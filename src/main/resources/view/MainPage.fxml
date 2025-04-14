@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="562.0" prefWidth="1020.0" style="-fx-background-color: #2f3640;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="ancMainPage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="562.0" prefWidth="1020.0" style="-fx-background-color: #2f3640;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ijse.powerhouse.controller.MainPageController">
    <children>
       <Pane prefHeight="560.0" prefWidth="374.0">
          <children>
@@ -72,17 +72,17 @@
                         </VBox>
                         <VBox alignment="TOP_CENTER" prefHeight="380.0" prefWidth="415.0" spacing="40.0">
                            <children>
-                              <TextField promptText="User Name...">
+                              <TextField fx:id="txtUserId" promptText="User Id...">
                                  <font>
                                     <Font name="Georgia Bold" size="14.0" />
                                  </font>
                               </TextField>
-                              <TextField promptText="Password...">
+                              <TextField fx:id="txtPassword" promptText="Password...">
                                  <font>
                                     <Font name="Georgia Bold" size="14.0" />
                                  </font>
                               </TextField>
-                              <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="86.0" text="Log in">
+                              <Button mnemonicParsing="false" onAction="#btnLoginOnAction" prefHeight="25.0" prefWidth="86.0" text="Log in">
                                  <font>
                                     <Font name="Georgia Bold" size="14.0" />
                                  </font>
