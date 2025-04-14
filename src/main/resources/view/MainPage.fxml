@@ -82,7 +82,7 @@
                                     <Font name="Georgia Bold" size="14.0" />
                                  </font>
                               </TextField>
-                              <Button mnemonicParsing="false" onAction="#btnLoginOnAction" prefHeight="25.0" prefWidth="86.0" text="Log in">
+                              <Button mnemonicParsing="false" onAction="#btnLoginOnAction" prefHeight="25.0" prefWidth="86.0" style="-fx-background-color: #2f3640; -fx-border-color: #f5f6fa;" text="Log in" textFill="WHITE">
                                  <font>
                                     <Font name="Georgia Bold" size="14.0" />
                                  </font>
