@@ -52,7 +52,7 @@
                      <children>
                         <VBox alignment="TOP_RIGHT" prefHeight="304.0" prefWidth="253.0" spacing="45.0">
                            <children>
-                              <Label text="User Name :" textFill="WHITE">
+                              <Label text="User Id :" textFill="WHITE">
                                  <font>
                                     <Font name="Georgia Bold" size="18.0" />
                                  </font>
