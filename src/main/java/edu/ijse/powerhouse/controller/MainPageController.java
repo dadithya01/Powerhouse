@@ -1,7 +1,6 @@
 package edu.ijse.powerhouse.controller;
 
 import edu.ijse.powerhouse.db.DBConnection;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.TextField;
@@ -12,6 +11,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Objects;
 
 public class MainPageController {
 
@@ -25,7 +25,7 @@ public class MainPageController {
     private TextField txtUserName;
 
     @FXML
-    void btnLoginOnAction(ActionEvent event) {
+    void btnLoginOnAction() {
         String inputUserName = txtUserName.getText();
         String inputPassword = txtPassword.getText();
 
@@ -39,9 +39,15 @@ public class MainPageController {
             ResultSet rs = stmt.executeQuery();
 
             if (rs.next()) {
-                ancMainPage.getChildren().clear();
-                AnchorPane load = FXMLLoader.load(getClass().getResource("/view/DashBoard.fxml"));
-                ancMainPage.getChildren().add(load);
+                if (Objects.equals(inputUserName, "adithya")){
+                    ancMainPage.getChildren().clear();
+                    AnchorPane load = FXMLLoader.load(getClass().getResource("/view/DashBoardO.fxml"));
+                    ancMainPage.getChildren().add(load);
+                }else if (Objects.equals(inputUserName,"lahiru")) {
+                    ancMainPage.getChildren().clear();
+                    AnchorPane load = FXMLLoader.load(getClass().getResource("/view/DashBoardA.fxml"));
+                    ancMainPage.getChildren().add(load);
+                }
             } else {
                 System.out.println("Wrong username or password!");
             }

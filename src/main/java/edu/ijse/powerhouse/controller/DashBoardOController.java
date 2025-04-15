@@ -1,21 +1,20 @@
 package edu.ijse.powerhouse.controller;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 
-public class DashBoardController {
+public class DashBoardOController {
 
     @FXML
-    private AnchorPane ancDashBoard;
+    private AnchorPane ancDashBoardO;
 
     @FXML
-    void btnLogoutOnAction(ActionEvent event) throws IOException {
-        ancDashBoard.getChildren().clear();
+    void btnLogoutOnAction() throws IOException {
+        ancDashBoardO.getChildren().clear();
         AnchorPane load = FXMLLoader.load(getClass().getResource("/view/MainPage.fxml"));
-        ancDashBoard.getChildren().add(load);
+        ancDashBoardO.getChildren().add(load);
     }
 }
