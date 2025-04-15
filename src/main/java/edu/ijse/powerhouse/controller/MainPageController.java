@@ -22,18 +22,18 @@ public class MainPageController {
     private TextField txtPassword;
 
     @FXML
-    private TextField txtUserId;
+    private TextField txtUserName;
 
     @FXML
     void btnLoginOnAction(ActionEvent event) {
-        String inputUserId = txtUserId.getText();
+        String inputUserName = txtUserName.getText();
         String inputPassword = txtPassword.getText();
 
         try {
             Connection conn = DBConnection.getInstance().getConnection();
-            String sql = "SELECT * FROM User_Authentication  WHERE user_Id = ? AND password_hash  = ?";
+            String sql = "SELECT * FROM User_Authentication  WHERE Username = ? AND password_hash  = ?";
             PreparedStatement stmt = conn.prepareStatement(sql);
-            stmt.setString(1, inputUserId);
+            stmt.setString(1, inputUserName);
             stmt.setString(2, inputPassword);
 
             ResultSet rs = stmt.executeQuery();
