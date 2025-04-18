@@ -39,11 +39,11 @@ public class MainPageController {
             ResultSet rs = stmt.executeQuery();
 
             if (rs.next()) {
-                if (Objects.equals(inputUserName, "adithya")){
+                if (Objects.equals(inputUserName, "owner")){
                     ancMainPage.getChildren().clear();
                     AnchorPane load = FXMLLoader.load(getClass().getResource("/view/DashBoardO.fxml"));
                     ancMainPage.getChildren().add(load);
-                }else if (Objects.equals(inputUserName,"lahiru")) {
+                }else if (Objects.equals(inputUserName,"admin")) {
                     ancMainPage.getChildren().clear();
                     AnchorPane load = FXMLLoader.load(getClass().getResource("/view/DashBoardA.fxml"));
                     ancMainPage.getChildren().add(load);
