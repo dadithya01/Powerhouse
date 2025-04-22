@@ -10,8 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="562.0" prefWidth="1020.0" style="-fx-background-color: #2f3640;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ijse.powerhouse.controller.DashBoardTController">
+<AnchorPane fx:id="ancDashBoardT" prefHeight="562.0" prefWidth="1020.0" style="-fx-background-color: #2f3640;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ijse.powerhouse.controller.DashBoardTController">
    <children>
       <Pane prefHeight="560.0" prefWidth="372.0" style="-fx-background-color: #485460;">
          <children>
@@ -29,8 +28,16 @@
                </effect>
             </Label>
             <VBox layoutY="87.0" prefHeight="404.0" prefWidth="372.0" />
-            <Button layoutX="42.0" layoutY="500.0" mnemonicParsing="false" text="Log out" />
+            <Button layoutX="14.0" layoutY="513.0" mnemonicParsing="false" onAction="#btnLogoutOnAction" style="-fx-background-color: #485460; -fx-border-color: #f5f6fa;" text="Log out" textFill="WHITE">
+               <font>
+                  <Font name="Georgia Bold" size="18.0" />
+               </font></Button>
          </children>
       </Pane>
+      <Label layoutX="496.0" layoutY="217.0" text="Trainer" textFill="WHITE">
+         <font>
+            <Font name="Georgia Bold" size="18.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
