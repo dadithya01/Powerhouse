@@ -47,6 +47,10 @@ public class MainPageController {
                     ancMainPage.getChildren().clear();
                     AnchorPane load = FXMLLoader.load(getClass().getResource("/view/DashBoardA.fxml"));
                     ancMainPage.getChildren().add(load);
+                } else if (Objects.equals(inputUserName,"trainer")) {
+                    ancMainPage.getChildren().clear();
+                    AnchorPane load = FXMLLoader.load(getClass().getResource("/view/DashBoardT.fxml"));
+                    ancMainPage.getChildren().add(load);
                 }
             } else {
                 System.out.println("Wrong username or password!");
