@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="ancMainPage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="808.0" prefWidth="1329.0" style="-fx-background-color: #2f3640;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ijse.powerhouse.controller.MainPageController">
+<AnchorPane fx:id="ancMainPage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="808.0" prefWidth="1343.0" style="-fx-background-color: #2f3640;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ijse.powerhouse.controller.MainPageController">
    <children>
       <Pane prefHeight="808.0" prefWidth="539.0">
          <children>
@@ -100,11 +100,6 @@
             <Insets top="60.0" />
          </padding>
       </VBox>
-      <ImageView fitHeight="57.0" fitWidth="54.0" layoutX="552.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/dumbbell.png" />
-         </image>
-      </ImageView>
       <Label layoutX="606.0" layoutY="54.0" text="PowerHouse" textFill="WHITE">
          <font>
             <Font name="Georgia Bold" size="18.0" />
@@ -113,5 +108,10 @@
             <Reflection />
          </effect>
       </Label>
+      <ImageView fitHeight="57.0" fitWidth="54.0" layoutX="552.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/dumbbell.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
