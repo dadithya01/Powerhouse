@@ -10,16 +10,16 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="ancDashBoardO" prefHeight="562.0" prefWidth="1020.0" style="-fx-background-color: #2f3640;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ijse.powerhouse.controller.DashBoardOController">
+<AnchorPane fx:id="ancDashBoardO" prefHeight="808.0" prefWidth="1329.0" style="-fx-background-color: #2f3640;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ijse.powerhouse.controller.DashBoardOController">
    <children>
-      <Pane prefHeight="560.0" prefWidth="372.0" style="-fx-background-color: #485460;">
+      <Pane prefHeight="808.0" prefWidth="539.0" style="-fx-background-color: #485460;">
          <children>
             <ImageView fitHeight="57.0" fitWidth="54.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../images/dumbbell.png" />
                </image>
             </ImageView>
-            <Label layoutX="81.0" layoutY="33.0" text="PowerHouse" textFill="WHITE">
+            <Label layoutX="68.0" layoutY="41.0" text="PowerHouse" textFill="WHITE">
                <font>
                   <Font name="Georgia Bold" size="18.0" />
                </font>
@@ -27,15 +27,15 @@
                   <Reflection />
                </effect>
             </Label>
-            <VBox layoutY="87.0" prefHeight="404.0" prefWidth="372.0" />
-            <Button layoutX="14.0" layoutY="513.0" mnemonicParsing="false" onAction="#btnLogoutOnAction" style="-fx-background-color: #485460; -fx-border-color: #f5f6fa;" text="Log out" textFill="WHITE">
+            <VBox layoutY="87.0" prefHeight="650.0" prefWidth="539.0" />
+            <Button layoutX="14.0" layoutY="759.0" mnemonicParsing="false" onAction="#btnLogoutOnAction" style="-fx-background-color: #485460; -fx-border-color: #f5f6fa;" text="Log out" textFill="WHITE">
                <font>
                   <Font name="Georgia Bold" size="18.0" />
                </font>
             </Button>
          </children>
       </Pane>
-      <Label layoutX="510.0" layoutY="228.0" text="Owner" textFill="WHITE">
+      <Label layoutX="652.0" layoutY="355.0" text="Owner" textFill="WHITE">
          <font>
             <Font name="Georgia Bold" size="18.0" />
          </font>
