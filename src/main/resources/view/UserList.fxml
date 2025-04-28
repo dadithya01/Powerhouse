@@ -1,16 +1,101 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
-
 
 <AnchorPane fx:id="ancUserList" prefHeight="808.0" prefWidth="804.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ijse.powerhouse.controller.UserListController">
    <children>
-      <Label layoutX="127.0" layoutY="147.0" text="UserList">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
+      <VBox alignment="TOP_CENTER" layoutX="80.0" layoutY="42.0" prefHeight="808.0" prefWidth="804.0" spacing="20.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label text="User List">
+               <font>
+                  <Font name="Georgia Bold" size="18.0" />
+               </font>
+            </Label>
+            <HBox prefHeight="337.0" prefWidth="804.0">
+               <children>
+                  <VBox alignment="TOP_RIGHT" prefHeight="351.0" prefWidth="298.0" spacing="20.0">
+                     <children>
+                        <Label text="User Id :">
+                           <font>
+                              <Font name="Georgia Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label text="Name :">
+                           <font>
+                              <Font name="Georgia Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label text="Phone :">
+                           <font>
+                              <Font name="Georgia Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label text="Email :">
+                           <font>
+                              <Font name="Georgia Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label text="User Name :">
+                           <font>
+                              <Font name="Georgia Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label text="Password :">
+                           <font>
+                              <Font name="Georgia Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label text="User Type Id :">
+                           <font>
+                              <Font name="Georgia Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label text="Registration Date :">
+                           <font>
+                              <Font name="Georgia Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label text="Status :">
+                           <font>
+                              <Font name="Georgia Bold" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets right="10.0" top="10.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </VBox>
+                  <VBox prefHeight="351.0" prefWidth="506.0" spacing="12.0">
+                     <children>
+                        <TextField />
+                        <TextField />
+                        <TextField />
+                        <TextField />
+                        <TextField />
+                        <TextField />
+                        <TextField />
+                        <TextField />
+                        <TextField />
+                     </children>
+                     <padding>
+                        <Insets left="10.0" right="30.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets top="30.0" />
+         </padding>
+      </VBox>
    </children>
 </AnchorPane>
