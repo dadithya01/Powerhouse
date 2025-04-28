@@ -4,6 +4,7 @@
 <?import javafx.scene.control.Accordion?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TitledPane?>
 <?import javafx.scene.effect.Reflection?>
 <?import javafx.scene.image.Image?>
@@ -13,18 +14,18 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="ancDashBoardO" prefHeight="808.0" prefWidth="1343.0" style="-fx-background-color: #2f3640;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ijse.powerhouse.controller.DashBoardOController">
+<AnchorPane fx:id="ancDashBoardO" prefHeight="808.0" prefWidth="1343.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ijse.powerhouse.controller.DashBoardOController">
    <children>
-      <Pane prefHeight="808.0" prefWidth="539.0" style="-fx-background-color: #485460;">
+      <Pane prefHeight="808.0" prefWidth="539.0" style="-fx-background-color: e8e8e8;">
          <children>
             <ImageView fitHeight="57.0" fitWidth="54.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../images/dumbbell.png" />
                </image>
             </ImageView>
-            <Label layoutX="68.0" layoutY="41.0" text="PowerHouse" textFill="WHITE">
+            <Label layoutX="68.0" layoutY="33.0" text="PowerHouse">
                <font>
-                  <Font name="Georgia Bold" size="18.0" />
+                  <Font name="Georgia Bold" size="24.0" />
                </font>
                <effect>
                   <Reflection />
@@ -32,63 +33,118 @@
             </Label>
             <VBox layoutY="124.0" prefHeight="613.0" prefWidth="539.0">
                <children>
-                  <Accordion>
+                  <Accordion VBox.vgrow="ALWAYS">
                     <panes>
                       <TitledPane animated="false" prefHeight="614.0" prefWidth="539.0" text="User Management">
                         <content>
-                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #485460;">
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: e8e8e8;">
                                  <children>
                                     <Accordion layoutX="-15.0" layoutY="446.0" />
+                                    <SplitPane layoutY="-1.0" orientation="VERTICAL" prefHeight="120.0" prefWidth="539.0">
+                                      <items>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                             <children>
+                                                <VBox alignment="CENTER" layoutX="-2.0" prefHeight="121.0" prefWidth="539.0" spacing="30.0" style="-fx-background-color: e8e8e8;">
+                                                   <children>
+                                                      <Button mnemonicParsing="false" onAction="#btnUserListOnAction" prefHeight="29.0" prefWidth="350.0" style="-fx-background-color: e8e8e8;" text="Users list" />
+                                                      <Button mnemonicParsing="false" onAction="#btnUserTypesOnAction" prefHeight="29.0" prefWidth="348.0" style="-fx-background-color: e8e8e8;" text="Button" />
+                                                   </children>
+                                                </VBox>
+                                             </children>
+                                          </AnchorPane>
+                                      </items>
+                                    </SplitPane>
                                  </children></AnchorPane>
                         </content>
+                           <font>
+                              <Font name="Georgia Bold" size="18.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="10.0" />
+                           </padding>
                       </TitledPane>
                       <TitledPane animated="false" prefHeight="423.0" prefWidth="539.0" text="Emploee Management">
                         <content>
-                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #485460;" />
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: e8e8e8;" />
                         </content>
+                           <font>
+                              <Font name="Georgia Bold" size="18.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="10.0" />
+                           </padding>
                       </TitledPane>
                       <TitledPane animated="false" prefHeight="635.0" prefWidth="539.0" text="Member Management">
                         <content>
-                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #485460;" />
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: e8e8e8;" />
                         </content>
+                           <font>
+                              <Font name="Georgia Bold" size="18.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="10.0" />
+                           </padding>
                       </TitledPane>
                         <TitledPane animated="false" prefHeight="635.0" prefWidth="539.0" text="Workout Plans">
                            <content>
-                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #485460;" />
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: e8e8e8;" />
                            </content>
+                           <font>
+                              <Font name="Georgia Bold" size="18.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="10.0" />
+                           </padding>
                         </TitledPane>
                         <TitledPane animated="false" prefHeight="635.0" prefWidth="539.0" text="Diet Plans">
                            <content>
-                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #485460;" />
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: e8e8e8;" />
                            </content>
+                           <font>
+                              <Font name="Georgia Bold" size="18.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="10.0" />
+                           </padding>
                         </TitledPane>
                         <TitledPane animated="false" prefHeight="635.0" prefWidth="539.0" text="Payments">
                            <content>
-                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #485460;" />
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: e8e8e8;" />
                            </content>
+                           <font>
+                              <Font name="Georgia Bold" size="18.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="10.0" />
+                           </padding>
                         </TitledPane>
                         <TitledPane animated="false" prefHeight="635.0" prefWidth="539.0" text="Equipment Management">
                            <content>
-                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #485460;" />
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: e8e8e8;" />
                            </content>
+                           <font>
+                              <Font name="Georgia Bold" size="18.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="10.0" />
+                           </padding>
                         </TitledPane>
                     </panes>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
                   </Accordion>
                </children>
                <padding>
                   <Insets bottom="100.0" top="100.0" />
                </padding></VBox>
-            <Button layoutX="14.0" layoutY="759.0" mnemonicParsing="false" onAction="#btnLogoutOnAction" style="-fx-background-color: #485460; -fx-border-color: #f5f6fa;" text="Log out" textFill="WHITE">
+            <Button layoutX="14.0" layoutY="759.0" mnemonicParsing="false" onAction="#btnLogoutOnAction" style="-fx-background-color: #2f3640;" text="Log out" textFill="WHITE">
                <font>
                   <Font name="Georgia Bold" size="18.0" />
                </font>
             </Button>
          </children>
       </Pane>
-      <Label layoutX="652.0" layoutY="355.0" text="Owner" textFill="WHITE">
-         <font>
-            <Font name="Georgia Bold" size="18.0" />
-         </font>
-      </Label>
+      <Pane fx:id="sidePane" layoutX="539.0" layoutY="125.0" prefHeight="808.0" prefWidth="804.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="539.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
    </children>
 </AnchorPane>

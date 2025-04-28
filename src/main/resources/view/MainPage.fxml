@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="ancMainPage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="808.0" prefWidth="1343.0" style="-fx-background-color: #2f3640;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ijse.powerhouse.controller.MainPageController">
+<AnchorPane fx:id="ancMainPage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="808.0" prefWidth="1343.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ijse.powerhouse.controller.MainPageController">
    <children>
       <Pane prefHeight="808.0" prefWidth="539.0">
          <children>
@@ -41,21 +41,24 @@
       </Pane>
       <VBox alignment="TOP_CENTER" layoutX="539.0" layoutY="212.0" prefHeight="385.0" prefWidth="791.0">
          <children>
-            <Label text="Log in" textFill="WHITE">
+            <Label text="Log in">
                <font>
                   <Font name="Georgia Bold" size="24.0" />
                </font>
+               <VBox.margin>
+                  <Insets left="40.0" />
+               </VBox.margin>
             </Label>
             <HBox prefHeight="253.0" prefWidth="744.0">
                <children>
                   <VBox alignment="TOP_RIGHT" prefHeight="304.0" prefWidth="253.0" spacing="45.0">
                      <children>
-                        <Label text="User Name :" textFill="WHITE">
+                        <Label text="User Name :">
                            <font>
                               <Font name="Georgia Bold" size="18.0" />
                            </font>
                         </Label>
-                        <Label text="Password :" textFill="#f5f5f5">
+                        <Label text="Password :">
                            <font>
                               <Font name="Georgia Bold" size="18.0" />
                            </font>
@@ -80,9 +83,9 @@
                               <Font name="Georgia Bold" size="14.0" />
                            </font>
                         </TextField>
-                        <Button mnemonicParsing="false" onAction="#btnLoginOnAction" prefHeight="25.0" prefWidth="86.0" style="-fx-background-color: #2f3640; -fx-border-color: #f5f6fa;" text="Log in" textFill="WHITE">
+                        <Button mnemonicParsing="false" onAction="#btnLoginOnAction" prefHeight="25.0" prefWidth="86.0" style="-fx-background-color: #2f3640;" text="Log in" textFill="WHITE">
                            <font>
-                              <Font name="Georgia Bold" size="14.0" />
+                              <Font name="Georgia Bold" size="18.0" />
                            </font>
                         </Button>
                      </children>
@@ -100,9 +103,9 @@
             <Insets top="60.0" />
          </padding>
       </VBox>
-      <Label layoutX="606.0" layoutY="54.0" text="PowerHouse" textFill="WHITE">
+      <Label layoutX="606.0" layoutY="46.0" text="PowerHouse">
          <font>
-            <Font name="Georgia Bold" size="18.0" />
+            <Font name="Georgia Bold" size="24.0" />
          </font>
          <effect>
             <Reflection />

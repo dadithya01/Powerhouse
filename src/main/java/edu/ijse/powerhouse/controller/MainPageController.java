@@ -31,7 +31,7 @@ public class MainPageController {
 
         try {
             Connection conn = DBConnection.getInstance().getConnection();
-            String sql = "SELECT * FROM User_Authentication  WHERE Username = ? AND password_hash  = ?";
+            String sql = "SELECT * FROM Users  WHERE Username = ? AND password  = ?";
             PreparedStatement stmt = conn.prepareStatement(sql);
             stmt.setString(1, inputUserName);
             stmt.setString(2, inputPassword);
