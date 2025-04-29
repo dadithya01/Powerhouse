@@ -1,10 +1,12 @@
 package edu.ijse.powerhouse.controller;
 
 import edu.ijse.powerhouse.db.DBConnection;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -13,8 +15,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Objects;
 
-public class MainPageController {
+public class LoginPageController {
 
+    @FXML
+    public Pane mainCont;
     @FXML
     private AnchorPane ancMainPage;
 
@@ -25,7 +29,7 @@ public class MainPageController {
     private TextField txtUserName;
 
     @FXML
-    void btnLoginOnAction() {
+    void btnLoginOnAction( ActionEvent actionEvent) throws IOException {
         String inputUserName = txtUserName.getText();
         String inputPassword = txtPassword.getText();
 
@@ -61,5 +65,12 @@ public class MainPageController {
         } catch (ClassNotFoundException | IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+
+    public void btnSignupOnAction(ActionEvent actionEvent) throws IOException {
+        mainCont.getChildren().clear();
+        Pane load = FXMLLoader.load(getClass().getResource("/view/SignUpPage.fxml"));
+        mainCont.getChildren().add(load);
     }
 }

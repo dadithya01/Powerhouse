@@ -13,7 +13,7 @@ public class AppInitializer extends Application {
 
         Image icon = new Image(getClass().getResourceAsStream("/images/dumbbell.png"));
 
-        Parent parent = FXMLLoader.load(getClass().getResource("/view/MainPage.fxml"));
+        Parent parent = FXMLLoader.load(getClass().getResource("/view/LoginPage.fxml"));
 
         Scene scene = new Scene(parent);
 

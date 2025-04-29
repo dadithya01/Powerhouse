@@ -14,7 +14,7 @@ public class DashBoardAController {
     @FXML
     void btnLogoutOnAction() throws IOException {
         ancDashBoardA.getChildren().clear();
-        AnchorPane load = FXMLLoader.load(getClass().getResource("/view/MainPage.fxml"));
+        AnchorPane load = FXMLLoader.load(getClass().getResource("/view/LoginPage.fxml"));
         ancDashBoardA.getChildren().add(load);
     }
 

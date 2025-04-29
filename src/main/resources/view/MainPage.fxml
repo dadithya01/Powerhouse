@@ -39,7 +39,7 @@
             </VBox>
          </children>
       </Pane>
-      <VBox alignment="TOP_CENTER" layoutX="539.0" layoutY="212.0" prefHeight="385.0" prefWidth="791.0">
+      <VBox alignment="TOP_CENTER" layoutX="539.0" layoutY="212.0" prefHeight="337.0" prefWidth="806.0">
          <children>
             <Label text="Log in">
                <font>
@@ -116,5 +116,25 @@
             <Image url="@../images/dumbbell.png" />
          </image>
       </ImageView>
+      <HBox layoutX="559.0" layoutY="767.0" prefHeight="41.0" prefWidth="368.0" spacing="5.0">
+         <children>
+            <Label text="Dont have account ?">
+               <font>
+                  <Font name="Georgia Bold" size="14.0" />
+               </font>
+            </Label>
+            <Button alignment="TOP_CENTER" mnemonicParsing="false" onAction="#btnSignupOnAction" prefHeight="11.0" prefWidth="63.0" style="-fx-background-color: f4f4f4; -fx-border-color: #2f3640;" text="Signp">
+               <font>
+                  <Font name="Georgia Bold" size="14.0" />
+               </font>
+               <padding>
+                  <Insets bottom="2.0" left="-5.0" top="2.0" />
+               </padding>
+            </Button>
+         </children>
+         <padding>
+            <Insets top="10.0" />
+         </padding>
+      </HBox>
    </children>
 </AnchorPane>
