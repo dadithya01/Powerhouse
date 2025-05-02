@@ -1,4 +1,4 @@
 package edu.ijse.powerhouse.controller;
 
-public class SignupPageController {
+public class ForgotPasswordController {
 }

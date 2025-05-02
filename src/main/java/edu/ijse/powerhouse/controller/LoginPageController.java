@@ -68,9 +68,9 @@ public class LoginPageController {
     }
 
 
-    public void btnSignupOnAction(ActionEvent actionEvent) throws IOException {
+    public void btnForgotPasswordOnAction(ActionEvent actionEvent) throws IOException {
         mainCont.getChildren().clear();
-        Pane load = FXMLLoader.load(getClass().getResource("/view/SignUpPage.fxml"));
+        Pane load = FXMLLoader.load(getClass().getResource("/view/ForgotPassword.fxml"));
         mainCont.getChildren().add(load);
     }
 }

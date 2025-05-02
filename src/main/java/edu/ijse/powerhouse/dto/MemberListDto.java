@@ -1,9 +1,9 @@
 package edu.ijse.powerhouse.dto;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
+import java.sql.Date;
 
-public class MemberDto {
+public class MemberListDto {
     private String member_id;
     private String name;
     private BigDecimal weight;
@@ -13,17 +13,17 @@ public class MemberDto {
     private String emergency_contact;
     private String medical_conditions;
     private String fitness_goals;
-    private LocalDate register_date;
+    private Date register_date;
     private String membership_status;
     private String added_by;
 
-    public MemberDto(){
+    public MemberListDto(){
 
     }
 
-    public MemberDto(String member_id, String name, BigDecimal weight, BigDecimal height, int age, String contact,
-            String emergency_contact, String medical_conditions, String fitness_goals, LocalDate register_date,
-            String membership_status, String added_by) {
+    public MemberListDto(String member_id, String name, BigDecimal weight, BigDecimal height, int age, String contact,
+                         String emergency_contact, String medical_conditions, String fitness_goals, Date register_date,
+                         String membership_status, String added_by) {
         this.member_id = member_id;
         this.name = name;
         this.weight = weight;
@@ -110,11 +110,11 @@ public class MemberDto {
         this.fitness_goals = fitness_goals;
     }
 
-    public LocalDate getRegister_date() {
+    public Date getRegister_date() {
         return register_date;
     }
 
-    public void setRegister_date(LocalDate register_date) {
+    public void setRegister_date(Date register_date) {
         this.register_date = register_date;
     }
 
@@ -135,7 +135,7 @@ public class MemberDto {
     }
 
     public String toString() {
-        return "MemberDto{" +
+        return "MemberListDto{" +
                 "member_id='" + member_id + '\'' +
                 ", name='" + name + '\'' +
                 ", weight=" + weight +

@@ -1,6 +1,8 @@
 package edu.ijse.powerhouse.dto;
+import lombok.*;
 
-import java.time.LocalDate;
+import java.sql.Date;
+import java.sql.Timestamp;
 
 public class UserListDto {
     private String user_Id;
@@ -10,13 +12,14 @@ public class UserListDto {
     private String user_Name;
     private String password;
     private String user_Type_Id;
-    private LocalDate registration_Date;
+    private Date registration_Date;
+    private Timestamp last_Login;
     private String status;
 
     public UserListDto() {
     }
 
-    public UserListDto(String user_Id, String name, String phone, String email, String user_Name, String password, String user_Type_Id,LocalDate registration_Date, String status) {
+    public UserListDto(String user_Id, String name, String phone, String email, String user_Name, String password, String user_Type_Id,Date registration_Date, Timestamp last_Login, String status) {
         this.user_Id = user_Id;
         this.name = name;
         this.phone = phone;
@@ -25,6 +28,7 @@ public class UserListDto {
         this.password = password;
         this.user_Type_Id = user_Type_Id;
         this.registration_Date = registration_Date;
+        this.last_Login = last_Login;
         this.status = status;
     }
 
@@ -73,11 +77,18 @@ public class UserListDto {
         this.user_Type_Id = user_Type_Id;
     }
 
-    public LocalDate getRegistration_Date() {
+    public Date getRegistration_Date() {
         return registration_Date;
     }
-    public void setRegistration_Date(LocalDate registration_Date) {
+    public void setRegistration_Date(Date registration_Date) {
         this.registration_Date = registration_Date;
+    }
+
+    public void setLast_Login(Timestamp last_Login) {
+        this.last_Login = last_Login;
+    }
+    public String getLast_Login_String() {
+        return last_Login.toString();
     }
 
     public String getPassword() {
@@ -99,10 +110,15 @@ public class UserListDto {
     @Override
     public String toString() {
         return "UserListDto{" +
-                "userId='" + user_Id + '\'' +
-                ", userName='" + user_Name + '\'' +
-                ", userType='" + user_Type_Id + '\'' +
+                "user_Id='" + user_Id + '\'' +
+                ", name='" + name + '\'' +
+                ", phone='" + phone + '\'' +
+                ", email='" + email + '\'' +
+                ", user_Name='" + user_Name + '\'' +
                 ", password='" + password + '\'' +
+                ", user_Type_Id='" + user_Type_Id + '\'' +
+                ", registration_Date=" + registration_Date +
+                ", last_Login=" + last_Login +
                 ", status='" + status + '\'' +
                 '}';
     }
