@@ -24,7 +24,7 @@
                   </ImageView>
                   <Label layoutX="68.0" layoutY="33.0" text="PowerHouse">
                      <font>
-                        <Font name="Georgia Bold" size="24.0" />
+                        <Font name="Serif Bold" size="24.0" />
                      </font>
                      <effect>
                         <Reflection />
@@ -33,7 +33,7 @@
                   <VBox layoutY="87.0" prefHeight="613.0" prefWidth="539.0" />
                   <Button layoutX="14.0" layoutY="759.0" mnemonicParsing="false" onAction="#btnLogoutOnAction" style="-fx-background-color: #2f3640; -fx-background-radius: 7;" text="Log out" textFill="WHITE">
                      <font>
-                        <Font name="Georgia Bold" size="18.0" />
+                        <Font name="Serif Bold" size="18.0" />
                      </font>
                   </Button>
                </children>

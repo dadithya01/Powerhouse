@@ -15,7 +15,7 @@
          <children>
             <Label text="User List">
                <font>
-                  <Font name="Georgia Bold" size="36.0" />
+                  <Font name="Serif Bold" size="36.0" />
                </font>
             </Label>
             <HBox prefHeight="337.0" prefWidth="804.0">
@@ -24,12 +24,12 @@
                      <children>
                         <Label text="User Id :">
                            <font>
-                              <Font name="Georgia Bold" size="14.0" />
+                              <Font name="Serif Bold" size="14.0" />
                            </font>
                         </Label>
                         <Label text="Name :">
                            <font>
-                              <Font name="Georgia Bold" size="14.0" />
+                              <Font name="Serif Bold" size="14.0" />
                            </font>
                            <padding>
                               <Insets top="-5.0" />
@@ -37,32 +37,32 @@
                         </Label>
                         <Label text="Phone :">
                            <font>
-                              <Font name="Georgia Bold" size="14.0" />
+                              <Font name="Serif Bold" size="14.0" />
                            </font>
                         </Label>
                         <Label text="Email :">
                            <font>
-                              <Font name="Georgia Bold" size="14.0" />
+                              <Font name="Serif Bold" size="14.0" />
                            </font>
                         </Label>
                         <Label text="User Name :">
                            <font>
-                              <Font name="Georgia Bold" size="14.0" />
+                              <Font name="Serif Bold" size="14.0" />
                            </font>
                         </Label>
                         <Label text="Password :">
                            <font>
-                              <Font name="Georgia Bold" size="14.0" />
+                              <Font name="Serif Bold" size="14.0" />
                            </font>
                         </Label>
                         <Label text="User Type Id :">
                            <font>
-                              <Font name="Georgia Bold" size="14.0" />
+                              <Font name="Serif Bold" size="14.0" />
                            </font>
                         </Label>
                         <Label text="Registration Date :">
                            <font>
-                              <Font name="Georgia Bold" size="14.0" />
+                              <Font name="Serif Bold" size="14.0" />
                            </font>
                            <padding>
                               <Insets top="5.0" />
@@ -70,7 +70,7 @@
                         </Label>
                         <Label text="Status :">
                            <font>
-                              <Font name="Georgia Bold" size="14.0" />
+                              <Font name="Serif Bold" size="14.0" />
                            </font>
                         </Label>
                      </children>
@@ -81,14 +81,14 @@
                         <Insets />
                      </HBox.margin>
                   </VBox>
-                  <VBox prefHeight="351.0" prefWidth="506.0" spacing="10.0">
+                  <VBox prefHeight="351.0" prefWidth="506.0" spacing="14.0">
                      <children>
                         <Label text="1">
                            <padding>
                               <Insets top="10.0" />
                            </padding>
                            <font>
-                              <Font name="Georgia Bold" size="14.0" />
+                              <Font name="Serif Bold" size="14.0" />
                            </font>
                         </Label>
                         <TextField>
@@ -161,15 +161,15 @@
                <children>
                   <Button mnemonicParsing="false" style="-fx-background-color: #27ae60; -fx-background-radius: 7;" text="Add" textFill="WHITE">
                      <font>
-                        <Font name="Georgia Bold" size="18.0" />
+                        <Font name="Serif Bold" size="18.0" />
                      </font></Button>
                   <Button mnemonicParsing="false" style="-fx-background-color: #2980b9; -fx-background-radius: 7;" text="Update" textFill="WHITE">
                      <font>
-                        <Font name="Georgia Bold" size="18.0" />
+                        <Font name="Serif Bold" size="18.0" />
                      </font></Button>
                   <Button mnemonicParsing="false" style="-fx-background-color: #e74c3c; -fx-background-radius: 7;" text="Delete" textFill="WHITE">
                      <font>
-                        <Font name="Georgia Bold" size="18.0" />
+                        <Font name="Serif Bold" size="18.0" />
                      </font></Button>
                </children></HBox>
          </children>

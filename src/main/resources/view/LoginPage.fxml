@@ -28,7 +28,7 @@
                      <children>
                         <Label text="WELCOME" textFill="WHITE">
                            <font>
-                              <Font name="Georgia Bold" size="36.0" />
+                              <Font name="Serif Bold" size="36.0" />
                            </font>
                            <effect>
                               <Reflection />
@@ -47,7 +47,7 @@
                      <children>
                         <Label text="Log in">
                            <font>
-                              <Font name="Georgia Bold" size="36.0" />
+                              <Font name="Serif Bold" size="36.0" />
                            </font>
                            <VBox.margin>
                               <Insets left="40.0" />
@@ -59,12 +59,12 @@
                                  <children>
                                     <Label text="User Name :">
                                        <font>
-                                          <Font name="Georgia Bold" size="18.0" />
+                                          <Font name="Serif Bold" size="18.0" />
                                        </font>
                                     </Label>
                                     <Label text="Password :">
                                        <font>
-                                          <Font name="Georgia Bold" size="18.0" />
+                                          <Font name="Serif Bold" size="18.0" />
                                        </font>
                                     </Label>
                                  </children>
@@ -89,7 +89,7 @@
                                     </TextField>
                                     <Button mnemonicParsing="false" onAction="#btnLoginOnAction" prefHeight="25.0" prefWidth="86.0" style="-fx-background-color: #2f3640; -fx-background-radius: 7;" text="Log in" textFill="WHITE">
                                        <font>
-                                          <Font name="Georgia Bold" size="18.0" />
+                                          <Font name="Serif Bold" size="18.0" />
                                        </font>
                                     </Button>
                                  </children>
@@ -109,7 +109,7 @@
                   </VBox>
                   <Label layoutX="68.0" layoutY="42.0" text="PowerHouse">
                      <font>
-                        <Font name="Georgia Bold" size="24.0" />
+                        <Font name="Serif Bold" size="24.0" />
                      </font>
                      <effect>
                         <Reflection />
@@ -127,7 +127,7 @@
                               <Insets />
                            </HBox.margin>
                            <font>
-                              <Font name="Georgia Bold" size="14.0" />
+                              <Font name="Serif Bold" size="14.0" />
                            </font>
                         </Button>
                      </children>
