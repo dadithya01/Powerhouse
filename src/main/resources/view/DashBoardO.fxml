@@ -15,9 +15,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="ancDashBoardO" prefHeight="808.0" prefWidth="1343.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ijse.powerhouse.controller.DashBoardOController">
+<AnchorPane fx:id="ancDashBoardO" prefHeight="808.0" prefWidth="1404.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ijse.powerhouse.controller.DashBoardOController">
    <children>
-      <HBox>
+      <HBox prefHeight="808.0" prefWidth="1404.0">
          <children>
             <Pane prefHeight="808.0" prefWidth="539.0" style="-fx-background-color: e8e8e8;">
                <children>
@@ -28,7 +28,7 @@
                   </ImageView>
                   <Label layoutX="68.0" layoutY="33.0" text="PowerHouse">
                      <font>
-                        <Font name="Georgia Bold" size="24.0" />
+                        <Font name="Serif Bold" size="24.0" />
                      </font>
                      <effect>
                         <Reflection />
@@ -38,19 +38,25 @@
                      <children>
                         <Accordion VBox.vgrow="ALWAYS">
                           <panes>
-                            <TitledPane animated="false" prefHeight="614.0" prefWidth="539.0" text="User Management">
+                            <TitledPane animated="false" prefHeight="157.0" prefWidth="539.0" text="User Management">
                               <content>
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: e8e8e8;">
                                        <children>
                                           <Accordion layoutX="-15.0" layoutY="446.0" />
-                                          <SplitPane layoutY="-1.0" orientation="VERTICAL" prefHeight="120.0" prefWidth="539.0">
+                                          <SplitPane layoutY="-1.0" orientation="VERTICAL" prefHeight="93.0" prefWidth="539.0">
                                             <items>
-                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="93.0" prefWidth="539.0">
                                                    <children>
-                                                      <VBox alignment="CENTER" layoutX="-2.0" prefHeight="121.0" prefWidth="539.0" spacing="30.0" style="-fx-background-color: e8e8e8;">
+                                                      <VBox alignment="CENTER" layoutX="-2.0" prefHeight="93.0" prefWidth="539.0" spacing="20.0" style="-fx-background-color: e8e8e8;">
                                                          <children>
-                                                            <Button mnemonicParsing="false" onAction="#btnUserListOnAction" prefHeight="29.0" prefWidth="350.0" style="-fx-background-color: e8e8e8;" text="Users list" />
-                                                            <Button mnemonicParsing="false" onAction="#btnUserTypesOnAction" prefHeight="29.0" prefWidth="348.0" style="-fx-background-color: e8e8e8;" text="Button" />
+                                                            <Button mnemonicParsing="false" onAction="#btnUserListOnAction" prefHeight="29.0" prefWidth="350.0" style="-fx-background-color: e8e8e8;" text="Users list">
+                                                               <font>
+                                                                  <Font name="Serif Bold" size="13.0" />
+                                                               </font></Button>
+                                                            <Button mnemonicParsing="false" onAction="#btnUserTypesOnAction" prefHeight="29.0" prefWidth="348.0" style="-fx-background-color: e8e8e8;" text="Button">
+                                                               <font>
+                                                                  <Font name="Serif Bold" size="13.0" />
+                                                               </font></Button>
                                                          </children>
                                                       </VBox>
                                                    </children>
@@ -61,7 +67,7 @@
                                     </AnchorPane>
                               </content>
                                  <font>
-                                    <Font name="Georgia Bold" size="18.0" />
+                                    <Font name="Serif Bold" size="18.0" />
                                  </font>
                                  <padding>
                                     <Insets bottom="10.0" />
@@ -72,7 +78,7 @@
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: e8e8e8;" />
                               </content>
                                  <font>
-                                    <Font name="Georgia Bold" size="18.0" />
+                                    <Font name="Serif Bold" size="18.0" />
                                  </font>
                                  <padding>
                                     <Insets bottom="10.0" />
@@ -83,7 +89,7 @@
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: e8e8e8;" />
                               </content>
                                  <font>
-                                    <Font name="Georgia Bold" size="18.0" />
+                                    <Font name="Serif Bold" size="18.0" />
                                  </font>
                                  <padding>
                                     <Insets bottom="10.0" />
@@ -94,7 +100,7 @@
                                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: e8e8e8;" />
                                  </content>
                                  <font>
-                                    <Font name="Georgia Bold" size="18.0" />
+                                    <Font name="Serif Bold" size="18.0" />
                                  </font>
                                  <padding>
                                     <Insets bottom="10.0" />
@@ -105,7 +111,7 @@
                                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: e8e8e8;" />
                                  </content>
                                  <font>
-                                    <Font name="Georgia Bold" size="18.0" />
+                                    <Font name="Serif Bold" size="18.0" />
                                  </font>
                                  <padding>
                                     <Insets bottom="10.0" />
@@ -116,7 +122,7 @@
                                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: e8e8e8;" />
                                  </content>
                                  <font>
-                                    <Font name="Georgia Bold" size="18.0" />
+                                    <Font name="Serif Bold" size="18.0" />
                                  </font>
                                  <padding>
                                     <Insets bottom="10.0" />
@@ -127,7 +133,7 @@
                                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: e8e8e8;" />
                                  </content>
                                  <font>
-                                    <Font name="Georgia Bold" size="18.0" />
+                                    <Font name="Serif Bold" size="18.0" />
                                  </font>
                                  <padding>
                                     <Insets bottom="10.0" />
@@ -145,12 +151,12 @@
                   </VBox>
                   <Button layoutX="14.0" layoutY="759.0" mnemonicParsing="false" onAction="#btnLogoutOnAction" style="-fx-background-color: #2f3640; -fx-background-radius: 7;" text="Log out" textFill="WHITE">
                      <font>
-                        <Font name="Georgia Bold" size="18.0" />
+                        <Font name="Serif Bold" size="18.0" />
                      </font>
                   </Button>
                </children>
             </Pane>
-            <Pane fx:id="sidePane" prefHeight="808.0" prefWidth="804.0" style="-fx-background-color: fefefe;" />
+            <Pane fx:id="sidePane" prefHeight="808.0" prefWidth="866.0" style="-fx-background-color: fefefe;" />
          </children>
       </HBox>
    </children>

@@ -2,4 +2,5 @@
 
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="808.0" prefWidth="804.0" style="-fx-background-color: fefefe;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ijse.powerhouse.controller.UserTypesController" />
+
+<AnchorPane prefHeight="808.0" prefWidth="866.0" style="-fx-background-color: fefefe;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ijse.powerhouse.controller.UserTypesController" />

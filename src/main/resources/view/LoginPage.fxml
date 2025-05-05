@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="ancMainPage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="808.0" prefWidth="1343.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ijse.powerhouse.controller.LoginPageController">
+<AnchorPane fx:id="ancMainPage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="808.0" prefWidth="1404.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ijse.powerhouse.controller.LoginPageController">
    <children>
       <HBox>
          <children>
@@ -41,11 +41,11 @@
                   </VBox>
                </children>
             </Pane>
-            <Pane fx:id="mainCont" prefHeight="808.0" prefWidth="804.0" style="-fx-background-color: fefefe;">
+            <Pane fx:id="mainCont" prefHeight="808.0" prefWidth="866.0" style="-fx-background-color: fefefe;">
                <children>
-                  <VBox alignment="TOP_CENTER" layoutX="7.0" layoutY="206.0" prefHeight="385.0" prefWidth="791.0">
+                  <VBox alignment="TOP_CENTER" layoutX="55.0" layoutY="206.0" prefHeight="385.0" prefWidth="795.0">
                      <children>
-                        <Label text="Log in">
+                        <Label prefHeight="52.0" prefWidth="125.0" text="Log in">
                            <font>
                               <Font name="Serif Bold" size="36.0" />
                            </font>
@@ -53,9 +53,9 @@
                               <Insets left="40.0" />
                            </VBox.margin>
                         </Label>
-                        <HBox prefHeight="253.0" prefWidth="744.0">
+                        <HBox prefHeight="253.0" prefWidth="700.0">
                            <children>
-                              <VBox alignment="TOP_RIGHT" prefHeight="304.0" prefWidth="253.0" spacing="45.0">
+                              <VBox alignment="TOP_RIGHT" prefHeight="253.0" prefWidth="257.0" spacing="45.0">
                                  <children>
                                     <Label text="User Name :">
                                        <font>
@@ -75,7 +75,7 @@
                                     <Insets right="20.0" top="50.0" />
                                  </padding>
                               </VBox>
-                              <VBox alignment="TOP_CENTER" prefHeight="380.0" prefWidth="415.0" spacing="40.0">
+                              <VBox alignment="TOP_CENTER" prefHeight="253.0" prefWidth="372.0" spacing="40.0">
                                  <children>
                                     <TextField fx:id="txtUserName" promptText="User Name...">
                                        <font>
