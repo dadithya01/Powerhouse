@@ -15,9 +15,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="ancDashBoardO" prefHeight="808.0" prefWidth="1404.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ijse.powerhouse.controller.DashBoardOController">
+<AnchorPane fx:id="ancDashBoardO" prefHeight="808.0" prefWidth="1469.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ijse.powerhouse.controller.DashBoardOController">
    <children>
-      <HBox prefHeight="808.0" prefWidth="1404.0">
+      <HBox prefHeight="808.0" prefWidth="1469.0">
          <children>
             <Pane prefHeight="808.0" prefWidth="539.0" style="-fx-background-color: e8e8e8;">
                <children>
@@ -156,7 +156,7 @@
                   </Button>
                </children>
             </Pane>
-            <Pane fx:id="sidePane" prefHeight="808.0" prefWidth="866.0" style="-fx-background-color: fefefe;" />
+            <Pane fx:id="sidePane" prefHeight="808.0" prefWidth="930.0" style="-fx-background-color: fefefe;" />
          </children>
       </HBox>
    </children>

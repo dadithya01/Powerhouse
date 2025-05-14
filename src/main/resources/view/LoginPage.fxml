@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="ancMainPage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="808.0" prefWidth="1404.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ijse.powerhouse.controller.LoginPageController">
+<AnchorPane fx:id="ancMainPage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="808.0" prefWidth="1469.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ijse.powerhouse.controller.LoginPageController">
    <children>
       <HBox>
          <children>
@@ -41,9 +41,9 @@
                   </VBox>
                </children>
             </Pane>
-            <Pane fx:id="mainCont" prefHeight="808.0" prefWidth="866.0" style="-fx-background-color: fefefe;">
+            <Pane fx:id="mainCont" prefHeight="808.0" prefWidth="930.0" style="-fx-background-color: fefefe;">
                <children>
-                  <VBox alignment="TOP_CENTER" layoutX="55.0" layoutY="206.0" prefHeight="385.0" prefWidth="795.0">
+                  <VBox alignment="TOP_CENTER" layoutX="77.0" layoutY="206.0" prefHeight="385.0" prefWidth="841.0">
                      <children>
                         <Label prefHeight="52.0" prefWidth="125.0" text="Log in">
                            <font>
