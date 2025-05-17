@@ -11,6 +11,7 @@ import java.io.IOException;
 
 public class DashBoardOController {
 
+    @FXML
     public Pane sidePane;
     @FXML
     private AnchorPane ancDashBoardO;

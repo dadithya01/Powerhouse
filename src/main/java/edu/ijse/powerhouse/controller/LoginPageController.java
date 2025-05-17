@@ -4,6 +4,7 @@ import edu.ijse.powerhouse.db.DBConnection;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
@@ -35,7 +36,7 @@ public class LoginPageController {
 
         try {
             Connection conn = DBConnection.getInstance().getConnection();
-            String sql = "SELECT * FROM Users  WHERE Username = ? AND password  = ?";
+            String sql = "SELECT user_Type_Id FROM Users  WHERE Username = ? AND password  = ?";
             PreparedStatement stmt = conn.prepareStatement(sql);
             stmt.setString(1, inputUserName);
             stmt.setString(2, inputPassword);
@@ -57,7 +58,11 @@ public class LoginPageController {
                     ancMainPage.getChildren().add(load);
                 }
             } else {
-                System.out.println("Wrong username or password!");
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Login Failed");
+                alert.setHeaderText(null);
+                alert.setContentText("Invalid username or password.");
+                alert.showAndWait();
             }
 
         } catch (SQLException e) {

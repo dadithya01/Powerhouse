@@ -12,27 +12,27 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="ancUserList" prefHeight="808.0" prefWidth="930.0" style="-fx-background-color: fefefe;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ijse.powerhouse.controller.UserListController">
+<AnchorPane fx:id="ancUserList" prefHeight="900.0" prefWidth="1325.0" style="-fx-background-color: fefefe;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ijse.powerhouse.controller.UserListController">
    <children>
-      <VBox alignment="TOP_CENTER" layoutX="80.0" layoutY="42.0" prefHeight="808.0" prefWidth="930.0" spacing="15.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <VBox alignment="TOP_CENTER" layoutX="80.0" layoutY="42.0" prefHeight="900.0" prefWidth="1325.0" spacing="15.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Label text="User List Management">
                <font>
-                  <Font name="Serif Bold" size="36.0" />
+                  <Font name="Serif Bold" size="48.0" />
                </font>
             </Label>
             <HBox prefHeight="337.0" prefWidth="804.0">
                <children>
-                  <VBox alignment="TOP_RIGHT" prefHeight="374.0" prefWidth="299.0" spacing="23.0">
+                  <VBox alignment="TOP_RIGHT" prefHeight="378.0" prefWidth="395.0" spacing="23.0">
                      <children>
                         <Label text="User Id :">
                            <font>
-                              <Font name="Serif Bold" size="14.0" />
+                              <Font name="Serif Bold" size="20.0" />
                            </font>
                         </Label>
                         <Label text="Name :">
                            <font>
-                              <Font name="Serif Bold" size="14.0" />
+                              <Font name="Serif Bold" size="20.0" />
                            </font>
                            <padding>
                               <Insets top="-5.0" />
@@ -40,32 +40,32 @@
                         </Label>
                         <Label text="Phone :">
                            <font>
-                              <Font name="Serif Bold" size="14.0" />
+                              <Font name="Serif Bold" size="20.0" />
                            </font>
                         </Label>
                         <Label text="Email :">
                            <font>
-                              <Font name="Serif Bold" size="14.0" />
+                              <Font name="Serif Bold" size="20.0" />
                            </font>
                         </Label>
                         <Label text="User Name :">
                            <font>
-                              <Font name="Serif Bold" size="14.0" />
+                              <Font name="Serif Bold" size="20.0" />
                            </font>
                         </Label>
                         <Label text="Password :">
                            <font>
-                              <Font name="Serif Bold" size="14.0" />
+                              <Font name="Serif Bold" size="20.0" />
                            </font>
                         </Label>
                         <Label text="User Type Id :">
                            <font>
-                              <Font name="Serif Bold" size="14.0" />
+                              <Font name="Serif Bold" size="20.0" />
                            </font>
                         </Label>
                         <Label text="Registration Date :">
                            <font>
-                              <Font name="Serif Bold" size="14.0" />
+                              <Font name="Serif Bold" size="20.0" />
                            </font>
                            <padding>
                               <Insets top="5.0" />
@@ -73,7 +73,7 @@
                         </Label>
                         <Label text="Status :">
                            <font>
-                              <Font name="Serif Bold" size="14.0" />
+                              <Font name="Serif Bold" size="20.0" />
                            </font>
                         </Label>
                      </children>
@@ -84,29 +84,36 @@
                         <Insets />
                      </HBox.margin>
                   </VBox>
-                  <VBox prefHeight="351.0" prefWidth="506.0" spacing="14.0">
+                  <VBox prefHeight="455.0" prefWidth="552.0" spacing="17.0">
                      <children>
-                        <TextField fx:id="txtId" />
+                        <Label fx:id="lblUserId" prefHeight="42.0" prefWidth="469.0" text="1">
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
+                           <font>
+                              <Font name="Serif Bold" size="18.0" />
+                           </font>
+                        </Label>
                         <TextField fx:id="txtName">
                            <padding>
                               <Insets top="10.0" />
                            </padding>
                            <font>
-                              <Font size="14.0" />
+                              <Font size="18.0" />
                            </font></TextField>
                         <TextField fx:id="txtPhone">
                            <padding>
                               <Insets top="10.0" />
                            </padding>
                            <font>
-                              <Font size="14.0" />
+                              <Font size="18.0" />
                            </font></TextField>
                         <TextField fx:id="txtEmail">
                            <padding>
                               <Insets top="10.0" />
                            </padding>
                            <font>
-                              <Font size="14.0" />
+                              <Font size="18.0" />
                            </font></TextField>
                         <TextField fx:id="txtUserName">
                            <VBox.margin>
@@ -116,35 +123,35 @@
                               <Insets top="10.0" />
                            </padding>
                            <font>
-                              <Font size="14.0" />
+                              <Font size="18.0" />
                            </font></TextField>
                         <TextField fx:id="txtPassword">
                            <padding>
                               <Insets top="10.0" />
                            </padding>
                            <font>
-                              <Font size="14.0" />
+                              <Font size="18.0" />
                            </font></TextField>
                         <TextField fx:id="txtUserTypeId">
                            <padding>
                               <Insets top="10.0" />
                            </padding>
                            <font>
-                              <Font size="14.0" />
+                              <Font size="18.0" />
                            </font></TextField>
                         <TextField fx:id="txtRegistrationDate">
                            <padding>
                               <Insets top="10.0" />
                            </padding>
                            <font>
-                              <Font size="14.0" />
+                              <Font size="18.0" />
                            </font></TextField>
                         <TextField fx:id="txtStatus">
                            <padding>
                               <Insets top="10.0" />
                            </padding>
                            <font>
-                              <Font size="14.0" />
+                              <Font size="18.0" />
                            </font></TextField>
                      </children>
                      <padding>
@@ -157,25 +164,25 @@
                <children>
                   <Button fx:id="btnSave" mnemonicParsing="false" onAction="#btnSaveOnAction" style="-fx-background-color: #27ae60; -fx-background-radius: 7;" text="Save" textFill="WHITE">
                      <font>
-                        <Font name="Serif Bold" size="18.0" />
+                        <Font name="Serif Bold" size="24.0" />
                      </font></Button>
                   <Button fx:id="btnUpdate" mnemonicParsing="false" onAction="#btnUpdateOnAction" style="-fx-background-color: #2980b9; -fx-background-radius: 7;" text="Update" textFill="WHITE">
                      <font>
-                        <Font name="Serif Bold" size="18.0" />
+                        <Font name="Serif Bold" size="24.0" />
                      </font></Button>
                   <Button fx:id="btnDelete" mnemonicParsing="false" onAction="#btnDeleteOnAction" style="-fx-background-color: #e74c3c; -fx-background-radius: 7;" text="Delete" textFill="WHITE">
                      <font>
-                        <Font name="Serif Bold" size="18.0" />
+                        <Font name="Serif Bold" size="24.0" />
                      </font></Button>
                   <Button fx:id="btnClear" mnemonicParsing="false" onAction="#btnClearOnAction" style="-fx-background-color: #130f40; -fx-background-radius: 7;" text="Clear" textFill="WHITE">
                      <font>
-                        <Font name="Serif Bold" size="18.0" />
+                        <Font name="Serif Bold" size="24.0" />
                      </font>
                   </Button>
                </children></HBox>
-            <ScrollPane>
+            <ScrollPane prefHeight="242.0" prefWidth="1325.0">
                <content>
-                  <TableView fx:id="tblUserList" onMouseClicked="#getData" prefHeight="264.0" prefWidth="1720.0">
+                  <TableView fx:id="tblUserList" onMouseClicked="#getData" prefHeight="244.0" prefWidth="1730.0">
                     <columns>
                       <TableColumn fx:id="colId" prefWidth="123.0" text="User Id" />
                       <TableColumn fx:id="colName" prefWidth="271.0" text="Name" />
@@ -185,7 +192,7 @@
                         <TableColumn fx:id="colPassword" prefWidth="216.0" text="Password" />
                         <TableColumn fx:id="colUserTypeId" prefWidth="164.0" text="User Type Id" />
                         <TableColumn fx:id="colRegistrationDate" prefWidth="186.0" text="Registration Date" />
-                        <TableColumn fx:id="colStatus" prefWidth="135.0" text="Status" />
+                        <TableColumn fx:id="colStatus" prefWidth="115.0" text="Status" />
                     </columns>
                   </TableView>
                </content>

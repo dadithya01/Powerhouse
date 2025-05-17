@@ -13,22 +13,22 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="ancMainPage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="808.0" prefWidth="1469.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ijse.powerhouse.controller.LoginPageController">
+<AnchorPane fx:id="ancMainPage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1850.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ijse.powerhouse.controller.LoginPageController">
    <children>
-      <HBox>
+      <HBox prefHeight="900.0" prefWidth="1850.0">
          <children>
-            <Pane prefHeight="808.0" prefWidth="539.0">
+            <Pane prefHeight="900.0" prefWidth="670.0">
                <children>
-                  <ImageView fitHeight="836.0" fitWidth="539.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="900.0" fitWidth="619.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../images/spencer-davis-0ShTs8iPY28-unsplash.jpg" />
                      </image>
                   </ImageView>
-                  <VBox alignment="TOP_CENTER" prefHeight="142.0" prefWidth="539.0">
+                  <VBox alignment="TOP_CENTER" prefHeight="164.0" prefWidth="601.0">
                      <children>
                         <Label text="WELCOME" textFill="WHITE">
                            <font>
-                              <Font name="Serif Bold" size="36.0" />
+                              <Font name="Serif Bold" size="48.0" />
                            </font>
                            <effect>
                               <Reflection />
@@ -41,30 +41,30 @@
                   </VBox>
                </children>
             </Pane>
-            <Pane fx:id="mainCont" prefHeight="808.0" prefWidth="930.0" style="-fx-background-color: fefefe;">
+            <Pane fx:id="mainCont" prefHeight="900.0" prefWidth="1325.0" style="-fx-background-color: fefefe;">
                <children>
-                  <VBox alignment="TOP_CENTER" layoutX="77.0" layoutY="206.0" prefHeight="385.0" prefWidth="841.0">
+                  <VBox alignment="TOP_CENTER" layoutX="42.0" layoutY="252.0" prefHeight="397.0" prefWidth="1176.0">
                      <children>
-                        <Label prefHeight="52.0" prefWidth="125.0" text="Log in">
+                        <Label prefHeight="85.0" prefWidth="197.0" text="Log in">
                            <font>
-                              <Font name="Serif Bold" size="36.0" />
+                              <Font name="Serif Bold" size="48.0" />
                            </font>
                            <VBox.margin>
                               <Insets left="40.0" />
                            </VBox.margin>
                         </Label>
-                        <HBox prefHeight="253.0" prefWidth="700.0">
+                        <HBox prefHeight="253.0" prefWidth="795.0">
                            <children>
-                              <VBox alignment="TOP_RIGHT" prefHeight="253.0" prefWidth="257.0" spacing="45.0">
+                              <VBox alignment="TOP_RIGHT" prefHeight="253.0" prefWidth="379.0" spacing="45.0">
                                  <children>
                                     <Label text="User Name :">
                                        <font>
-                                          <Font name="Serif Bold" size="18.0" />
+                                          <Font name="Serif Bold" size="24.0" />
                                        </font>
                                     </Label>
                                     <Label text="Password :">
                                        <font>
-                                          <Font name="Serif Bold" size="18.0" />
+                                          <Font name="Serif Bold" size="24.0" />
                                        </font>
                                     </Label>
                                  </children>
@@ -75,21 +75,21 @@
                                     <Insets right="20.0" top="50.0" />
                                  </padding>
                               </VBox>
-                              <VBox alignment="TOP_CENTER" prefHeight="253.0" prefWidth="372.0" spacing="40.0">
+                              <VBox alignment="TOP_CENTER" prefHeight="253.0" prefWidth="478.0" spacing="35.0">
                                  <children>
                                     <TextField fx:id="txtUserName" promptText="User Name...">
                                        <font>
-                                          <Font name="Georgia Bold" size="14.0" />
+                                          <Font size="20.0" />
                                        </font>
                                     </TextField>
                                     <TextField fx:id="txtPassword" promptText="Password...">
                                        <font>
-                                          <Font name="Georgia Bold" size="14.0" />
+                                          <Font size="20.0" />
                                        </font>
                                     </TextField>
-                                    <Button mnemonicParsing="false" onAction="#btnLoginOnAction" prefHeight="25.0" prefWidth="86.0" style="-fx-background-color: #2f3640; -fx-background-radius: 7;" text="Log in" textFill="WHITE">
+                                    <Button mnemonicParsing="false" onAction="#btnLoginOnAction" prefHeight="51.0" prefWidth="117.0" style="-fx-background-color: #2f3640; -fx-background-radius: 7;" text="Log in" textFill="WHITE">
                                        <font>
-                                          <Font name="Serif Bold" size="18.0" />
+                                          <Font name="Serif Bold" size="24.0" />
                                        </font>
                                     </Button>
                                  </children>
@@ -97,7 +97,7 @@
                                     <Insets />
                                  </HBox.margin>
                                  <padding>
-                                    <Insets left="10.0" right="30.0" top="50.0" />
+                                    <Insets left="10.0" right="30.0" top="45.0" />
                                  </padding>
                               </VBox>
                            </children>
@@ -107,34 +107,24 @@
                         <Insets top="60.0" />
                      </padding>
                   </VBox>
-                  <Label layoutX="68.0" layoutY="42.0" text="PowerHouse">
+                  <Label layoutX="88.0" layoutY="53.0" text="PowerHouse">
                      <font>
-                        <Font name="Serif Bold" size="24.0" />
+                        <Font name="Serif Bold" size="30.0" />
                      </font>
                      <effect>
                         <Reflection />
                      </effect>
                   </Label>
-                  <ImageView fitHeight="57.0" fitWidth="54.0" layoutX="14.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="69.0" fitWidth="69.0" layoutX="19.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../images/dumbbell.png" />
                      </image>
                   </ImageView>
-                  <HBox layoutX="7.0" layoutY="741.0" prefHeight="54.0" prefWidth="198.0" spacing="7.0">
-                     <children>
-                        <Button mnemonicParsing="false" onAction="#btnForgotPasswordOnAction" prefHeight="26.0" prefWidth="156.0" style="-fx-background-color: fefefe;" text="Forgot password ?">
-                           <HBox.margin>
-                              <Insets />
-                           </HBox.margin>
-                           <font>
-                              <Font name="Serif Bold" size="14.0" />
-                           </font>
-                        </Button>
-                     </children>
-                     <padding>
-                        <Insets left="20.0" top="18.0" />
-                     </padding>
-                  </HBox>
+                  <Button alignment="TOP_LEFT" layoutX="19.0" layoutY="835.0" mnemonicParsing="false" onAction="#btnForgotPasswordOnAction" prefHeight="51.0" prefWidth="282.0" style="-fx-background-color: fefefe;" text="Forgot password ?">
+                     <font>
+                        <Font name="Serif Bold" size="20.0" />
+                     </font>
+                  </Button>
                </children>
             </Pane>
          </children>

@@ -1,271 +1,241 @@
 package edu.ijse.powerhouse.controller;
 
-import edu.ijse.powerhouse.db.DBConnection;
 import edu.ijse.powerhouse.dto.UserListDto;
+import edu.ijse.powerhouse.dto.tm.UserListTM;
+import edu.ijse.powerhouse.model.UserListModel;
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
 
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Optional;
 import java.util.ResourceBundle;
+
 
 public class UserListController implements Initializable {
 
-    Connection con = null;
-    PreparedStatement st = null;
-    ResultSet rs = null;
+    public Label lblUserId;
+    public TextField txtName;
+    public TextField txtPhone;
+    public TextField txtEmail;
+    public TextField txtUserName;
+    public TextField txtPassword;
+    public TextField txtUserTypeId;
+    public TextField txtRegistrationDate;
+    public TextField txtStatus;
 
-    @FXML
-    private AnchorPane ancUserList;
+    public TableView<UserListTM> tblUserList;
+    public TableColumn<UserListTM, String> colId;
+    public TableColumn<UserListTM, String> colName;
+    public TableColumn<UserListTM, String> colPhone;
+    public TableColumn<UserListTM, String> colEmail;
+    public TableColumn<UserListTM, String> colUserName;
+    public TableColumn<UserListTM, String> colPassword;
+    public TableColumn<UserListTM, String> colUserTypeId;
+    public TableColumn<UserListTM, String> colRegistrationDate;
+    public TableColumn<UserListTM, String> colStatus;
 
-    @FXML
-    private Button btnClear;
+    private final UserListModel userListModel = new UserListModel();
+    public Button btnSave;
+    public Button btnUpdate;
+    public Button btnDelete;
+    public Button btnClear;
 
-    @FXML
-    private Button btnDelete;
 
-    @FXML
-    private Button btnSave;
-
-    @FXML
-    private Button btnUpdate;
-
-    @FXML
-    private TableColumn<UserListDto, String> colEmail;
-
-    @FXML
-    private TableColumn<UserListDto, String> colId;
-
-    @FXML
-    private TableColumn<UserListDto, String> colName;
-
-    @FXML
-    private TableColumn<UserListDto, String> colPassword;
-
-    @FXML
-    private TableColumn<UserListDto, String> colPhone;
-
-    @FXML
-    private TableColumn<UserListDto,String> colRegistrationDate;
-
-    @FXML
-    private TableColumn<UserListDto, String> colStatus;
-
-    @FXML
-    private TableColumn<UserListDto, String> colUserName;
-
-    @FXML
-    private TableColumn<UserListDto, String> colUserTypeId;
-
-    @FXML
-    private TableView<UserListDto> tblUserList;
-
-    @FXML
-    private TextField txtEmail;
-
-    @FXML
-    private TextField txtId;
-
-    @FXML
-    private TextField txtName;
-
-    @FXML
-    private TextField txtPassword;
-
-    @FXML
-    private TextField txtPhone;
-
-    @FXML
-    private TextField txtRegistrationDate;
-
-    @FXML
-    private TextField txtStatus;
-
-    @FXML
-    private TextField txtUserName;
-
-    @FXML
-    private TextField txtUserTypeId;
-
-    @FXML
-    void btnClearOnAction(ActionEvent event) {
-        clear();
-
-    }
-
-    void clear(){
-        txtId.setText(null);
-        txtName.setText(null);
-        txtPhone.setText(null);
-        txtEmail.setText(null);
-        txtUserName.setText(null);
-        txtPassword.setText(null);
-        txtUserTypeId.setText(null);
-        txtRegistrationDate.setText(null);
-        txtStatus.setText(null);
-        btnSave.setDisable(false);
-    }
-
-    @FXML
-    void btnDeleteOnAction(ActionEvent event) {
-        String delete = "DELETE FROM Users WHERE user_Id = ?";
-        try {
-            con = DBConnection.getInstance().getConnection();
-            st = con.prepareStatement(delete);
-            st.setString(1, txtId.getText());
-            int rowsAffected = st.executeUpdate();
-            if (rowsAffected > 0) {
-                showUserList();
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setContentText("User deleted successfully!");
-                alert.showAndWait();
-            } else {
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setContentText("Failed to delete user.");
-                alert.showAndWait();
-            }
-        } catch (SQLException | ClassNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    @FXML
-    void btnSaveOnAction(ActionEvent event) {
-        String save = "INSERT INTO Users (user_Id, name, phone, email, Username, Password, user_Type_Id, registration_Date, Status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
-        try {
-            con = DBConnection.getInstance().getConnection();
-            st = con.prepareStatement(save);
-            st.setString(1, txtId.getText());
-            st.setString(2, txtName.getText());
-            st.setString(3, txtPhone.getText());
-            st.setString(4, txtEmail.getText());
-            st.setString(5, txtUserName.getText());
-            st.setString(6, txtPassword.getText());
-            st.setString(7, txtUserTypeId.getText());
-            st.setString(8, txtRegistrationDate.getText());
-            st.setString(9, txtStatus.getText());
-
-            int rowsAffected = st.executeUpdate();
-            if (rowsAffected > 0) {
-                showUserList();
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setContentText("User added successfully!");
-                alert.showAndWait();
-            } else {
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setContentText("Failed to add user.");
-                alert.showAndWait();
-            }
-        } catch (SQLException | ClassNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    @FXML
-    void getData(MouseEvent event) {
-        UserListDto userListDto = tblUserList.getSelectionModel().getSelectedItem();
-        txtId.setText(userListDto.getUser_Id());
-        txtName.setText(userListDto.getName());
-        txtPhone.setText(userListDto.getPhone());
-        txtEmail.setText(userListDto.getEmail());
-        txtUserName.setText(userListDto.getUser_Name());
-        txtPassword.setText(userListDto.getPassword());
-        txtUserTypeId.setText(userListDto.getUser_Type_Id());
-        txtRegistrationDate.setText(String.valueOf(userListDto.getRegistration_Date()));
-        txtStatus.setText(userListDto.getStatus());
-        btnSave.setDisable(true);
-    }
-
-    @FXML
-    void btnUpdateOnAction(ActionEvent event) throws SQLException, ClassNotFoundException {
-        String update = "UPDATE Users SET name = ?, phone = ?, email = ?, Username = ?, Password = ?, user_Type_Id = ?, registration_Date = ?, Status = ? WHERE user_Id = ?";
-        con = DBConnection.getInstance().getConnection();
-        st=con.prepareStatement(update);
-        st.setString(1, txtName.getText());
-        st.setString(2, txtPhone.getText());
-        st.setString(3, txtEmail.getText());
-        st.setString(4, txtUserName.getText());
-        st.setString(5, txtPassword.getText());
-        st.setString(6, txtUserTypeId.getText());
-        st.setString(7, txtRegistrationDate.getText());
-        st.setString(8, txtStatus.getText());
-        st.setString(9, txtId.getText());
-        int rowsAffected = st.executeUpdate();
-        if (rowsAffected > 0) {
-            showUserList();
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setContentText("User updated successfully!");
-            alert.showAndWait();
-        } else {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setContentText("Failed to update user.");
-            alert.showAndWait();
-        }
-    }
-
-    @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        showUserList();
-    }
+        colId.setCellValueFactory(new PropertyValueFactory<>("userId"));
+        colName.setCellValueFactory(new PropertyValueFactory<>("name"));
+        colPhone.setCellValueFactory(new PropertyValueFactory<>("phone"));
+        colEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
+        colUserName.setCellValueFactory(new PropertyValueFactory<>("userName"));
+        colPassword.setCellValueFactory(new PropertyValueFactory<>("password"));
+        colUserTypeId.setCellValueFactory(new PropertyValueFactory<>("userTypeId"));
+        colRegistrationDate.setCellValueFactory(new PropertyValueFactory<>("registrationDate"));
+        colStatus.setCellValueFactory(new PropertyValueFactory<>("status"));
 
-    public ObservableList<UserListDto> getUserList() {
-        ObservableList<UserListDto> userList = FXCollections.observableArrayList();
-
-        String Query = "SELECT * FROM Users";
         try {
-            con = DBConnection.getInstance().getConnection();
-            try {
-                st = con.prepareStatement(Query);
-                rs = st.executeQuery();
-
-                while (rs.next()) {
-                    UserListDto user = new UserListDto();
-                    user.setUser_Id(rs.getString("user_Id"));
-                    user.setName(rs.getString("name"));
-                    user.setPhone(rs.getString("phone"));
-                    user.setEmail(rs.getString("email"));
-                    user.setUser_Name(rs.getString("Username"));
-                    user.setPassword(rs.getString("password"));
-                    user.setUser_Type_Id(rs.getString("user_Type_Id"));
-                    user.setRegistration_Date(rs.getDate("registration_Date"));
-                    user.setStatus(rs.getString("status"));
-                    userList.add(user);
-
-                }
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
-            }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
+            resetPage();
+            loadNextId();
+        } catch (Exception e) {
+            e.printStackTrace();
+            new Alert(Alert.AlertType.ERROR, "Something went wrong!").show();
         }
-        return userList;
     }
 
-    public void showUserList() {
-        ObservableList<UserListDto> userList = getUserList();
-        tblUserList.setItems(userList);
-        colId.setCellValueFactory(new PropertyValueFactory<UserListDto,String >("user_Id"));
+    public void loadTableData() throws SQLException, ClassNotFoundException {
+        tblUserList.setItems(FXCollections.observableArrayList(
+                userListModel.getAllUsers()
+                        .stream()
+                        .map(userListDto -> new UserListTM(
+                                userListDto.getUserId(),
+                                userListDto.getName(),
+                                userListDto.getPhone(),
+                                userListDto.getEmail(),
+                                userListDto.getUserName(),
+                                userListDto.getPassword(),
+                                userListDto.getUserTypeId(),
+                                userListDto.getRegistrationDate(),
+                                userListDto.getStatus()
+                        )).toList()
+        ));
+    }
 
-        colName.setCellValueFactory(new PropertyValueFactory<UserListDto,String>("name"));
-        colPhone.setCellValueFactory(new PropertyValueFactory<UserListDto,String>("phone"));
-        colEmail.setCellValueFactory(new PropertyValueFactory<UserListDto,String>("email"));
-        colUserName.setCellValueFactory(new PropertyValueFactory<UserListDto,String>("user_Name"));
-        colPassword.setCellValueFactory(new PropertyValueFactory<UserListDto,String>("password"));
-        colUserTypeId.setCellValueFactory(new PropertyValueFactory<UserListDto,String>("user_Type_Id"));
-        colRegistrationDate.setCellValueFactory(new PropertyValueFactory<UserListDto,String>("registration_Date"));
-        colStatus.setCellValueFactory(new PropertyValueFactory<UserListDto,String>("status"));
+    private void resetPage() {
+        try {
+            loadTableData();
+            loadNextId();
 
+            btnSave.setDisable(false);
+            btnDelete.setDisable(true);
+            btnUpdate.setDisable(true);
+
+            txtName.setText(null);
+            txtPhone.setText(null);
+            txtEmail.setText(null);
+            txtUserName.setText(null);
+            txtPassword.setText(null);
+            txtUserTypeId.setText(null);
+            txtRegistrationDate.setText(null);
+            txtStatus.setText(null);
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            new Alert(Alert.AlertType.ERROR, "Something went wrong!").show();
+        }
+    }
+
+    public void btnSaveOnAction(ActionEvent actionEvent) {
+        String userId = lblUserId.getText();
+        String userName = txtName.getText();
+        String userContact = txtPhone.getText();
+        String userEmail = txtEmail.getText();
+        String userUserName = txtUserName.getText();
+        String userPassword = txtPassword.getText();
+        String userTypeId = txtUserTypeId.getText();
+        String userRegistrationDate = txtRegistrationDate.getText();
+        String userStatus = txtStatus.getText();
+
+        UserListDto userListDto = new UserListDto(
+                userId,
+                userName,
+                userContact,
+                userEmail,
+                userUserName,
+                userPassword,
+                userTypeId,
+                userRegistrationDate,
+                userStatus
+        );
+        try {
+            boolean isSaved = userListModel.saveUser(userListDto);
+
+            if (isSaved) {
+                resetPage();
+                new Alert(Alert.AlertType.INFORMATION, "Saved").show();
+            } else {
+                new Alert(Alert.AlertType.ERROR, "Fail").show();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            new Alert(Alert.AlertType.ERROR, "Something went wrong").show();
+        }
+    }
+
+    public void btnUpdateOnAction(ActionEvent actionEvent) {
+        String userId = lblUserId.getText();
+        String userName = txtName.getText();
+        String userContact = txtPhone.getText();
+        String userEmail = txtEmail.getText();
+        String userUserName = txtUserName.getText();
+        String userPassword = txtPassword.getText();
+        String userTypeId = txtUserTypeId.getText();
+        String userRegistrationDate = txtRegistrationDate.getText();
+        String userStatus = txtStatus.getText();
+
+
+        UserListDto userListDto = new UserListDto(
+                userId,
+                userName,
+                userContact,
+                userEmail,
+                userUserName,
+                userPassword,
+                userTypeId,
+                userRegistrationDate,
+                userStatus
+        );
+        try {
+            boolean isUpdated = userListModel.updateUser(userListDto);
+            if(isUpdated){
+                resetPage();
+                new Alert(Alert.AlertType.INFORMATION,"Updated").show();
+            }else {
+                new Alert(Alert.AlertType.ERROR,"Fail").show();
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+            new Alert(Alert.AlertType.ERROR,"Something went wrong").show();
+        }
+    }
+
+    public void btnDeleteOnAction(ActionEvent actionEvent) {
+        Alert alert = new Alert(
+                Alert.AlertType.CONFIRMATION,
+                "Are You Sure ? ",
+                ButtonType.YES,
+                ButtonType.NO
+        );
+        Optional<ButtonType> response = alert.showAndWait();
+
+        if(response.isPresent() && response.get() == ButtonType.YES){
+            String userId = lblUserId.getText();
+            try {
+                boolean isDeleted = userListModel.deleteUser(userId);
+                if(isDeleted){
+                    resetPage();
+                    new Alert(Alert.AlertType.INFORMATION,"Deleted").show();
+                }else {
+                    new Alert(Alert.AlertType.ERROR,"Fail").show();
+                }
+            }catch (Exception e){
+                e.printStackTrace();
+                new Alert(Alert.AlertType.ERROR,"Something went wrong").show();
+            }
+        }
+    }
+
+
+    public void btnClearOnAction(ActionEvent actionEvent) {
+        resetPage();
+    }
+
+    private void loadNextId() throws SQLException, ClassNotFoundException {
+        String nextId = userListModel.getNextCustomerId();
+        lblUserId.setText(nextId);
+    }
+
+    public void getData(MouseEvent mouseEvent) {
+        UserListTM selectedItem = tblUserList.getSelectionModel().getSelectedItem();
+
+        if (selectedItem != null) {
+            lblUserId.setText(selectedItem.getUserId());
+            txtName.setText(selectedItem.getName());
+            txtPhone.setText(selectedItem.getPhone());
+            txtEmail.setText(selectedItem.getEmail());
+            txtUserName.setText(selectedItem.getUserName());
+            txtPassword.setText(selectedItem.getPassword());
+            txtUserTypeId.setText(selectedItem.getUserTypeId());
+            txtRegistrationDate.setText(selectedItem.getRegistrationDate());
+            txtStatus.setText(selectedItem.getStatus());
+
+            btnSave.setDisable(true);
+            btnUpdate.setDisable(false);
+            btnDelete.setDisable(false);
+        }
     }
 }

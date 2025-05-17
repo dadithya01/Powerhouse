@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Accordion?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TitledPane?>
 <?import javafx.scene.effect.Reflection?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -11,34 +14,137 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="ancDashBoardA" prefHeight="808.0" prefWidth="1469.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ijse.powerhouse.controller.DashBoardAController">
+<AnchorPane fx:id="ancDashBoardA" prefHeight="900.0" prefWidth="1850.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ijse.powerhouse.controller.DashBoardAController">
    <children>
-      <HBox prefHeight="808.0" prefWidth="1469.0">
+      <HBox prefHeight="900.0" prefWidth="1850.0">
          <children>
-            <Pane prefHeight="808.0" prefWidth="539.0" style="-fx-background-color: e8e8e8;">
+            <Pane prefHeight="900.0" prefWidth="670.0" style="-fx-background-color: e8e8e8;">
                <children>
-                  <ImageView fitHeight="57.0" fitWidth="54.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="69.0" fitWidth="69.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../images/dumbbell.png" />
                      </image>
                   </ImageView>
-                  <Label layoutX="68.0" layoutY="33.0" text="PowerHouse">
+                  <Label layoutX="83.0" layoutY="49.0" text="PowerHouse">
                      <font>
-                        <Font name="Serif Bold" size="24.0" />
+                        <Font name="Serif Bold" size="30.0" />
                      </font>
                      <effect>
                         <Reflection />
                      </effect>
                   </Label>
-                  <VBox layoutY="87.0" prefHeight="613.0" prefWidth="539.0" />
-                  <Button layoutX="14.0" layoutY="759.0" mnemonicParsing="false" onAction="#btnLogoutOnAction" style="-fx-background-color: #2f3640; -fx-background-radius: 7;" text="Log out" textFill="WHITE">
+                  <VBox layoutY="87.0" prefHeight="734.0" prefWidth="597.0">
+                     <children>
+                        <Accordion prefHeight="534.0" prefWidth="548.0" VBox.vgrow="ALWAYS">
+                          <panes>
+                            <TitledPane animated="false" text="User Management">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: e8e8e8;">
+                                       <children>
+                                          <VBox alignment="CENTER" layoutX="57.0" prefHeight="171.0" prefWidth="538.0" spacing="20.0">
+                                             <children>
+                                                <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#btnUserListOnAction" prefHeight="37.0" prefWidth="547.0" style="-fx-background-color: e8e8e8;" text="Users List">
+                                                   <font>
+                                                      <Font name="Serif Bold" size="18.0" />
+                                                   </font>
+                                                </Button>
+                                                <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#btnUserTypesOnAction" prefHeight="37.0" prefWidth="580.0" style="-fx-background-color: e8e8e8;" text="User Types">
+                                                   <font>
+                                                      <Font name="Serif Bold" size="18.0" />
+                                                   </font>
+                                                </Button>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </AnchorPane>
+                              </content>
+                                 <font>
+                                    <Font name="Serif Bold" size="20.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets bottom="10.0" />
+                                 </padding>
+                            </TitledPane>
+                            <TitledPane animated="false" text="Employee Management">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: e8e8e8;" />
+                              </content>
+                                 <font>
+                                    <Font name="Serif Bold" size="20.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets bottom="10.0" />
+                                 </padding>
+                            </TitledPane>
+                            <TitledPane animated="false" text="Member Management">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: e8e8e8;" />
+                              </content>
+                                 <font>
+                                    <Font name="Serif Bold" size="20.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets bottom="10.0" />
+                                 </padding>
+                            </TitledPane>
+                              <TitledPane animated="false" layoutX="10.0" layoutY="96.0" text="Workout Plans">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: e8e8e8;" />
+                                 </content>
+                                 <font>
+                                    <Font name="Serif Bold" size="20.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets bottom="10.0" />
+                                 </padding>
+                              </TitledPane>
+                              <TitledPane animated="false" layoutX="10.0" layoutY="501.0" text="Diet Plans">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: e8e8e8;" />
+                                 </content>
+                                 <font>
+                                    <Font name="Serif Bold" size="20.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets bottom="10.0" />
+                                 </padding>
+                              </TitledPane>
+                              <TitledPane animated="false" layoutX="10.0" layoutY="182.0" text="Payments">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: e8e8e8;" />
+                                 </content>
+                                 <font>
+                                    <Font name="Serif Bold" size="20.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets bottom="10.0" />
+                                 </padding>
+                              </TitledPane>
+                              <TitledPane animated="false" layoutX="10.0" layoutY="501.0" text="Equipment Management">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: e8e8e8;" />
+                                 </content>
+                                 <font>
+                                    <Font name="Serif Bold" size="20.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets bottom="10.0" />
+                                 </padding>
+                              </TitledPane>
+                          </panes>
+                        </Accordion>
+                     </children>
+                     <padding>
+                        <Insets bottom="100.0" top="100.0" />
+                     </padding></VBox>
+                  <Button layoutX="14.0" layoutY="835.0" mnemonicParsing="false" onAction="#btnLogoutOnAction" prefHeight="51.0" prefWidth="125.0" style="-fx-background-color: #2f3640; -fx-background-radius: 7;" text="Log out" textFill="WHITE">
                      <font>
-                        <Font name="Serif Bold" size="18.0" />
+                        <Font name="Serif Bold" size="24.0" />
                      </font>
                   </Button>
                </children>
             </Pane>
-            <Pane prefHeight="808.0" prefWidth="930.0" style="-fx-background-color: fefefe;" />
+            <Pane fx:id="sidePane" prefHeight="900.0" prefWidth="1333.0" style="-fx-background-color: fefefe;" />
          </children>
       </HBox>
    </children>

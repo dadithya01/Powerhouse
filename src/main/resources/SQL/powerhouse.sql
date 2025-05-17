@@ -5,26 +5,26 @@ create database powerhouse;
 use powerhouse;
 
 CREATE TABLE User_Types (
-    user_type_id VARCHAR(100) PRIMARY KEY,
+    user_type_id varchar(100) PRIMARY KEY ,
     type ENUM('Owner','Administrator','Trainer') NOT NULL
 );
 
 CREATE TABLE Users (
-    user_Id VARCHAR(100) PRIMARY KEY,
+    user_Id varchar(100) PRIMARY KEY ,
     name VARCHAR(100) NOT NULL,
     phone VARCHAR(20) NOT NULL,
     email VARCHAR(100) UNIQUE NOT NULL,
     Username VARCHAR(50) UNIQUE NOT NULL,
     Password VARCHAR(255) NOT NULL,
-    user_Type_Id VARCHAR(100),
+    user_Type_Id varchar(100),
     registration_Date DATE,
-    Last_Login TIMESTAMP,
     Status ENUM('Active', 'Inactive') DEFAULT 'Active',
     FOREIGN KEY (User_Type_Id) REFERENCES User_Types(User_Type_Id)
 );
 
+
 CREATE TABLE Employee (
-    employee_id VARCHAR(100) PRIMARY KEY ,
+    employee_id varchar(100) PRIMARY KEY ,
     name VARCHAR(100) NOT NULL,
     contact VARCHAR(50) NOT NULL,
     address VARCHAR(255),
@@ -36,8 +36,8 @@ CREATE TABLE Employee (
 );
 
 CREATE TABLE Trainer (
-    trainer_id VARCHAR(100) PRIMARY KEY ,
-    user_id VARCHAR(100) UNIQUE,
+    trainer_id varchar(100) PRIMARY KEY ,
+    user_id varchar(100) UNIQUE,
     name VARCHAR(100) NOT NULL,
     contact VARCHAR(100) NOT NULL,
     address VARCHAR(255),
@@ -51,7 +51,7 @@ CREATE TABLE Trainer (
 );
 
 CREATE TABLE Member (
-    member_id VARCHAR(100) PRIMARY KEY ,
+    member_id varchar(100) PRIMARY KEY ,
     name VARCHAR(100) NOT NULL,
     weight DECIMAL(5,2),
     height DECIMAL(5,2),
@@ -62,12 +62,12 @@ CREATE TABLE Member (
     fitness_goals TEXT,
     register_date DATE NOT NULL,
     membership_status ENUM('Active', 'Inactive') DEFAULT 'Active',
-    added_by VARCHAR(100),
+    added_by varchar(100),
     FOREIGN KEY (added_by) REFERENCES Users(user_id)
 );
 
 CREATE TABLE Payment_Plan (
-    plan_id VARCHAR(100) PRIMARY KEY ,
+    plan_id varchar(100) PRIMARY KEY ,
     name VARCHAR(100) NOT NULL,
     price DECIMAL(10,2) NOT NULL,
     duration INT NOT NULL,
@@ -79,9 +79,9 @@ CREATE TABLE Payment_Plan (
 );
 
 CREATE TABLE Payment (
-    payment_id VARCHAR(100) PRIMARY KEY ,
-    plan_id VARCHAR(100) ,
-    member_id VARCHAR(100) NOT NULL,
+    payment_id varchar(100) PRIMARY KEY ,
+    plan_id varchar(100) ,
+    member_id varchar(100) NOT NULL,
     payment_date DATETIME NOT NULL,
     paid_value DECIMAL(10,2) NOT NULL,
     total DECIMAL(10,2) NOT NULL,
@@ -89,14 +89,14 @@ CREATE TABLE Payment (
     payment_method ENUM('Cash', 'Card', 'Bank Transfer') NOT NULL,
     transaction_id VARCHAR(100),
     receipt_number VARCHAR(50),
-    recorded_by VARCHAR(100) NOT NULL,
+    recorded_by varchar(100) NOT NULL,
     FOREIGN KEY (member_id) REFERENCES Member(member_id),
     FOREIGN KEY (recorded_by) REFERENCES Users(user_id),
     FOREIGN KEY (plan_id) REFERENCES Payment_Plan(plan_id)
 );
 
 CREATE TABLE Exercise (
-    exercise_id VARCHAR(100) PRIMARY KEY ,
+    exercise_id varchar(100) PRIMARY KEY ,
     name VARCHAR(100) NOT NULL,
     description TEXT,
     muscle_group VARCHAR(100),
@@ -104,24 +104,24 @@ CREATE TABLE Exercise (
     difficulty_level ENUM('Beginner', 'Intermediate', 'Advanced'),
     video_url VARCHAR(255),
     instructions TEXT,
-    added_by VARCHAR(100),
+    added_by varchar(100),
     FOREIGN KEY (added_by) REFERENCES Trainer(trainer_id)
 );
 
 CREATE TABLE Workout_Plan (
-    workout_plan_id VARCHAR(100) PRIMARY KEY ,
+    workout_plan_id varchar(100) PRIMARY KEY ,
     name VARCHAR(100) NOT NULL,
     description TEXT,
     difficulty_level ENUM('Beginner', 'Intermediate', 'Advanced'),
-    created_by VARCHAR(100) NOT NULL,
+    created_by varchar(100) NOT NULL,
     created_date DATE,
     duration_weeks INT,
     FOREIGN KEY (created_by) REFERENCES Trainer(trainer_id)
 );
 
 CREATE TABLE Workout_Exercise (
-    workout_plan_id VARCHAR(100),
-    exercise_id VARCHAR(100),
+    workout_plan_id varchar(100) ,
+    exercise_id varchar(100),
     day_number INT NOT NULL,
     sets INT,
     reps INT,
@@ -133,10 +133,10 @@ CREATE TABLE Workout_Exercise (
 );
 
 CREATE TABLE Diet_Plan (
-    diet_plan_id VARCHAR(100) PRIMARY KEY ,
+    diet_plan_id varchar(100) PRIMARY KEY ,
     name VARCHAR(100) NOT NULL,
     description TEXT,
-    created_by VARCHAR(100) NOT NULL,
+    created_by varchar(100) NOT NULL,
     created_date DATE,
     calorie_target INT,
     protein_target INT,
@@ -147,8 +147,8 @@ CREATE TABLE Diet_Plan (
 );
 
 CREATE TABLE Meal (
-    meal_id VARCHAR(100) PRIMARY KEY ,
-    diet_plan_id VARCHAR(100),
+    meal_id varchar(100) PRIMARY KEY ,
+    diet_plan_id varchar(100),
     name VARCHAR(100) NOT NULL,
     description TEXT,
     meal_time VARCHAR(50),
@@ -161,12 +161,12 @@ CREATE TABLE Meal (
 );
 
 CREATE TABLE Member_Diet_Plan (
-    member_id VARCHAR(100),
-    diet_plan_id VARCHAR(100),
+    member_id varchar(100),
+    diet_plan_id varchar(100),
     assigned_date DATE NOT NULL,
     end_date DATE,
     notes TEXT,
-    assigned_by VARCHAR(100) NOT NULL,
+    assigned_by varchar(100) NOT NULL,
     PRIMARY KEY (member_id, diet_plan_id),
     FOREIGN KEY (member_id) REFERENCES Member(member_id),
     FOREIGN KEY (diet_plan_id) REFERENCES Diet_Plan(diet_plan_id),
@@ -174,13 +174,13 @@ CREATE TABLE Member_Diet_Plan (
 );
 
 CREATE TABLE Member_Workout_Plan (
-    member_id VARCHAR(100),
-    workout_plan_id VARCHAR(100),
+    member_id varchar(100),
+    workout_plan_id varchar(100),
     assigned_date DATE NOT NULL,
     end_date DATE,
     progress INT DEFAULT 0,
     notes TEXT,
-    assigned_by VARCHAR(100) NOT NULL,
+    assigned_by varchar(100) NOT NULL,
     PRIMARY KEY (member_id, workout_plan_id),
     FOREIGN KEY (member_id) REFERENCES Member(member_id),
     FOREIGN KEY (workout_plan_id) REFERENCES Workout_Plan(workout_plan_id),
@@ -188,7 +188,7 @@ CREATE TABLE Member_Workout_Plan (
 );
 
 CREATE TABLE Equipment (
-    equipment_id VARCHAR(100) PRIMARY KEY ,
+    equipment_id varchar(100) PRIMARY KEY ,
     name VARCHAR(100) NOT NULL,
     description TEXT,
     purchase_date DATE,
@@ -196,22 +196,22 @@ CREATE TABLE Equipment (
     maintenance_schedule TEXT,
     last_maintenance_date DATE,
     status ENUM('Available', 'In Use', 'Under Maintenance', 'Unavailable') DEFAULT 'Available',
-    added_by VARCHAR(100) NOT NULL,
+    added_by varchar(100) NOT NULL,
     FOREIGN KEY (added_by) REFERENCES Users(user_id)
 );
 
 CREATE TABLE Attendance (
-    attendance_id VARCHAR(100) PRIMARY KEY,
-    member_id VARCHAR(100) NOT NULL,
+    attendance_id varchar(100) PRIMARY KEY ,
+    member_id varchar(100) NOT NULL,
     check_in DATETIME NOT NULL,
     check_out DATETIME,
-    recorded_by VARCHAR(100) NOT NULL,
+    recorded_by varchar(100) NOT NULL,
     FOREIGN KEY (member_id) REFERENCES Member(member_id),
     FOREIGN KEY (recorded_by) REFERENCES Users(user_id)
 );
 
 CREATE TABLE Membership_Type (
-    membership_type_id VARCHAR(100) PRIMARY KEY ,
+    membership_type_id varchar(100) PRIMARY KEY ,
     name VARCHAR(100) NOT NULL,
     description TEXT,
     duration INT,
@@ -221,13 +221,13 @@ CREATE TABLE Membership_Type (
 );
 
 CREATE TABLE Member_Membership (
-    member_membership_id VARCHAR(100) PRIMARY KEY ,
-    member_id VARCHAR(100) NOT NULL,
-    membership_type_id VARCHAR(100) NOT NULL,
+    member_membership_id varchar(100) PRIMARY KEY,
+    member_id varchar(100) NOT NULL,
+    membership_type_id varchar(100) NOT NULL,
     start_date DATE NOT NULL,
     end_date DATE NOT NULL,
     status ENUM('Active', 'Expired', 'Cancelled') DEFAULT 'Active',
-    assigned_by VARCHAR(100) NOT NULL,
+    assigned_by varchar(100) NOT NULL,
     FOREIGN KEY (member_id) REFERENCES Member(member_id),
     FOREIGN KEY (membership_type_id) REFERENCES Membership_Type(membership_type_id),
     FOREIGN KEY (assigned_by) REFERENCES Users(user_id)
@@ -239,6 +239,6 @@ show columns from Member_Membership;
 
 table Users;
 
-table Member;
+table Employee;
 
 show tables;
