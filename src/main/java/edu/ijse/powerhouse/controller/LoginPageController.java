@@ -44,13 +44,13 @@ public class LoginPageController {
             ResultSet rs = stmt.executeQuery();
 
             if (rs.next()) {
-                if (Objects.equals(inputUserName, "owner")){
+                if (Objects.equals(inputUserName, "owner")) {
                     ancMainPage.getChildren().clear();
-                    AnchorPane load = FXMLLoader.load(getClass().getResource("/view/DashBoardO.fxml"));
+                    AnchorPane load = FXMLLoader.load(getClass().getResource("/view/DashBoardOA.fxml"));
                     ancMainPage.getChildren().add(load);
                 }else if (Objects.equals(inputUserName,"admin")) {
                     ancMainPage.getChildren().clear();
-                    AnchorPane load = FXMLLoader.load(getClass().getResource("/view/DashBoardA.fxml"));
+                    AnchorPane load = FXMLLoader.load(getClass().getResource("/view/DashBoardOA.fxml"));
                     ancMainPage.getChildren().add(load);
                 } else if (Objects.equals(inputUserName,"trainer")) {
                     ancMainPage.getChildren().clear();
@@ -63,6 +63,9 @@ public class LoginPageController {
                 alert.setHeaderText(null);
                 alert.setContentText("Invalid username or password.");
                 alert.showAndWait();
+                txtUserName.clear();
+                txtPassword.clear();
+                txtUserName.requestFocus();
             }
 
         } catch (SQLException e) {

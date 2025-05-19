@@ -9,7 +9,7 @@ import javafx.scene.layout.Pane;
 
 import java.io.IOException;
 
-public class DashBoardOController {
+public class DashBoardOAController {
 
     @FXML
     public Pane sidePane;
@@ -41,6 +41,20 @@ public class DashBoardOController {
     void btnUserTypesOnAction() throws IOException {
         sidePane.getChildren().clear();
         AnchorPane load = FXMLLoader.load(getClass().getResource("/view/UserTypes.fxml"));
+        sidePane.getChildren().add(load);
+    }
+
+    @FXML
+    void btnEmployeeListOnAction() throws IOException {
+        sidePane.getChildren().clear();
+        AnchorPane load = FXMLLoader.load(getClass().getResource("/view/EmployeeList.fxml"));
+        sidePane.getChildren().add(load);
+    }
+
+    @FXML
+    void btnTrainerListOnAction() throws IOException {
+        sidePane.getChildren().clear();
+        AnchorPane load = FXMLLoader.load(getClass().getResource("/view/TrainerList.fxml"));
         sidePane.getChildren().add(load);
     }
 }

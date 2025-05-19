@@ -1,8 +1,9 @@
-package edu.ijse.powerhouse.dto;
+package edu.ijse.powerhouse.dto.tm;
 
 import java.math.BigDecimal;
 
-public class TrainerListDto {
+public class TrainerListTM {
+
     private String trainer_id;
     private String user_id;
     private String name;
@@ -15,10 +16,10 @@ public class TrainerListDto {
     private String bio;
     private Double rating;
 
-    public TrainerListDto() {
+    public TrainerListTM() {
     }
 
-    public TrainerListDto(String trainer_id, String user_id, String name, String contact, String address, int age, String specialization, String certification, String hire_date, String bio, Double rating) {
+    public TrainerListTM(String trainer_id, String user_id, String name, String contact, String address, int age, String specialization, String certification, String hire_date, String bio, double rating) {
         this.trainer_id = trainer_id;
         this.user_id = user_id;
         this.name = name;
@@ -31,6 +32,7 @@ public class TrainerListDto {
         this.bio = bio;
         this.rating = rating;
     }
+
     public String getTrainer_id() {
         return trainer_id;
     }
@@ -97,5 +99,4 @@ public class TrainerListDto {
     public void setRating(Double rating) {
         this.rating = rating;
     }
-
 }

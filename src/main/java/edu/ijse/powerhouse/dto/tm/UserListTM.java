@@ -1,8 +1,5 @@
 package edu.ijse.powerhouse.dto.tm;
 
-import java.sql.Date;
-import java.time.LocalDate;
-
 public class UserListTM {
     private String userId;
     private String name;
@@ -13,6 +10,9 @@ public class UserListTM {
     private String userTypeId;
     private String registrationDate;
     private String status;
+
+    public UserListTM() {
+    }
 
     public UserListTM(String userId, String name, String phone, String email, String userName, String password, String userTypeId, String registrationDate, String status) {
         this.userId = userId;
@@ -98,18 +98,4 @@ public class UserListTM {
         this.status = status;
     }
 
-    @Override
-    public String toString() {
-        return "UserListTM{" +
-                "userId='" + userId + '\'' +
-                ", name='" + name + '\'' +
-                ", phone='" + phone + '\'' +
-                ", email='" + email + '\'' +
-                ", userName='" + userName + '\'' +
-                ", password='" + password + '\'' +
-                ", userTypeId=" + userTypeId +
-                ", registrationDate=" + registrationDate +
-                ", status='" + status + '\'' +
-                '}';
-    }
 }

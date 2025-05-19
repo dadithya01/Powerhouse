@@ -94,28 +94,28 @@
                               <Font name="Serif Bold" size="18.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="txtName">
+                        <TextField fx:id="txtName" style="-fx-background-radius: 10;">
                            <padding>
                               <Insets top="10.0" />
                            </padding>
                            <font>
                               <Font size="18.0" />
                            </font></TextField>
-                        <TextField fx:id="txtPhone">
+                        <TextField fx:id="txtPhone" style="-fx-background-radius: 10;">
                            <padding>
                               <Insets top="10.0" />
                            </padding>
                            <font>
                               <Font size="18.0" />
                            </font></TextField>
-                        <TextField fx:id="txtEmail">
+                        <TextField fx:id="txtEmail" style="-fx-background-radius: 10;">
                            <padding>
                               <Insets top="10.0" />
                            </padding>
                            <font>
                               <Font size="18.0" />
                            </font></TextField>
-                        <TextField fx:id="txtUserName">
+                        <TextField fx:id="txtUserName" style="-fx-background-radius: 10;">
                            <VBox.margin>
                               <Insets />
                            </VBox.margin>
@@ -125,28 +125,28 @@
                            <font>
                               <Font size="18.0" />
                            </font></TextField>
-                        <TextField fx:id="txtPassword">
+                        <TextField fx:id="txtPassword" style="-fx-background-radius: 10;">
                            <padding>
                               <Insets top="10.0" />
                            </padding>
                            <font>
                               <Font size="18.0" />
                            </font></TextField>
-                        <TextField fx:id="txtUserTypeId">
+                        <TextField fx:id="txtUserTypeId" style="-fx-background-radius: 10;">
                            <padding>
                               <Insets top="10.0" />
                            </padding>
                            <font>
                               <Font size="18.0" />
                            </font></TextField>
-                        <TextField fx:id="txtRegistrationDate">
+                        <TextField fx:id="txtRegistrationDate" style="-fx-background-radius: 10;">
                            <padding>
                               <Insets top="10.0" />
                            </padding>
                            <font>
                               <Font size="18.0" />
                            </font></TextField>
-                        <TextField fx:id="txtStatus">
+                        <TextField fx:id="txtStatus" style="-fx-background-radius: 10;">
                            <padding>
                               <Insets top="10.0" />
                            </padding>

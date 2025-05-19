@@ -1,8 +1,5 @@
 package edu.ijse.powerhouse.dto;
 
-import java.sql.Date;
-
-
 public class UserListDto {
 
     private String userId;
@@ -14,6 +11,9 @@ public class UserListDto {
     private String userTypeId;
     private String registrationDate;
     private String status;
+
+    public UserListDto() {
+    }
 
     public UserListDto(String userId, String name, String phone, String email, String userName, String password, String userTypeId, String registrationDate, String status) {
         this.userId = userId;
@@ -99,18 +99,4 @@ public class UserListDto {
         this.status = status;
     }
 
-    @Override
-    public String toString() {
-        return "UserListDto{" +
-                "userId='" + userId + '\'' +
-                ", name='" + name + '\'' +
-                ", phone='" + phone + '\'' +
-                ", email='" + email + '\'' +
-                ", userName='" + userName + '\'' +
-                ", password='" + password + '\'' +
-                ", userTypeId=" + userTypeId +
-                ", registrationDate=" + registrationDate +
-                ", status='" + status + '\'' +
-                '}';
-    }
 }

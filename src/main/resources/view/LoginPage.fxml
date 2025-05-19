@@ -77,12 +77,12 @@
                               </VBox>
                               <VBox alignment="TOP_CENTER" prefHeight="253.0" prefWidth="478.0" spacing="35.0">
                                  <children>
-                                    <TextField fx:id="txtUserName" promptText="User Name...">
+                                    <TextField fx:id="txtUserName" promptText="User Name..." style="-fx-background-radius: 10;">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </TextField>
-                                    <TextField fx:id="txtPassword" promptText="Password...">
+                                    <TextField fx:id="txtPassword" promptText="Password..." style="-fx-background-radius: 10;">
                                        <font>
                                           <Font size="20.0" />
                                        </font>

@@ -215,7 +215,7 @@ public class UserListController implements Initializable {
     }
 
     private void loadNextId() throws SQLException, ClassNotFoundException {
-        String nextId = userListModel.getNextCustomerId();
+        String nextId = userListModel.getNextUserId();
         lblUserId.setText(nextId);
     }
 

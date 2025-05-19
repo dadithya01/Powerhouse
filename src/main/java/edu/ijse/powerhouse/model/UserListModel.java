@@ -60,7 +60,7 @@ public class UserListModel {
         return userList;
     }
 
-    public String getNextCustomerId() throws SQLException , ClassNotFoundException{
+    public String getNextUserId() throws SQLException , ClassNotFoundException{
         ResultSet resultSet = CrudUtil.execute("SELECT user_id FROM Users ORDER BY user_id DESC LIMIT 1");
         char tableCharacter = 'U';
 
