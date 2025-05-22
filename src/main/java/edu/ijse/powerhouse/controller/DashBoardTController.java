@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 
 import java.io.IOException;
 
@@ -12,6 +13,9 @@ public class DashBoardTController {
 
     @FXML
     private AnchorPane ancDashBoardT;
+
+    @FXML
+    private Pane sidePane;
 
     @FXML
     void btnLogoutOnAction() throws IOException {
@@ -25,5 +29,26 @@ public class DashBoardTController {
             AnchorPane load = FXMLLoader.load(getClass().getResource("/view/LoginPage.fxml"));
             ancDashBoardT.getChildren().add(load);
         }
+    }
+
+    @FXML
+    void btnMemberListOnAction() throws IOException {
+        sidePane.getChildren().clear();
+        AnchorPane load = FXMLLoader.load(getClass().getResource("/view/MemberList.fxml"));
+        sidePane.getChildren().add(load);
+    }
+
+    @FXML
+    void btnMembershipOnAction() throws IOException {
+//        sidePane.getChildren().clear();
+//        AnchorPane load = FXMLLoader.load(getClass().getResource("/view/PaymentList.fxml"));
+//        sidePane.getChildren().add(load);
+    }
+
+    @FXML
+    void btnAttendanceOnAction() throws IOException {
+//        sidePane.getChildren().clear();
+//        AnchorPane load = FXMLLoader.load(getClass().getResource("/view/PaymentList.fxml"));
+//        sidePane.getChildren().add(load);
     }
 }

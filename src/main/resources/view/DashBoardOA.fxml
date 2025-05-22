@@ -97,7 +97,36 @@
                             </TitledPane>
                             <TitledPane animated="false" prefHeight="635.0" prefWidth="539.0" text="Member Management">
                               <content>
-                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: e8e8e8;" />
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: e8e8e8;">
+                                       <children>
+                                          <HBox layoutX="57.0" prefHeight="113.0" prefWidth="538.0">
+                                             <children>
+                                                <VBox alignment="CENTER" prefHeight="113.0" prefWidth="441.0" spacing="10.0">
+                                                   <children>
+                                                      <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#btnMemberListOnAction" prefHeight="43.0" prefWidth="282.0" style="-fx-background-color: e8e8e8;" text="Member List">
+                                                         <font>
+                                                            <Font name="Serif Bold" size="20.0" />
+                                                         </font>
+                                                      </Button>
+                                                      <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#btnMembershipTypeOnAction" prefHeight="34.0" prefWidth="277.0" style="-fx-background-color: e8e8e8;" text="Membership Type">
+                                                         <font>
+                                                            <Font name="Serif Bold" size="20.0" />
+                                                         </font>
+                                                      </Button>
+                                                   </children>
+                                                </VBox>
+                                                <VBox alignment="CENTER" prefHeight="113.0" prefWidth="449.0" spacing="10.0">
+                                                   <children>
+                                                      <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#btnAttendanceOnAction" prefHeight="43.0" prefWidth="298.0" style="-fx-background-color: e8e8e8;" text="Attendance">
+                                                         <font>
+                                                            <Font name="Serif Bold" size="20.0" />
+                                                         </font>
+                                                      </Button>
+                                                   </children>
+                                                </VBox>
+                                             </children>
+                                          </HBox>
+                                       </children></AnchorPane>
                               </content>
                                  <font>
                                     <Font name="Serif Bold" size="24.0" />

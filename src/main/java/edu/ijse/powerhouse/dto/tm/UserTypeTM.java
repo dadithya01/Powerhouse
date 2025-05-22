@@ -1,13 +1,14 @@
-package edu.ijse.powerhouse.dto;
+package edu.ijse.powerhouse.dto.tm;
 
-public class UserTypeDto {
+public class UserTypeTM {
+
     private String user_Type_Id;
     private String type;
 
-    public UserTypeDto() {
+    public UserTypeTM() {
     }
 
-    public UserTypeDto(String user_Type_Id, String type) {
+    public UserTypeTM(String user_Type_Id, String type) {
         this.user_Type_Id = user_Type_Id;
         this.type = type;
     }
@@ -23,5 +24,4 @@ public class UserTypeDto {
     public void setType(String type) {
         this.type = type;
     }
-
 }

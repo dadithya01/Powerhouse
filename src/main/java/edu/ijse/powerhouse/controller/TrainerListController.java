@@ -10,7 +10,6 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 
-import java.math.BigDecimal;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.Optional;
@@ -51,15 +50,15 @@ public class TrainerListController implements Initializable {
 
 
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        colTId.setCellValueFactory(new PropertyValueFactory<>("trainerId"));
-        colUId.setCellValueFactory(new PropertyValueFactory<>("userId"));
+        colTId.setCellValueFactory(new PropertyValueFactory<>("trainer_id"));
+        colUId.setCellValueFactory(new PropertyValueFactory<>("user_id"));
         colName.setCellValueFactory(new PropertyValueFactory<>("name"));
-        colPhone.setCellValueFactory(new PropertyValueFactory<>("phone"));
+        colPhone.setCellValueFactory(new PropertyValueFactory<>("contact"));
         colAddress.setCellValueFactory(new PropertyValueFactory<>("address"));
         colAge.setCellValueFactory(new PropertyValueFactory<>("age"));
         colSpecialization.setCellValueFactory(new PropertyValueFactory<>("specialization"));
         colCertification.setCellValueFactory(new PropertyValueFactory<>("certification"));
-        colHireDate.setCellValueFactory(new PropertyValueFactory<>("hireDate"));
+        colHireDate.setCellValueFactory(new PropertyValueFactory<>("hire_date"));
         colBio.setCellValueFactory(new PropertyValueFactory<>("bio"));
         colRating.setCellValueFactory(new PropertyValueFactory<>("rating"));
 

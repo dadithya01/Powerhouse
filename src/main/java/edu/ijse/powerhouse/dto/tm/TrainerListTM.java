@@ -1,7 +1,5 @@
 package edu.ijse.powerhouse.dto.tm;
 
-import java.math.BigDecimal;
-
 public class TrainerListTM {
 
     private String trainer_id;

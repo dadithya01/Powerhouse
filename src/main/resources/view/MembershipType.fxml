@@ -12,80 +12,54 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="ancEmployeeList" prefHeight="900.0" prefWidth="1325.0" style="-fx-background-color: fefefe;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ijse.powerhouse.controller.TrainerListController">
+<AnchorPane fx:id="ancEmployeeList" prefHeight="900.0" prefWidth="1325.0" style="-fx-background-color: fefefe;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ijse.powerhouse.controller.MembershipTypeController">
     <children>
         <VBox alignment="TOP_CENTER" layoutX="80.0" layoutY="42.0" prefHeight="900.0" prefWidth="1325.0" spacing="15.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
-                <Label text="Trainer List Management">
+                <Label text="Membership Type Management">
                     <font>
                         <Font name="Serif Bold" size="48.0" />
                     </font>
                 </Label>
-                <HBox prefHeight="337.0" prefWidth="804.0">
+                <HBox prefHeight="329.0" prefWidth="1325.0">
                     <children>
-                        <VBox alignment="TOP_RIGHT" prefHeight="378.0" prefWidth="395.0" spacing="20.0">
+                        <VBox alignment="TOP_RIGHT" prefHeight="378.0" prefWidth="395.0" spacing="15.0">
                             <children>
-                                <Label text="Trainer Id :">
+                                <Label text="Membership Type Id :">
                                     <font>
                                         <Font name="Serif Bold" size="20.0" />
                                     </font>
-                                </Label>
-                                <Label text="User Id :">
-                                    <font>
-                                        <Font name="Serif Bold" size="20.0" />
-                                    </font>
-                                    <padding>
-                                        <Insets top="-5.0" />
-                                    </padding>
                                 </Label>
                                 <Label text="Name :">
                                     <font>
                                         <Font name="Serif Bold" size="20.0" />
                                     </font>
                                 </Label>
-                                <Label text="Phone :">
+                                <Label text="Description :">
                                     <font>
                                         <Font name="Serif Bold" size="20.0" />
                                     </font>
                                 </Label>
-                                <Label text="Address :">
+                                <Label text="Duration :">
                                     <font>
                                         <Font name="Serif Bold" size="20.0" />
                                     </font>
                                 </Label>
-                                <Label text="Age :">
+                                <Label text="Price :">
                                     <font>
                                         <Font name="Serif Bold" size="20.0" />
                                     </font>
                                 </Label>
-                                <Label text="Specialization :">
+                                <Label text="Features :">
                                     <font>
                                         <Font name="Serif Bold" size="20.0" />
                                     </font>
                                 </Label>
-                                <Label text="Certification :">
-                                    <font>
-                                        <Font name="Serif Bold" size="20.0" />
-                                    </font>
-                                    <padding>
-                                        <Insets top="5.0" />
-                                    </padding>
-                                </Label>
-                                <Label text="Hire Date :">
+                                <Label text="Status :">
                                     <font>
                                         <Font name="Serif Bold" size="20.0" />
                                     </font>
                                 </Label>
-                        <Label text="Bio :">
-                           <font>
-                              <Font name="Serif Bold" size="20.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="362.0" layoutY="461.0" text="Rating :">
-                           <font>
-                              <Font name="Serif Bold" size="20.0" />
-                           </font>
-                        </Label>
                             </children>
                             <padding>
                                 <Insets right="10.0" top="10.0" />
@@ -94,9 +68,9 @@
                                 <Insets />
                             </HBox.margin>
                         </VBox>
-                        <VBox prefHeight="455.0" prefWidth="552.0" spacing="14.0">
+                        <VBox prefHeight="455.0" prefWidth="552.0" spacing="9.0">
                             <children>
-                                <Label fx:id="lblTrainerId" prefHeight="42.0" prefWidth="469.0" text="1">
+                                <Label fx:id="lblMembershipTypeId" prefHeight="42.0" prefWidth="469.0" text="1">
                                     <padding>
                                         <Insets top="10.0" />
                                     </padding>
@@ -104,13 +78,6 @@
                                         <Font name="Serif Bold" size="18.0" />
                                     </font>
                                 </Label>
-                                <TextField fx:id="txtUserId" style="-fx-background-radius: 10;">
-                                    <padding>
-                                        <Insets top="10.0" />
-                                    </padding>
-                                    <font>
-                                        <Font size="18.0" />
-                                    </font></TextField>
                                 <TextField fx:id="txtName" style="-fx-background-radius: 10;">
                                     <padding>
                                         <Insets top="10.0" />
@@ -118,14 +85,37 @@
                                     <font>
                                         <Font size="18.0" />
                                     </font></TextField>
-                                <TextField fx:id="txtPhone" style="-fx-background-radius: 10;">
+                                <TextField fx:id="txtDescription" style="-fx-background-radius: 10;">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                    <padding>
+                                        <Insets top="10.0" />
+                                    </padding>
+                                </TextField>
+                                <TextField fx:id="txtDuration" style="-fx-background-radius: 10;">
+                                    <padding>
+                                        <Insets top="10.0" />
+                                    </padding>
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                </TextField>
+                                <TextField fx:id="txtPrice" style="-fx-background-radius: 10;">
                                     <padding>
                                         <Insets top="10.0" />
                                     </padding>
                                     <font>
                                         <Font size="18.0" />
                                     </font></TextField>
-                                <TextField fx:id="txtAddress" style="-fx-background-radius: 10;">
+                                <TextField fx:id="txtFeatures" style="-fx-background-radius: 10;">
+                                    <padding>
+                                        <Insets top="10.0" />
+                                    </padding>
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font></TextField>
+                                <TextField fx:id="txtStatus" style="-fx-background-radius: 10;">
                                     <VBox.margin>
                                         <Insets />
                                     </VBox.margin>
@@ -134,51 +124,8 @@
                                     </padding>
                                     <font>
                                         <Font size="18.0" />
-                                    </font></TextField>
-                                <TextField fx:id="txtAge" style="-fx-background-radius: 10;">
-                                    <padding>
-                                        <Insets top="10.0" />
-                                    </padding>
-                                    <font>
-                                        <Font size="18.0" />
-                                    </font></TextField>
-                                <TextField fx:id="txtSpecialization" style="-fx-background-radius: 10;">
-                                    <padding>
-                                        <Insets top="10.0" />
-                                    </padding>
-                                    <font>
-                                        <Font size="18.0" />
-                                    </font></TextField>
-                                <TextField fx:id="txtCertification" style="-fx-background-radius: 10;">
-                                    <padding>
-                                        <Insets top="10.0" />
-                                    </padding>
-                                    <font>
-                                        <Font size="18.0" />
-                                    </font></TextField>
-                                <TextField fx:id="txtHireDate" style="-fx-background-radius: 10;">
-                                    <padding>
-                                        <Insets top="10.0" />
-                                    </padding>
-                                    <font>
-                                        <Font size="18.0" />
-                                    </font></TextField>
-                        <TextField fx:id="txtBio" style="-fx-background-radius: 10;">
-                           <padding>
-                              <Insets top="10.0" />
-                           </padding>
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </TextField>
-                        <TextField fx:id="txtRating" layoutX="20.0" layoutY="458.0" promptText="9.99" style="-fx-background-radius: 10;">
-                           <padding>
-                              <Insets top="10.0" />
-                           </padding>
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </TextField>
+                                    </font>
+                                </TextField>
                             </children>
                             <padding>
                                 <Insets left="10.0" right="30.0" />
@@ -206,21 +153,17 @@
                             </font>
                         </Button>
                     </children></HBox>
-                <ScrollPane prefHeight="242.0" prefWidth="1325.0">
+                <ScrollPane prefHeight="373.0" prefWidth="1325.0">
                     <content>
-                        <TableView fx:id="tblTrainerList" onMouseClicked="#getData" prefHeight="168.0" prefWidth="2071.0">
+                        <TableView fx:id="tblMembershipType" onMouseClicked="#getData" prefHeight="368.0" prefWidth="1325.0">
                             <columns>
-                                <TableColumn fx:id="colTId" prefWidth="123.0" text="Trainer Id" />
-                                <TableColumn fx:id="colUId" prefWidth="123.0" text="User Id" />
-                                <TableColumn fx:id="colName" prefWidth="258.0" text="Name" />
-                                <TableColumn fx:id="colPhone" prefWidth="189.0" text="Phone " />
-                                <TableColumn fx:id="colAddress" prefWidth="265.0" text="Address" />
-                                <TableColumn fx:id="colAge" prefWidth="95.0" text="Age" />
-                                <TableColumn fx:id="colSpecialization" prefWidth="266.0" text="Specialization" />
-                        <TableColumn fx:id="colCertification" prefWidth="266.0" text="Certification" />
-                                <TableColumn fx:id="colHireDate" prefWidth="133.0" text="Hire Date" />
-                                <TableColumn fx:id="colBio" prefWidth="251.0" text="Bio" />
-                        <TableColumn fx:id="colRating" prefWidth="93.0" text="Rating" />
+                                <TableColumn fx:id="colId" prefWidth="154.0" text="Membership Type Id" />
+                                <TableColumn fx:id="colName" prefWidth="198.0" text="Name" />
+                                <TableColumn fx:id="colDescription" prefWidth="258.0" text="Description" />
+                                <TableColumn fx:id="colDuration" prefWidth="148.0" text="Duration" />
+                                <TableColumn fx:id="colPrice" prefWidth="122.0" text="Price" />
+                                <TableColumn fx:id="colFeatures" prefWidth="309.0" text="Features" />
+                                <TableColumn fx:id="colStatus" prefWidth="109.0" text="Status" />
                             </columns>
                         </TableView>
                     </content>

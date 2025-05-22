@@ -13,7 +13,6 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.Objects;
 
 public class LoginPageController {
@@ -67,11 +66,9 @@ public class LoginPageController {
                 txtPassword.clear();
                 txtUserName.requestFocus();
             }
-
-        } catch (SQLException e) {
+        } catch (Exception e) {
             e.printStackTrace();
-        } catch (ClassNotFoundException | IOException e) {
-            throw new RuntimeException(e);
+            new Alert(Alert.AlertType.ERROR,"Something went wrong").show();
         }
     }
 

@@ -1,6 +1,7 @@
-package edu.ijse.powerhouse.dto;
+package edu.ijse.powerhouse.dto.tm;
 
-public class MemberListDto {
+public class MemberListTM {
+
     private String member_id;
     private String name;
     private Double weight;
@@ -14,10 +15,10 @@ public class MemberListDto {
     private String membership_status;
     private String added_by;
 
-    public MemberListDto() {
+    public MemberListTM() {
     }
 
-    public MemberListDto(String member_id, String name, Double weight, Double height, int age, String contact, String emergency_contact, String medical_conditions, String fitness_goals, String  register_date, String membership_status, String added_by) {
+    public MemberListTM(String member_id, String name, Double weight, Double height, int age, String contact, String emergency_contact, String medical_conditions, String fitness_goals, String  register_date, String membership_status, String added_by) {
         this.member_id = member_id;
         this.name = name;
         this.weight = weight;
@@ -103,5 +104,4 @@ public class MemberListDto {
     public void setAdded_by(String added_by) {
         this.added_by = added_by;
     }
-
 }

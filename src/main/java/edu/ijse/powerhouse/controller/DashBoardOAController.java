@@ -1,5 +1,6 @@
 package edu.ijse.powerhouse.controller;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Alert;
@@ -56,5 +57,31 @@ public class DashBoardOAController {
         sidePane.getChildren().clear();
         AnchorPane load = FXMLLoader.load(getClass().getResource("/view/TrainerList.fxml"));
         sidePane.getChildren().add(load);
+    }
+
+    @FXML
+    void btnMemberListOnAction() throws IOException {
+        sidePane.getChildren().clear();
+        AnchorPane load = FXMLLoader.load(getClass().getResource("/view/MemberList.fxml"));
+        sidePane.getChildren().add(load);
+    }
+
+    @FXML
+    void btnMembershipTypeOnAction() throws IOException {
+        sidePane.getChildren().clear();
+        AnchorPane load = FXMLLoader.load(getClass().getResource("/view/MembershipType.fxml"));
+        sidePane.getChildren().add(load);
+    }
+
+    @FXML
+    void btnAttendanceOnAction() throws IOException {
+//        sidePane.getChildren().clear();
+//        AnchorPane load = FXMLLoader.load(getClass().getResource("/view/PaymentList.fxml"));
+//        sidePane.getChildren().add(load);
+    }
+
+    @FXML
+    void btnMembershipTypeOnAction(ActionEvent actionEvent) {
+
     }
 }
