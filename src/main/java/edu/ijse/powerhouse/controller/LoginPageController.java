@@ -19,6 +19,7 @@ public class LoginPageController {
 
     @FXML
     public Pane mainCont;
+
     @FXML
     private AnchorPane ancMainPage;
 

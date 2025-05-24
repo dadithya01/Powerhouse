@@ -69,7 +69,7 @@ public class MembershipTypeController implements Initializable {
                                 membershipTypeDto.getDescription(),
                                 membershipTypeDto.getDuration(),
                                 membershipTypeDto.getPrice(),
-                                membershipTypeDto.getFeatures(),
+                                membershipTypeDto.getFeatures(),                                                                                                                                                                                                            
                                 membershipTypeDto.getStatus()
                         )).toList()
         ));

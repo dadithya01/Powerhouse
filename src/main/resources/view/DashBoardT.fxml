@@ -48,7 +48,7 @@
                                                       <Font name="Serif Bold" size="20.0" />
                                                    </font>
                                                 </Button>
-                                                <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#btnMembershipOnAction" prefHeight="43.0" prefWidth="594.0" style="-fx-background-color: e8e8e8;" text="Membership">
+                                                <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#btnMembershipOnAction" prefHeight="43.0" prefWidth="594.0" style="-fx-background-color: e8e8e8;" text="Membership Type">
                                                    <font>
                                                       <Font name="Serif Bold" size="20.0" />
                                                    </font>

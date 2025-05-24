@@ -79,9 +79,4 @@ public class DashBoardOAController {
 //        AnchorPane load = FXMLLoader.load(getClass().getResource("/view/PaymentList.fxml"));
 //        sidePane.getChildren().add(load);
     }
-
-    @FXML
-    void btnMembershipTypeOnAction(ActionEvent actionEvent) {
-
-    }
 }

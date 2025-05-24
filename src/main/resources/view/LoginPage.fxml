@@ -24,7 +24,7 @@
                         <Image url="@../images/spencer-davis-0ShTs8iPY28-unsplash.jpg" />
                      </image>
                   </ImageView>
-                  <VBox alignment="TOP_CENTER" prefHeight="164.0" prefWidth="601.0">
+                  <VBox alignment="TOP_CENTER" prefHeight="164.0" prefWidth="597.0">
                      <children>
                         <Label text="WELCOME" textFill="WHITE">
                            <font>
