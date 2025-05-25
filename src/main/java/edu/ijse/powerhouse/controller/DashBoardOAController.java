@@ -75,8 +75,8 @@ public class DashBoardOAController {
 
     @FXML
     void btnAttendanceOnAction() throws IOException {
-//        sidePane.getChildren().clear();
-//        AnchorPane load = FXMLLoader.load(getClass().getResource("/view/PaymentList.fxml"));
-//        sidePane.getChildren().add(load);
+        sidePane.getChildren().clear();
+        AnchorPane load = FXMLLoader.load(getClass().getResource("/view/Attendance.fxml"));
+        sidePane.getChildren().add(load);
     }
 }

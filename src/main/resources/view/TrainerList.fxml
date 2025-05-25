@@ -208,7 +208,7 @@
                     </children></HBox>
                 <ScrollPane prefHeight="242.0" prefWidth="1325.0">
                     <content>
-                        <TableView fx:id="tblTrainerList" onMouseClicked="#getData" prefHeight="168.0" prefWidth="2071.0">
+                        <TableView fx:id="tblTrainerList" onMouseClicked="#getData" prefHeight="168.0" prefWidth="2126.0">
                             <columns>
                                 <TableColumn fx:id="colTId" prefWidth="123.0" text="Trainer Id" />
                                 <TableColumn fx:id="colUId" prefWidth="123.0" text="User Id" />
@@ -220,7 +220,7 @@
                         <TableColumn fx:id="colCertification" prefWidth="266.0" text="Certification" />
                                 <TableColumn fx:id="colHireDate" prefWidth="133.0" text="Hire Date" />
                                 <TableColumn fx:id="colBio" prefWidth="251.0" text="Bio" />
-                        <TableColumn fx:id="colRating" prefWidth="93.0" text="Rating" />
+                        <TableColumn fx:id="colRating" prefWidth="135.0" text="Rating" />
                             </columns>
                         </TableView>
                     </content>

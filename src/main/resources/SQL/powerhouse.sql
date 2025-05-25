@@ -204,7 +204,7 @@ CREATE TABLE Attendance (
     attendance_id varchar(100) PRIMARY KEY ,
     member_id varchar(100) NOT NULL,
     check_in DATETIME NOT NULL,
-    check_out DATETIME,
+    check_out time,
     recorded_by varchar(100) NOT NULL,
     FOREIGN KEY (member_id) REFERENCES Member(member_id),
     FOREIGN KEY (recorded_by) REFERENCES Users(user_id)
