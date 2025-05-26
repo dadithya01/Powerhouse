@@ -39,23 +39,28 @@
                           <panes>
                             <TitledPane animated="false" prefHeight="635.0" prefWidth="539.0" text="Member Management">
                               <content>
-                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: e8e8e8;">
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefWidth="200.0" style="-fx-background-color: e8e8e8;">
                                        <children>
-                                          <VBox alignment="CENTER" layoutX="57.0" prefHeight="299.0" prefWidth="501.0" spacing="30.0">
+                                          <VBox alignment="CENTER" layoutX="57.0" prefHeight="415.0" prefWidth="501.0" spacing="15.0">
                                              <children>
                                                 <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#btnMemberListOnAction" prefHeight="43.0" prefWidth="531.0" style="-fx-background-color: e8e8e8;" text="Member List">
                                                    <font>
-                                                      <Font name="Serif Bold" size="20.0" />
-                                                   </font>
-                                                </Button>
-                                                <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#btnMembershipOnAction" prefHeight="43.0" prefWidth="594.0" style="-fx-background-color: e8e8e8;" text="Membership Type">
-                                                   <font>
-                                                      <Font name="Serif Bold" size="20.0" />
+                                                      <Font name="Serif Bold" size="24.0" />
                                                    </font>
                                                 </Button>
                                                 <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#btnAttendanceOnAction" prefHeight="43.0" prefWidth="538.0" style="-fx-background-color: e8e8e8;" text="Attendance">
                                                    <font>
-                                                      <Font name="Serif Bold" size="20.0" />
+                                                      <Font name="Serif Bold" size="24.0" />
+                                                   </font>
+                                                </Button>
+                                                <Button alignment="TOP_LEFT" layoutX="10.0" layoutY="189.0" mnemonicParsing="false" onAction="#btnAssignedworkoutOnAction" prefHeight="43.0" prefWidth="538.0" style="-fx-background-color: e8e8e8;" text="Assigned workout">
+                                                   <font>
+                                                      <Font name="Serif Bold" size="24.0" />
+                                                   </font>
+                                                </Button>
+                                                <Button alignment="TOP_LEFT" layoutX="10.0" layoutY="215.0" mnemonicParsing="false" onAction="#btnAssignedDietPlansOnAction" prefHeight="43.0" prefWidth="538.0" style="-fx-background-color: e8e8e8;" text="Assigned Diet Plans">
+                                                   <font>
+                                                      <Font name="Serif Bold" size="24.0" />
                                                    </font>
                                                 </Button>
                                              </children>
@@ -71,7 +76,33 @@
                             </TitledPane>
                             <TitledPane animated="false" prefHeight="635.0" prefWidth="539.0" text="Workout Plans">
                               <content>
-                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: e8e8e8;" />
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefWidth="200.0" style="-fx-background-color: e8e8e8;">
+                                       <children>
+                                          <VBox alignment="CENTER" layoutX="57.0" prefHeight="415.0" prefWidth="501.0" spacing="30.0">
+                                             <children>
+                                                <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#btnWorkoutPlanListOnAction" prefHeight="34.0" prefWidth="538.0" style="-fx-background-color: e8e8e8;" text="Workout Plan List">
+                                                   <font>
+                                                      <Font name="Serif Bold" size="24.0" />
+                                                   </font>
+                                                </Button>
+                                                <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#btnExercisesLibraryOnAction" prefHeight="34.0" prefWidth="539.0" style="-fx-background-color: e8e8e8;" text="Exercises Library">
+                                                   <font>
+                                                      <Font name="Serif Bold" size="24.0" />
+                                                   </font>
+                                                </Button>
+                                                <Button alignment="TOP_LEFT" layoutX="10.0" layoutY="175.0" mnemonicParsing="false" onAction="#btnDietPlansOnAction" prefHeight="34.0" prefWidth="539.0" style="-fx-background-color: e8e8e8;" text="Diet Plans">
+                                                   <font>
+                                                      <Font name="Serif Bold" size="24.0" />
+                                                   </font>
+                                                </Button>
+                                                <Button alignment="TOP_LEFT" layoutX="10.0" layoutY="243.0" mnemonicParsing="false" onAction="#btnMealListOnAction" prefHeight="34.0" prefWidth="539.0" style="-fx-background-color: e8e8e8;" text="Meal List">
+                                                   <font>
+                                                      <Font name="Serif Bold" size="24.0" />
+                                                   </font>
+                                                </Button>
+                                             </children>
+                                          </VBox>
+                                       </children></AnchorPane>
                               </content>
                                  <font>
                                     <Font name="Serif Bold" size="24.0" />
@@ -80,28 +111,6 @@
                                     <Insets bottom="10.0" />
                                  </padding>
                             </TitledPane>
-                            <TitledPane animated="false" prefHeight="635.0" prefWidth="539.0" text="Diet Plans">
-                              <content>
-                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: e8e8e8;" />
-                              </content>
-                                 <font>
-                                    <Font name="Serif Bold" size="24.0" />
-                                 </font>
-                                 <padding>
-                                    <Insets bottom="10.0" />
-                                 </padding>
-                            </TitledPane>
-                              <TitledPane animated="false" layoutX="10.0" layoutY="96.0" prefHeight="635.0" prefWidth="539.0" text="Diet Plans">
-                                 <content>
-                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: e8e8e8;" />
-                                 </content>
-                                 <font>
-                                    <Font name="Serif Bold" size="24.0" />
-                                 </font>
-                                 <padding>
-                                    <Insets bottom="10.0" />
-                                 </padding>
-                              </TitledPane>
                           </panes>
                         </Accordion>
                      </children>

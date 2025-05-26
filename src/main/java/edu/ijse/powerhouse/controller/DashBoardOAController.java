@@ -79,4 +79,57 @@ public class DashBoardOAController {
         AnchorPane load = FXMLLoader.load(getClass().getResource("/view/Attendance.fxml"));
         sidePane.getChildren().add(load);
     }
+    @FXML
+    void btnDietPlansOnAction(ActionEvent event) throws IOException {
+//        sidePane.getChildren().clear();
+//        AnchorPane load = FXMLLoader.load(getClass().getResource("/view/Payment.fxml"));
+//        sidePane.getChildren().add(load);
+    }
+    @FXML
+    void btnMealListOnAction(ActionEvent event) throws IOException {
+//        sidePane.getChildren().clear();
+//        AnchorPane load = FXMLLoader.load(getClass().getResource("/view/Report.fxml"));
+//        sidePane.getChildren().add(load);
+    }
+    @FXML
+    void btnPaymentRecordManageOnAction(ActionEvent event) throws IOException {
+//        sidePane.getChildren().clear();
+//        AnchorPane load = FXMLLoader.load(getClass().getResource("/view/Settings.fxml"));
+//        sidePane.getChildren().add(load);
+    }
+
+    @FXML
+    void btnPaymentPlan(ActionEvent event) throws IOException {
+//        sidePane.getChildren().clear();
+//        AnchorPane load = FXMLLoader.load(getClass().getResource("/view/Settings.fxml"));
+//        sidePane.getChildren().add(load);
+    }
+
+    @FXML
+    void btnEquipmentManagementOnAction(ActionEvent event) throws IOException {
+//        sidePane.getChildren().clear();
+//        AnchorPane load = FXMLLoader.load(getClass().getResource("/view/Settings.fxml"));
+//        sidePane.getChildren().add(load);
+    }
+
+    @FXML
+    void btnAssignedDietPlansOnAction(ActionEvent event) throws IOException {
+//        sidePane.getChildren().clear();
+//        AnchorPane load = FXMLLoader.load(getClass().getResource("/view/Settings.fxml"));
+//        sidePane.getChildren().add(load);
+    }
+
+    @FXML
+    void btnAssignedworkoutOnAction(ActionEvent event) throws IOException {
+//        sidePane.getChildren().clear();
+//        AnchorPane load = FXMLLoader.load(getClass().getResource("/view/Report.fxml"));
+//        sidePane.getChildren().add(load);
+    }
+
+    @FXML
+    void btnWorkoutPlanListOnAction(ActionEvent event) throws IOException {
+        sidePane.getChildren().clear();
+        AnchorPane load = FXMLLoader.load(getClass().getResource("/view/WorkoutPlanList.fxml"));
+        sidePane.getChildren().add(load);
+    }
 }

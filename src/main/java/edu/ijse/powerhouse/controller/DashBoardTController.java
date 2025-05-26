@@ -39,16 +39,51 @@ public class DashBoardTController {
     }
 
     @FXML
-    void btnMembershipOnAction() throws IOException {
-        sidePane.getChildren().clear();
-        AnchorPane load = FXMLLoader.load(getClass().getResource("/view/MembershipType.fxml"));
-        sidePane.getChildren().add(load);
-    }
-
-    @FXML
     void btnAttendanceOnAction() throws IOException {
         sidePane.getChildren().clear();
         AnchorPane load = FXMLLoader.load(getClass().getResource("/view/Attendance.fxml"));
         sidePane.getChildren().add(load);
+    }
+
+    @FXML
+    void btnAssignedworkoutOnAction() throws IOException {
+//        sidePane.getChildren().clear();
+//        AnchorPane load = FXMLLoader.load(getClass().getResource("/view/WorkoutPlanList.fxml"));
+//        sidePane.getChildren().add(load);
+    }
+
+    @FXML
+    void btnAssignedDietPlansOnAction() throws IOException {
+//        sidePane.getChildren().clear();
+//        AnchorPane load = FXMLLoader.load(getClass().getResource("/view/WorkoutPlan.fxml"));
+//        sidePane.getChildren().add(load);
+    }
+
+    @FXML
+    void btnWorkoutPlanListOnAction() throws IOException {
+        sidePane.getChildren().clear();
+        AnchorPane load = FXMLLoader.load(getClass().getResource("/view/WorkoutPlanList.fxml"));
+        sidePane.getChildren().add(load);
+    }
+
+    @FXML
+    void btnExercisesLibraryOnAction() throws IOException {
+//        sidePane.getChildren().clear();
+//        AnchorPane load = FXMLLoader.load(getClass().getResource("/view/DietPlanList.fxml"));
+//        sidePane.getChildren().add(load);
+    }
+
+    @FXML
+    void btnDietPlansOnAction() throws IOException {
+//        sidePane.getChildren().clear();
+//        AnchorPane load = FXMLLoader.load(getClass().getResource("/view/DietPlanList.fxml"));
+//        sidePane.getChildren().add(load);
+    }
+
+    @FXML
+    void btnMealListOnAction() throws IOException {
+//        sidePane.getChildren().clear();
+//        AnchorPane load = FXMLLoader.load(getClass().getResource("/view/DietPlanList.fxml"));
+//        sidePane.getChildren().add(load);
     }
 }
