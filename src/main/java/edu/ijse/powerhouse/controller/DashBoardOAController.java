@@ -81,9 +81,9 @@ public class DashBoardOAController {
     }
     @FXML
     void btnDietPlansOnAction(ActionEvent event) throws IOException {
-//        sidePane.getChildren().clear();
-//        AnchorPane load = FXMLLoader.load(getClass().getResource("/view/Payment.fxml"));
-//        sidePane.getChildren().add(load);
+        sidePane.getChildren().clear();
+        AnchorPane load = FXMLLoader.load(getClass().getResource("/view/DietPlan.fxml"));
+        sidePane.getChildren().add(load);
     }
     @FXML
     void btnMealListOnAction(ActionEvent event) throws IOException {
@@ -130,6 +130,13 @@ public class DashBoardOAController {
     void btnWorkoutPlanListOnAction(ActionEvent event) throws IOException {
         sidePane.getChildren().clear();
         AnchorPane load = FXMLLoader.load(getClass().getResource("/view/WorkoutPlanList.fxml"));
+        sidePane.getChildren().add(load);
+    }
+
+    @FXML
+    void btnExercisesLibraryOnAction(ActionEvent event) throws IOException {
+        sidePane.getChildren().clear();
+        AnchorPane load = FXMLLoader.load(getClass().getResource("/view/ExercisesLibrary.fxml"));
         sidePane.getChildren().add(load);
     }
 }

@@ -12,76 +12,65 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="900.0" prefWidth="1325.0" style="-fx-background-color: fefefe;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ijse.powerhouse.controller.TrainerListController">
+<AnchorPane fx:id="ancEmployeeList" prefHeight="900.0" prefWidth="1325.0" style="-fx-background-color: fefefe;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ijse.powerhouse.controller.DietPlanController">
     <children>
         <VBox alignment="TOP_CENTER" layoutX="80.0" layoutY="42.0" prefHeight="900.0" prefWidth="1325.0" spacing="15.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
-                <Label text="Trainer List Management">
+                <Label text="Diet Plan Management">
                     <font>
                         <Font name="Serif Bold" size="48.0" />
                     </font>
                 </Label>
-                <HBox prefHeight="337.0" prefWidth="804.0">
+                <HBox prefHeight="231.0" prefWidth="1325.0">
                     <children>
-                        <VBox alignment="TOP_RIGHT" prefHeight="378.0" prefWidth="395.0" spacing="20.0">
+                        <VBox alignment="TOP_RIGHT" prefHeight="378.0" prefWidth="395.0" spacing="15.0">
                             <children>
-                                <Label text="Trainer Id :">
+                                <Label text="Diet Plan Id :">
                                     <font>
                                         <Font name="Serif Bold" size="20.0" />
                                     </font>
-                                </Label>
-                                <Label text="User Id :">
-                                    <font>
-                                        <Font name="Serif Bold" size="20.0" />
-                                    </font>
-                                    <padding>
-                                        <Insets top="-5.0" />
-                                    </padding>
                                 </Label>
                                 <Label text="Name :">
                                     <font>
                                         <Font name="Serif Bold" size="20.0" />
                                     </font>
                                 </Label>
-                                <Label text="Phone :">
+                                <Label text="Description :">
                                     <font>
                                         <Font name="Serif Bold" size="20.0" />
                                     </font>
                                 </Label>
-                                <Label text="Address :">
+                                <Label text="Created By :">
                                     <font>
                                         <Font name="Serif Bold" size="20.0" />
                                     </font>
                                 </Label>
-                                <Label text="Age :">
+                                <Label text="Created Date :">
                                     <font>
                                         <Font name="Serif Bold" size="20.0" />
                                     </font>
                                 </Label>
-                                <Label text="Specialization :">
-                                    <font>
-                                        <Font name="Serif Bold" size="20.0" />
-                                    </font>
-                                </Label>
-                                <Label text="Certification :">
-                                    <font>
-                                        <Font name="Serif Bold" size="20.0" />
-                                    </font>
-                                    <padding>
-                                        <Insets top="5.0" />
-                                    </padding>
-                                </Label>
-                                <Label text="Hire Date :">
-                                    <font>
-                                        <Font name="Serif Bold" size="20.0" />
-                                    </font>
-                                </Label>
-                        <Label text="Bio :">
+                        <Label layoutX="251.0" layoutY="196.0" text="Calorie Target :">
                            <font>
                               <Font name="Serif Bold" size="20.0" />
                            </font>
                         </Label>
-                        <Label layoutX="362.0" layoutY="461.0" text="Rating :">
+                        <Label layoutX="238.0" layoutY="240.0" text="Protein Target :">
+                           <font>
+                              <Font name="Serif Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="236.0" layoutY="284.0" text="Carbs Target :">
+                           <font>
+                              <Font name="Serif Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="253.0" layoutY="328.0" text="Fat Target :">
+                           <font>
+                              <Font name="Serif Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="279.0" layoutY="372.0" text="Note :">
                            <font>
                               <Font name="Serif Bold" size="20.0" />
                            </font>
@@ -94,9 +83,9 @@
                                 <Insets />
                             </HBox.margin>
                         </VBox>
-                        <VBox prefHeight="455.0" prefWidth="552.0" spacing="14.0">
+                        <VBox prefHeight="455.0" prefWidth="552.0" spacing="9.0">
                             <children>
-                                <Label fx:id="lblTrainerId" prefHeight="42.0" prefWidth="469.0" text="1">
+                                <Label fx:id="lblDietPlanId" prefHeight="42.0" prefWidth="469.0" text="1">
                                     <padding>
                                         <Insets top="10.0" />
                                     </padding>
@@ -104,13 +93,6 @@
                                         <Font name="Serif Bold" size="18.0" />
                                     </font>
                                 </Label>
-                                <TextField fx:id="txtUserId" style="-fx-background-radius: 10;">
-                                    <padding>
-                                        <Insets top="10.0" />
-                                    </padding>
-                                    <font>
-                                        <Font size="18.0" />
-                                    </font></TextField>
                                 <TextField fx:id="txtName" style="-fx-background-radius: 10;">
                                     <padding>
                                         <Insets top="10.0" />
@@ -118,52 +100,30 @@
                                     <font>
                                         <Font size="18.0" />
                                     </font></TextField>
-                                <TextField fx:id="txtPhone" style="-fx-background-radius: 10;">
+                                <TextField fx:id="txtDescription" style="-fx-background-radius: 10;">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                    <padding>
+                                        <Insets top="10.0" />
+                                    </padding>
+                                </TextField>
+                                <TextField fx:id="txtCreatedBy" style="-fx-background-radius: 10;">
+                                    <padding>
+                                        <Insets top="10.0" />
+                                    </padding>
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                </TextField>
+                                <TextField fx:id="txtCreatedDate" style="-fx-background-radius: 10;">
                                     <padding>
                                         <Insets top="10.0" />
                                     </padding>
                                     <font>
                                         <Font size="18.0" />
                                     </font></TextField>
-                                <TextField fx:id="txtAddress" style="-fx-background-radius: 10;">
-                                    <VBox.margin>
-                                        <Insets />
-                                    </VBox.margin>
-                                    <padding>
-                                        <Insets top="10.0" />
-                                    </padding>
-                                    <font>
-                                        <Font size="18.0" />
-                                    </font></TextField>
-                                <TextField fx:id="txtAge" style="-fx-background-radius: 10;">
-                                    <padding>
-                                        <Insets top="10.0" />
-                                    </padding>
-                                    <font>
-                                        <Font size="18.0" />
-                                    </font></TextField>
-                                <TextField fx:id="txtSpecialization" style="-fx-background-radius: 10;">
-                                    <padding>
-                                        <Insets top="10.0" />
-                                    </padding>
-                                    <font>
-                                        <Font size="18.0" />
-                                    </font></TextField>
-                                <TextField fx:id="txtCertification" style="-fx-background-radius: 10;">
-                                    <padding>
-                                        <Insets top="10.0" />
-                                    </padding>
-                                    <font>
-                                        <Font size="18.0" />
-                                    </font></TextField>
-                                <TextField fx:id="txtHireDate" style="-fx-background-radius: 10;">
-                                    <padding>
-                                        <Insets top="10.0" />
-                                    </padding>
-                                    <font>
-                                        <Font size="18.0" />
-                                    </font></TextField>
-                        <TextField fx:id="txtBio" style="-fx-background-radius: 10;">
+                        <TextField fx:id="txtCalorieTarget" layoutX="20.0" layoutY="193.0" style="-fx-background-radius: 10;">
                            <padding>
                               <Insets top="10.0" />
                            </padding>
@@ -171,7 +131,31 @@
                               <Font size="18.0" />
                            </font>
                         </TextField>
-                        <TextField fx:id="txtRating" layoutX="20.0" layoutY="458.0" promptText="9.99" style="-fx-background-radius: 10;">
+                        <TextField fx:id="txtProteinTarget" layoutX="20.0" layoutY="237.0" style="-fx-background-radius: 10;">
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="txtCarbsTarget" layoutX="20.0" layoutY="281.0" style="-fx-background-radius: 10;">
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="txtFatTarget" layoutX="20.0" layoutY="325.0" style="-fx-background-radius: 10;">
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="txtNote" layoutX="20.0" layoutY="369.0" style="-fx-background-radius: 10;">
                            <padding>
                               <Insets top="10.0" />
                            </padding>
@@ -206,21 +190,20 @@
                             </font>
                         </Button>
                     </children></HBox>
-                <ScrollPane prefHeight="242.0" prefWidth="1325.0">
+                <ScrollPane prefHeight="465.0" prefWidth="1325.0">
                     <content>
-                        <TableView fx:id="tblTrainerList" onMouseClicked="#getData" prefHeight="168.0" prefWidth="2126.0">
+                        <TableView fx:id="tblDietPlan" onMouseClicked="#getData" prefHeight="261.0" prefWidth="1909.0">
                             <columns>
-                                <TableColumn fx:id="colTId" prefWidth="123.0" text="Trainer Id" />
-                                <TableColumn fx:id="colUId" prefWidth="123.0" text="User Id" />
-                                <TableColumn fx:id="colName" prefWidth="258.0" text="Name" />
-                                <TableColumn fx:id="colPhone" prefWidth="189.0" text="Phone " />
-                                <TableColumn fx:id="colAddress" prefWidth="265.0" text="Address" />
-                                <TableColumn fx:id="colAge" prefWidth="95.0" text="Age" />
-                                <TableColumn fx:id="colSpecialization" prefWidth="266.0" text="Specialization" />
-                        <TableColumn fx:id="colCertification" prefWidth="266.0" text="Certification" />
-                                <TableColumn fx:id="colHireDate" prefWidth="133.0" text="Hire Date" />
-                                <TableColumn fx:id="colBio" prefWidth="251.0" text="Bio" />
-                        <TableColumn fx:id="colRating" prefWidth="135.0" text="Rating" />
+                                <TableColumn fx:id="colDietPlanId" prefWidth="130.0" text="Diet Plan Id" />
+                                <TableColumn fx:id="colName" prefWidth="294.0" text="Name" />
+                                <TableColumn fx:id="colDescription" prefWidth="377.0" text="Description" />
+                                <TableColumn fx:id="colCreatedBy" prefWidth="121.0" text="Created By" />
+                                <TableColumn fx:id="colCreatedDate" prefWidth="172.0" text="Created Date" />
+                        <TableColumn fx:id="colCalorieTarget" prefWidth="114.0" text="Calorie Target" />
+                        <TableColumn fx:id="colProteinTarget" prefWidth="114.0" text="Protein Target" />
+                        <TableColumn fx:id="colCarbsTarget" prefWidth="114.0" text="Carbs Target" />
+                        <TableColumn fx:id="colFatTarget" prefWidth="114.0" text="Fat Target" />
+                        <TableColumn fx:id="colNote" prefWidth="314.0" text="Note" />
                             </columns>
                         </TableView>
                     </content>

@@ -68,16 +68,16 @@ public class DashBoardTController {
 
     @FXML
     void btnExercisesLibraryOnAction() throws IOException {
-//        sidePane.getChildren().clear();
-//        AnchorPane load = FXMLLoader.load(getClass().getResource("/view/DietPlanList.fxml"));
-//        sidePane.getChildren().add(load);
+        sidePane.getChildren().clear();
+        AnchorPane load = FXMLLoader.load(getClass().getResource("/view/ExercisesLibrary.fxml"));
+        sidePane.getChildren().add(load);
     }
 
     @FXML
     void btnDietPlansOnAction() throws IOException {
-//        sidePane.getChildren().clear();
-//        AnchorPane load = FXMLLoader.load(getClass().getResource("/view/DietPlanList.fxml"));
-//        sidePane.getChildren().add(load);
+        sidePane.getChildren().clear();
+        AnchorPane load = FXMLLoader.load(getClass().getResource("/view/DietPlan.fxml"));
+        sidePane.getChildren().add(load);
     }
 
     @FXML
