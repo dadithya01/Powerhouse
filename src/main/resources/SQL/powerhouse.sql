@@ -237,7 +237,7 @@ show table status where name='Member_Membership';
 
 show columns from Member_Membership;
 
-table Users;
+table Meal;
 
 table Employee;
 

@@ -12,25 +12,20 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="ancUserList" prefHeight="900.0" prefWidth="1325.0" style="-fx-background-color: fefefe;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ijse.powerhouse.controller.ExercisesLibraryController">
+<AnchorPane prefHeight="900.0" prefWidth="1325.0" style="-fx-background-color: fefefe;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ijse.powerhouse.controller.AssignDietPlansController">
     <children>
         <VBox alignment="TOP_CENTER" layoutX="80.0" layoutY="42.0" prefHeight="900.0" prefWidth="1325.0" spacing="15.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
-                <Label text="Exercises Library Management">
+                <Label text="Assign Diet Plans">
                     <font>
                         <Font name="Serif Bold" size="48.0" />
                     </font>
                 </Label>
-                <HBox prefHeight="337.0" prefWidth="804.0">
+                <HBox prefHeight="302.0" prefWidth="1325.0">
                     <children>
-                        <VBox alignment="TOP_RIGHT" prefHeight="378.0" prefWidth="395.0" spacing="23.0">
+                        <VBox alignment="TOP_RIGHT" prefHeight="378.0" prefWidth="395.0" spacing="20.0">
                             <children>
-                                <Label text="Exercise Id :">
-                                    <font>
-                                        <Font name="Serif Bold" size="20.0" />
-                                    </font>
-                                </Label>
-                                <Label text="Name :">
+                                <Label text="Diet Plan Id :">
                                     <font>
                                         <Font name="Serif Bold" size="20.0" />
                                     </font>
@@ -38,40 +33,27 @@
                                         <Insets top="-5.0" />
                                     </padding>
                                 </Label>
-                                <Label text="Description :">
+                                <Label text="Member Id :">
                                     <font>
                                         <Font name="Serif Bold" size="20.0" />
                                     </font>
                                 </Label>
-                                <Label text="Muscle Group :">
+                                <Label text="Assigned Date :">
                                     <font>
                                         <Font name="Serif Bold" size="20.0" />
                                     </font>
                                 </Label>
-                                <Label text="Equipment Needed :">
+                                <Label text="End Date :">
                                     <font>
                                         <Font name="Serif Bold" size="20.0" />
                                     </font>
                                 </Label>
-                                <Label text="Difficulty Level :">
+                                <Label text="Notes :">
                                     <font>
                                         <Font name="Serif Bold" size="20.0" />
                                     </font>
                                 </Label>
-                                <Label text="Video Url :">
-                                    <font>
-                                        <Font name="Serif Bold" size="20.0" />
-                                    </font>
-                                </Label>
-                                <Label text="Instructions :">
-                                    <font>
-                                        <Font name="Serif Bold" size="20.0" />
-                                    </font>
-                                    <padding>
-                                        <Insets top="5.0" />
-                                    </padding>
-                                </Label>
-                                <Label text="Added By :">
+                                <Label text="Assigned By :">
                                     <font>
                                         <Font name="Serif Bold" size="20.0" />
                                     </font>
@@ -84,9 +66,9 @@
                                 <Insets />
                             </HBox.margin>
                         </VBox>
-                        <VBox prefHeight="455.0" prefWidth="552.0" spacing="17.0">
+                        <VBox prefHeight="455.0" prefWidth="552.0" spacing="14.0">
                             <children>
-                                <Label fx:id="lblExerciseId" prefHeight="42.0" prefWidth="469.0" text="1">
+                                <Label fx:id="lblDietPlanId" prefHeight="42.0" prefWidth="469.0" text="1">
                                     <padding>
                                         <Insets top="10.0" />
                                     </padding>
@@ -94,59 +76,35 @@
                                         <Font name="Serif Bold" size="18.0" />
                                     </font>
                                 </Label>
-                                <TextField fx:id="txtName" style="-fx-background-radius: 10;">
+                                <TextField fx:id="txtMemberId" style="-fx-background-radius: 10;">
                                     <padding>
                                         <Insets top="10.0" />
                                     </padding>
                                     <font>
                                         <Font size="18.0" />
                                     </font></TextField>
-                                <TextField fx:id="txtDescription" style="-fx-background-radius: 10;">
+                                <TextField fx:id="txtAssignedDate" style="-fx-background-radius: 10;">
                                     <padding>
                                         <Insets top="10.0" />
                                     </padding>
                                     <font>
                                         <Font size="18.0" />
                                     </font></TextField>
-                                <TextField fx:id="txtMuscleGroup" style="-fx-background-radius: 10;">
+                                <TextField fx:id="txtEndDate" style="-fx-background-radius: 10;">
                                     <padding>
                                         <Insets top="10.0" />
                                     </padding>
                                     <font>
                                         <Font size="18.0" />
                                     </font></TextField>
-                                <TextField fx:id="txtEquipmentNeeded" style="-fx-background-radius: 10;">
-                                    <VBox.margin>
-                                        <Insets />
-                                    </VBox.margin>
+                                <TextField fx:id="txtNotes" style="-fx-background-radius: 10;">
                                     <padding>
                                         <Insets top="10.0" />
                                     </padding>
                                     <font>
                                         <Font size="18.0" />
                                     </font></TextField>
-                                <TextField fx:id="txtDifficultyLevel" promptText="    Beginner, Intermediate, Advanced" style="-fx-background-radius: 10;">
-                                    <padding>
-                                        <Insets top="10.0" />
-                                    </padding>
-                                    <font>
-                                        <Font size="18.0" />
-                                    </font></TextField>
-                                <TextField fx:id="txtVideoUrl" style="-fx-background-radius: 10;">
-                                    <padding>
-                                        <Insets top="10.0" />
-                                    </padding>
-                                    <font>
-                                        <Font size="18.0" />
-                                    </font></TextField>
-                                <TextField fx:id="txtInstructions" style="-fx-background-radius: 10;">
-                                    <padding>
-                                        <Insets top="10.0" />
-                                    </padding>
-                                    <font>
-                                        <Font size="18.0" />
-                                    </font></TextField>
-                                <TextField fx:id="txtAddedBy" style="-fx-background-radius: 10;">
+                                <TextField fx:id="txtAssignedBy" style="-fx-background-radius: 10;">
                                     <padding>
                                         <Insets top="10.0" />
                                     </padding>
@@ -180,19 +138,16 @@
                             </font>
                         </Button>
                     </children></HBox>
-                <ScrollPane prefHeight="242.0" prefWidth="1325.0">
+                <ScrollPane prefHeight="393.0" prefWidth="1325.0">
                     <content>
-                        <TableView fx:id="tblExerciseLibrary" onMouseClicked="#getData" prefHeight="244.0" prefWidth="1984.0">
+                        <TableView fx:id="tblAssignDiet" onMouseClicked="#getData" prefHeight="385.0" prefWidth="1325.0">
                             <columns>
-                                <TableColumn fx:id="colId" prefWidth="123.0" text="Exercise Id" />
-                                <TableColumn fx:id="colName" prefWidth="271.0" text="Name" />
-                                <TableColumn fx:id="colDescription" prefWidth="350.0" text="Description" />
-                                <TableColumn fx:id="colMuscleGroup" prefWidth="180.0" text="Muscle Group" />
-                                <TableColumn fx:id="colEquipmentNeeded" prefWidth="167.0" text="Equipment Needed" />
-                                <TableColumn fx:id="colDifficultyLevel" prefWidth="172.0" text="Difficulty Level" />
-                                <TableColumn fx:id="colVideoUrl" prefWidth="226.0" text="Video Url" />
-                                <TableColumn fx:id="colInstructions" prefWidth="306.0" text="Instructions" />
-                        <TableColumn fx:id="colAddedBy" prefWidth="115.0" text="Added By" />
+                                <TableColumn fx:id="colMemberId" prefWidth="123.0" text="Member Id" />
+                                <TableColumn fx:id="colDietPlanId" prefWidth="138.0" text="Diet Plan Id" />
+                                <TableColumn fx:id="colAssignedDate" prefWidth="201.0" text="Assigned Date" />
+                                <TableColumn fx:id="colEndDate" prefWidth="201.0" text="End Date" />
+                                <TableColumn fx:id="colNotes" prefWidth="487.0" text="Notes" />
+                                <TableColumn fx:id="colAssignedBy" prefWidth="133.0" text="Assigned By" />
                             </columns>
                         </TableView>
                     </content>

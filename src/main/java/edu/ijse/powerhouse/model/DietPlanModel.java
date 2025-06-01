@@ -24,7 +24,7 @@ public class DietPlanModel {
     }
 
     public boolean updateDietPlan(DietPlanDto dietPlanDto) throws SQLException, ClassNotFoundException {
-        return CrudUtil.execute("UPDATE diet_plan_id SET name = ?, description = ?, created_by = ?, created_date = ?, calorie_target = ?, protein_target = ?, carbs_target = ?, fat_target = ?, notes = ? WHERE diet_plan_id = ?",
+        return CrudUtil.execute("UPDATE Diet_Plan SET name = ?, description = ?, created_by = ?, created_date = ?, calorie_target = ?, protein_target = ?, carbs_target = ?, fat_target = ?, notes = ? WHERE diet_plan_id = ?",
                 dietPlanDto.getName(),
                 dietPlanDto.getDescription(),
                 dietPlanDto.getCreated_by(),
