@@ -87,12 +87,46 @@ public class AttendanceController implements Initializable {
         }
     }
 
+    private String validateAttendanceInput(
+            String attendanceId, String memberId, String checkIn, String checkOut, String recordedBy) {
+
+        // Check required fields
+        if (attendanceId.isEmpty() || memberId.isEmpty() || checkIn.isEmpty() || recordedBy.isEmpty()) {
+            return "Please fill all required fields (Attendance ID, Member ID, Check-In, Recorded By)";
+        }
+
+        // Check date/time format - assuming "yyyy-MM-dd HH:mm:ss"
+        String dateTimePattern = "\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}";
+        String TimePattern = "\\d{2}:\\d{2}:\\d{2}";
+        if (!checkIn.matches(dateTimePattern)) {
+            return "Check-In must be in 'yyyy-MM-dd HH:mm:ss' format";
+        }
+        if (!checkOut.isEmpty() && !checkOut.matches(TimePattern)) {
+            return "Check-Out must be in 'HH:mm:ss' format or left empty";
+        }
+
+        // Validate RecordedBy (you can customize as per requirements, e.g., alphanumeric)
+        if (recordedBy.length() < 3) {
+            return "Recorded By must be at least 3 characters";
+        }
+
+        return null; // No errors
+    }
+
+
     public void btnSaveOnAction(ActionEvent actionEvent) {
-        String attendanceId = lblAttendanceId.getText();
-        String memberId = txtMemberId.getText();
-        String checkIn = txtCheckIn.getText();
-        String checkOut = txtCheckOut.getText();
-        String recordedBy = txtRecordedBy.getText();
+
+        String attendanceId = lblAttendanceId.getText().trim();
+        String memberId = txtMemberId.getText().trim();
+        String checkIn = txtCheckIn.getText().trim();
+        String checkOut = txtCheckOut.getText().trim();
+        String recordedBy = txtRecordedBy.getText().trim();
+
+        String validationError = validateAttendanceInput(attendanceId, memberId, checkIn, checkOut, recordedBy);
+        if (validationError != null) {
+            new Alert(Alert.AlertType.WARNING, validationError).show();
+            return;
+        }
 
         AttendanceDto attendanceDto = new AttendanceDto(
                 attendanceId,
@@ -101,9 +135,9 @@ public class AttendanceController implements Initializable {
                 checkOut,
                 recordedBy
         );
+
         try {
             boolean isSaved = attendanceModel.saveAttendance(attendanceDto);
-
             if (isSaved) {
                 resetPage();
                 new Alert(Alert.AlertType.INFORMATION, "Saved").show();
@@ -114,14 +148,47 @@ public class AttendanceController implements Initializable {
             e.printStackTrace();
             new Alert(Alert.AlertType.ERROR, "Something went wrong").show();
         }
+//        String attendanceId = lblAttendanceId.getText();
+//        String memberId = txtMemberId.getText();
+//        String checkIn = txtCheckIn.getText();
+//        String checkOut = txtCheckOut.getText();
+//        String recordedBy = txtRecordedBy.getText();
+//
+//        AttendanceDto attendanceDto = new AttendanceDto(
+//                attendanceId,
+//                memberId,
+//                checkIn,
+//                checkOut,
+//                recordedBy
+//        );
+//        try {
+//            boolean isSaved = attendanceModel.saveAttendance(attendanceDto);
+//
+//            if (isSaved) {
+//                resetPage();
+//                new Alert(Alert.AlertType.INFORMATION, "Saved").show();
+//            } else {
+//                new Alert(Alert.AlertType.ERROR, "Fail").show();
+//            }
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            new Alert(Alert.AlertType.ERROR, "Something went wrong").show();
+//        }
     }
 
     public void btnUpdateOnAction(ActionEvent actionEvent) {
-        String attendanceId = lblAttendanceId.getText();
-        String memberId = txtMemberId.getText();
-        String checkIn = txtCheckIn.getText();
-        String checkOut = txtCheckOut.getText();
-        String recordedBy = txtRecordedBy.getText();
+
+        String attendanceId = lblAttendanceId.getText().trim();
+        String memberId = txtMemberId.getText().trim();
+        String checkIn = txtCheckIn.getText().trim();
+        String checkOut = txtCheckOut.getText().trim();
+        String recordedBy = txtRecordedBy.getText().trim();
+
+        String validationError = validateAttendanceInput(attendanceId, memberId, checkIn, checkOut, recordedBy);
+        if (validationError != null) {
+            new Alert(Alert.AlertType.WARNING, validationError).show();
+            return;
+        }
 
         AttendanceDto attendanceDto = new AttendanceDto(
                 attendanceId,
@@ -130,18 +197,44 @@ public class AttendanceController implements Initializable {
                 checkOut,
                 recordedBy
         );
+
         try {
             boolean isUpdated = attendanceModel.updateAttendance(attendanceDto);
-            if(isUpdated){
+            if (isUpdated) {
                 resetPage();
-                new Alert(Alert.AlertType.INFORMATION,"Updated").show();
-            }else {
-                new Alert(Alert.AlertType.ERROR,"Fail").show();
+                new Alert(Alert.AlertType.INFORMATION, "Updated").show();
+            } else {
+                new Alert(Alert.AlertType.ERROR, "Fail").show();
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
-            new Alert(Alert.AlertType.ERROR,"Something went wrong").show();
+            new Alert(Alert.AlertType.ERROR, "Something went wrong").show();
         }
+//        String attendanceId = lblAttendanceId.getText();
+//        String memberId = txtMemberId.getText();
+//        String checkIn = txtCheckIn.getText();
+//        String checkOut = txtCheckOut.getText();
+//        String recordedBy = txtRecordedBy.getText();
+//
+//        AttendanceDto attendanceDto = new AttendanceDto(
+//                attendanceId,
+//                memberId,
+//                checkIn,
+//                checkOut,
+//                recordedBy
+//        );
+//        try {
+//            boolean isUpdated = attendanceModel.updateAttendance(attendanceDto);
+//            if(isUpdated){
+//                resetPage();
+//                new Alert(Alert.AlertType.INFORMATION,"Updated").show();
+//            }else {
+//                new Alert(Alert.AlertType.ERROR,"Fail").show();
+//            }
+//        }catch (Exception e){
+//            e.printStackTrace();
+//            new Alert(Alert.AlertType.ERROR,"Something went wrong").show();
+//        }
     }
 
     public void btnDeleteOnAction(ActionEvent actionEvent) {

@@ -97,7 +97,57 @@ public class MembershipTypeController implements Initializable {
         }
     }
 
+    private boolean validateMembershipForm() {
+        String name = txtName.getText().trim();
+        String description = txtDescription.getText().trim();
+        String durationText = txtDuration.getText().trim();
+        String priceText = txtPrice.getText().trim();
+        String features = txtFeatures.getText().trim();
+        String status = txtStatus.getText().trim();
+
+        if (name.isEmpty() || description.isEmpty() || durationText.isEmpty() ||
+                priceText.isEmpty() || features.isEmpty() || status.isEmpty()) {
+            new Alert(Alert.AlertType.WARNING, "Please fill in all fields.").show();
+            return false;
+        }
+
+        try {
+            int duration = Integer.parseInt(durationText);
+            if (duration <= 0) {
+                new Alert(Alert.AlertType.WARNING, "Duration must be a positive number.").show();
+                return false;
+            }
+        } catch (NumberFormatException e) {
+            new Alert(Alert.AlertType.WARNING, "Invalid duration. Please enter a valid number.").show();
+            return false;
+        }
+
+        try {
+            double price = Double.parseDouble(priceText);
+            if (price <= 0) {
+                new Alert(Alert.AlertType.WARNING, "Price must be a positive number.").show();
+                return false;
+            }
+        } catch (NumberFormatException e) {
+            new Alert(Alert.AlertType.WARNING, "Invalid price. Please enter a valid number.").show();
+            return false;
+        }
+
+        if (!status.equalsIgnoreCase("Active") && !status.equalsIgnoreCase("Inactive")) {
+            new Alert(Alert.AlertType.WARNING, "Status must be 'Active' or 'Inactive'.").show();
+            return false;
+        }
+
+        return true;
+    }
+
+
     public void btnSaveOnAction(ActionEvent actionEvent) {
+
+        if (!validateMembershipForm()) {
+            return; // Exit early if validation fails
+        }
+
         String membershipTypeId = lblMembershipTypeId.getText();
         String name = txtName.getText();
         String description = txtDescription.getText();
@@ -132,6 +182,11 @@ public class MembershipTypeController implements Initializable {
     }
 
     public void btnUpdateOnAction(ActionEvent actionEvent) {
+
+        if (!validateMembershipForm()) {
+            return; // Exit early if validation fails
+        }
+
         String membershipTypeId = lblMembershipTypeId.getText();
         String name = txtName.getText();
         String description = txtDescription.getText();

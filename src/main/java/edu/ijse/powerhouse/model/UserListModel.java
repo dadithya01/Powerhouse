@@ -1,13 +1,32 @@
 package edu.ijse.powerhouse.model;
 
+import edu.ijse.powerhouse.db.DBConnection;
 import edu.ijse.powerhouse.dto.UserListDto;
 import edu.ijse.powerhouse.util.CrudUtil;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class UserListModel {
+
+    public boolean isDuplicateUser(String email, String userName, String phone) throws SQLException, ClassNotFoundException {
+        ResultSet rs = CrudUtil.execute(
+                "SELECT * FROM Users WHERE email = ? OR Username = ? OR phone = ?",
+                email, userName, phone
+        );
+        return rs.next(); // If there’s at least one result, it's a duplicate
+    }
+
+    public boolean isDuplicateUserForUpdate(String userId, String email, String userName, String phone) throws SQLException, ClassNotFoundException {
+        ResultSet rs = CrudUtil.execute(
+                "SELECT * FROM Users WHERE (email = ? OR Username = ? OR phone = ?) AND user_Id != ?",
+                email, userName, phone, userId
+        );
+        return rs.next();
+    }
 
     public boolean saveUser(UserListDto userListDto) throws SQLException, ClassNotFoundException {
         return CrudUtil.execute("INSERT INTO Users (user_Id, name, phone, email, Username, Password, user_Type_Id, registration_Date, Status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",

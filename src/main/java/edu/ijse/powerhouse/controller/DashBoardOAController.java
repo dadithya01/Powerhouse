@@ -107,9 +107,9 @@ public class DashBoardOAController {
 
     @FXML
     void btnEquipmentManagementOnAction(ActionEvent event) throws IOException {
-//        sidePane.getChildren().clear();
-//        AnchorPane load = FXMLLoader.load(getClass().getResource("/view/Settings.fxml"));
-//        sidePane.getChildren().add(load);
+        sidePane.getChildren().clear();
+        AnchorPane load = FXMLLoader.load(getClass().getResource("/view/EquipmentManagement.fxml"));
+        sidePane.getChildren().add(load);
     }
 
     @FXML

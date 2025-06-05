@@ -122,7 +122,55 @@ public class MemberListController implements Initializable {
         }
     }
 
+    private boolean isValidInput() {
+        if (txtName.getText().isBlank()) {
+            showAlert("Name is required.");
+            return false;
+        }
+        if (!txtWeight.getText().matches("\\d+(\\.\\d+)?")) {
+            showAlert("Enter a valid weight (e.g., 70.5).");
+            return false;
+        }
+        if (!txtHeight.getText().matches("\\d+(\\.\\d+)?")) {
+            showAlert("Enter a valid height (e.g., 175.0).");
+            return false;
+        }
+        if (!txtAge.getText().matches("\\d{1,3}")) {
+            showAlert("Enter a valid age (e.g., 25).");
+            return false;
+        }
+        if (!txtPhone.getText().matches("\\d{10,15}")) {
+            showAlert("Enter a valid phone number (10-15 digits).");
+            return false;
+        }
+        if (!txtEmergencyContact.getText().matches("\\d{10,15}")) {
+            showAlert("Enter a valid emergency contact number.");
+            return false;
+        }
+        if (txtRegistrationDate.getText().isBlank()) {
+            showAlert("Registration date is required.");
+            return false;
+        }
+        if (txtMembershipStatus.getText().isBlank()) {
+            showAlert("Membership status is required.");
+            return false;
+        }
+        if (txtAddedBy.getText().isBlank()) {
+            showAlert("Added By field is required.");
+            return false;
+        }
+
+        return true;
+    }
+
+    private void showAlert(String message) {
+        new Alert(Alert.AlertType.WARNING, message).show();
+    }
+
     public void btnSaveOnAction(ActionEvent actionEvent) {
+
+        if (!isValidInput()) return;
+
         String memberId = lblMemberId.getText();
         String name = txtName.getText();
         Double weight = Double.valueOf(txtWeight.getText());
@@ -166,6 +214,9 @@ public class MemberListController implements Initializable {
     }
 
     public void btnUpdateOnAction(ActionEvent actionEvent) {
+
+        if (!isValidInput()) return;
+
         String memberId = lblMemberId.getText();
         String name = txtName.getText();
         Double weight = Double.valueOf(txtWeight.getText());

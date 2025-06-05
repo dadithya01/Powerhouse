@@ -113,7 +113,45 @@ public class DietPlanController implements Initializable {
         }
     }
 
+    private boolean isValidInput() {
+        StringBuilder errors = new StringBuilder();
+
+        if (txtName.getText().isEmpty()) errors.append("Name is required.\n");
+        if (txtDescription.getText().isEmpty()) errors.append("Description is required.\n");
+        if (txtCreatedBy.getText().isEmpty()) errors.append("Created By is required.\n");
+        if (txtCreatedDate.getText().isEmpty()) {
+            errors.append("Created Date is required.\n");
+        } else if (!txtCreatedDate.getText().matches("\\d{4}-\\d{2}-\\d{2}")) {
+            errors.append("Created Date must be in YYYY-MM-DD format.\n");
+        }
+
+        if (!isValidNumber(txtCalorieTarget.getText())) errors.append("Calorie Target must be a valid number.\n");
+        if (!isValidNumber(txtProteinTarget.getText())) errors.append("Protein Target must be a valid number.\n");
+        if (!isValidNumber(txtCarbsTarget.getText())) errors.append("Carbs Target must be a valid number.\n");
+        if (!isValidNumber(txtFatTarget.getText())) errors.append("Fat Target must be a valid number.\n");
+
+        if (errors.length() > 0) {
+            new Alert(Alert.AlertType.WARNING, errors.toString()).show();
+            return false;
+        }
+
+        return true;
+    }
+
+    private boolean isValidNumber(String text) {
+        if (text == null || text.isEmpty()) return false;
+        try {
+            Double.parseDouble(text);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    }
+
+
     public void btnSaveOnAction(ActionEvent actionEvent) {
+
+        if (!isValidInput()) return;
         String dietPlanId = lblDietPlanId.getText();
         String name = txtName.getText();
         String description = txtDescription.getText();
@@ -154,6 +192,8 @@ public class DietPlanController implements Initializable {
     }
 
     public void btnUpdateOnAction(ActionEvent actionEvent) {
+
+        if (!isValidInput()) return;
         String dietPlanId = lblDietPlanId.getText();
         String name = txtName.getText();
         String description = txtDescription.getText();

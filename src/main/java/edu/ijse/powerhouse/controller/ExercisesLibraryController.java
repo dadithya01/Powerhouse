@@ -108,7 +108,45 @@ public class ExercisesLibraryController implements Initializable {
         }
     }
 
+    private boolean isInputValid() {
+        StringBuilder errorMessage = new StringBuilder();
+
+        if (txtName.getText().isEmpty()) {
+            errorMessage.append("• Name is required.\n");
+        }
+        if (txtDescription.getText().isEmpty()) {
+            errorMessage.append("• Description is required.\n");
+        }
+        if (txtMuscleGroup.getText().isEmpty()) {
+            errorMessage.append("• Muscle group is required.\n");
+        }
+        if (txtEquipmentNeeded.getText().isEmpty()) {
+            errorMessage.append("• Equipment needed is required.\n");
+        }
+        if (txtDifficultyLevel.getText().isEmpty() || !txtDifficultyLevel.getText().matches("^(Beginner|Intermediate|Advanced)$")) {
+            errorMessage.append("• Difficulty level required and must be Beginner,Intermediate,Advanced.\n");
+        }
+        if (txtVideoUrl.getText().isEmpty() || !txtVideoUrl.getText().matches("^https?://.*")) {
+            errorMessage.append("• A valid Video URL is required (starting with http:// or https://).\n");
+        }
+        if (txtInstructions.getText().isEmpty()) {
+            errorMessage.append("• Instructions are required.\n");
+        }
+        if (txtAddedBy.getText().isEmpty()) {
+            errorMessage.append("• Added By is required.\n");
+        }
+
+        if (errorMessage.length() > 0) {
+            new Alert(Alert.AlertType.WARNING, errorMessage.toString()).show();
+            return false;
+        }
+        return true;
+    }
+
+
     public void btnSaveOnAction(ActionEvent actionEvent) {
+
+        if (!isInputValid()) return;
         String exerciseId = lblExerciseId.getText();
         String name = txtName.getText();
         String description = txtDescription.getText();
@@ -146,6 +184,8 @@ public class ExercisesLibraryController implements Initializable {
     }
 
     public void btnUpdateOnAction(ActionEvent actionEvent) {
+
+        if (!isInputValid()) return;
         String exerciseId = lblExerciseId.getText();
         String name = txtName.getText();
         String description = txtDescription.getText();

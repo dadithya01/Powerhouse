@@ -108,32 +108,71 @@ public class EmployeeListController implements Initializable {
         }
     }
 
-    public void btnSaveOnAction(ActionEvent actionEvent) {
-        String employeeId = lblEmployeeId.getText();
-        String name = txtName.getText();
-        String contact = txtPhone.getText();
-        String address = txtAddress.getText();
-        int age = Integer.parseInt(txtAge.getText());
-        String hireDate = txtHireDate.getText();
-        String position = txtPosition.getText();
-        Double salary = Double.valueOf(txtSalary.getText());
-        String emergencyContact = txtEmergencyContact.getText();
+    private String validateInput(
+            String employeeId, String name, String contact, String address, String ageText,
+            String hireDate, String position, String salaryText, String emergencyContact
+    ) {
+        // Check required fields
+        if (employeeId.isEmpty() || name.isEmpty() || contact.isEmpty() || address.isEmpty() ||
+                ageText.isEmpty() || hireDate.isEmpty() || position.isEmpty() || salaryText.isEmpty() || emergencyContact.isEmpty()) {
+            return "Please fill all the fields";
+        }
 
+        // Validate age
+        try {
+            int age = Integer.parseInt(ageText);
+            if (age <= 0) return "Age must be a positive number";
+        } catch (NumberFormatException e) {
+            return "Invalid age format";
+        }
+
+        // Validate salary
+        try {
+            double salary = Double.parseDouble(salaryText);
+            if (salary <= 0) return "Salary must be a positive number";
+        } catch (NumberFormatException e) {
+            return "Invalid salary format";
+        }
+
+        // Validate phone numbers (digits only, length 10-15)
+        if (!contact.matches("\\d{10,15}")) return "Invalid phone number format";
+        if (!emergencyContact.matches("\\d{10,15}")) return "Invalid emergency contact format";
+
+        // Validate hire date format YYYY-MM-DD
+        if (!hireDate.matches("\\d{4}-\\d{2}-\\d{2}")) return "Hire Date must be in YYYY-MM-DD format";
+
+        // All validations passed
+        return null;
+    }
+
+
+    public void btnSaveOnAction(ActionEvent actionEvent) {
+
+        String employeeId = lblEmployeeId.getText().trim();
+        String name = txtName.getText().trim();
+        String contact = txtPhone.getText().trim();
+        String address = txtAddress.getText().trim();
+        String ageText = txtAge.getText().trim();
+        String hireDate = txtHireDate.getText().trim();
+        String position = txtPosition.getText().trim();
+        String salaryText = txtSalary.getText().trim();
+        String emergencyContact = txtEmergencyContact.getText().trim();
+
+        String validationError = validateInput(employeeId, name, contact, address, ageText, hireDate, position, salaryText, emergencyContact);
+        if (validationError != null) {
+            new Alert(Alert.AlertType.WARNING, validationError).show();
+            return;
+        }
+
+        int age = Integer.parseInt(ageText);
+        double salary = Double.parseDouble(salaryText);
 
         EmployeeListDto employeeListDto = new EmployeeListDto(
-                employeeId,
-                name,
-                contact,
-                address,
-                age,
-                hireDate,
-                position,
-                salary,
-                emergencyContact
+                employeeId, name, contact, address, age, hireDate, position, salary, emergencyContact
         );
+
         try {
             boolean isSaved = employeeListModel.saveEmployee(employeeListDto);
-
             if (isSaved) {
                 resetPage();
                 new Alert(Alert.AlertType.INFORMATION, "Saved").show();
@@ -144,43 +183,114 @@ public class EmployeeListController implements Initializable {
             e.printStackTrace();
             new Alert(Alert.AlertType.ERROR, "Something went wrong").show();
         }
+//        String employeeId = lblEmployeeId.getText();
+//        String name = txtName.getText();
+//        String contact = txtPhone.getText();
+//        String address = txtAddress.getText();
+//        int age = Integer.parseInt(txtAge.getText());
+//        String hireDate = txtHireDate.getText();
+//        String position = txtPosition.getText();
+//        Double salary = Double.valueOf(txtSalary.getText());
+//        String emergencyContact = txtEmergencyContact.getText();
+//
+//
+//        EmployeeListDto employeeListDto = new EmployeeListDto(
+//                employeeId,
+//                name,
+//                contact,
+//                address,
+//                age,
+//                hireDate,
+//                position,
+//                salary,
+//                emergencyContact
+//        );
+//        try {
+//            boolean isSaved = employeeListModel.saveEmployee(employeeListDto);
+//
+//            if (isSaved) {
+//                resetPage();
+//                new Alert(Alert.AlertType.INFORMATION, "Saved").show();
+//            } else {
+//                new Alert(Alert.AlertType.ERROR, "Fail").show();
+//            }
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            new Alert(Alert.AlertType.ERROR, "Something went wrong").show();
+//        }
     }
 
     public void btnUpdateOnAction(ActionEvent actionEvent) {
-        String employeeId = lblEmployeeId.getText();
-        String name = txtName.getText();
-        String contact = txtPhone.getText();
-        String address = txtAddress.getText();
-        int age = Integer.parseInt(txtAge.getText());
-        String hireDate = txtHireDate.getText();
-        String position = txtPosition.getText();
-        Double salary = Double.valueOf(txtSalary.getText());
-        String emergencyContact = txtEmergencyContact.getText();
 
+        String employeeId = lblEmployeeId.getText().trim();
+        String name = txtName.getText().trim();
+        String contact = txtPhone.getText().trim();
+        String address = txtAddress.getText().trim();
+        String ageText = txtAge.getText().trim();
+        String hireDate = txtHireDate.getText().trim();
+        String position = txtPosition.getText().trim();
+        String salaryText = txtSalary.getText().trim();
+        String emergencyContact = txtEmergencyContact.getText().trim();
+
+        String validationError = validateInput(employeeId, name, contact, address, ageText, hireDate, position, salaryText, emergencyContact);
+        if (validationError != null) {
+            new Alert(Alert.AlertType.WARNING, validationError).show();
+            return;
+        }
+
+        int age = Integer.parseInt(ageText);
+        double salary = Double.parseDouble(salaryText);
 
         EmployeeListDto employeeListDto = new EmployeeListDto(
-                employeeId,
-                name,
-                contact,
-                address,
-                age,
-                hireDate,
-                position,
-                salary,
-                emergencyContact
+                employeeId, name, contact, address, age, hireDate, position, salary, emergencyContact
         );
+
         try {
             boolean isUpdated = employeeListModel.updateEmployee(employeeListDto);
-            if(isUpdated){
+            if (isUpdated) {
                 resetPage();
-                new Alert(Alert.AlertType.INFORMATION,"Updated").show();
-            }else {
-                new Alert(Alert.AlertType.ERROR,"Fail").show();
+                new Alert(Alert.AlertType.INFORMATION, "Updated").show();
+            } else {
+                new Alert(Alert.AlertType.ERROR, "Fail").show();
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
-            new Alert(Alert.AlertType.ERROR,"Something went wrong").show();
+            new Alert(Alert.AlertType.ERROR, "Something went wrong").show();
         }
+//        String employeeId = lblEmployeeId.getText();
+//        String name = txtName.getText();
+//        String contact = txtPhone.getText();
+//        String address = txtAddress.getText();
+//        int age = Integer.parseInt(txtAge.getText());
+//        String hireDate = txtHireDate.getText();
+//        String position = txtPosition.getText();
+//        Double salary = Double.valueOf(txtSalary.getText());
+//        String emergencyContact = txtEmergencyContact.getText();
+//
+//
+//        EmployeeListDto employeeListDto = new EmployeeListDto(
+//                employeeId,
+//                name,
+//                contact,
+//                address,
+//                age,
+//                hireDate,
+//                position,
+//                salary,
+//                emergencyContact
+//        );
+//        try {
+//            boolean isUpdated = employeeListModel.updateEmployee(employeeListDto);
+//            if(isUpdated){
+//                resetPage();
+//                new Alert(Alert.AlertType.INFORMATION,"Updated").show();
+//            }else {
+//                new Alert(Alert.AlertType.ERROR,"Fail").show();
+//            }
+//        }catch (Exception e){
+//            e.printStackTrace();
+//            new Alert(Alert.AlertType.ERROR,"Something went wrong").show();
+//        }
     }
 
     public void btnDeleteOnAction(ActionEvent actionEvent) {

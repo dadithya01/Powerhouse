@@ -74,7 +74,32 @@ public class UserTypesController implements Initializable {
         }
     }
 
+    private boolean isValidInput() {
+        String type = txtType.getText();
+
+        if (type == null || type.trim().isEmpty()) {
+            new Alert(Alert.AlertType.WARNING, "User type cannot be empty!").show();
+            return false;
+        }
+
+        if (!type.matches("[A-Za-z ]+")) {
+            new Alert(Alert.AlertType.WARNING, "User type must contain only letters and spaces!").show();
+            return false;
+        }
+
+        if (type.length() > 30) {
+            new Alert(Alert.AlertType.WARNING, "User type is too long!").show();
+            return false;
+        }
+
+        return true;
+    }
+
+
     public void btnSaveOnAction(ActionEvent actionEvent) {
+
+        if (!isValidInput()) return;
+
         String userTypeId = lblUserTypeId.getText();
         String type = txtType.getText();
 
@@ -99,6 +124,9 @@ public class UserTypesController implements Initializable {
     }
 
     public void btnUpdateOnAction(ActionEvent actionEvent) {
+
+        if (!isValidInput()) return;
+
         String userTypeId = lblUserTypeId.getText();
         String type = txtType.getText();
 

@@ -117,7 +117,68 @@ public class TrainerListController implements Initializable {
         }
     }
 
+    private boolean isValidInput() {
+        String userId = txtUserId.getText();
+        String name = txtName.getText();
+        String phone = txtPhone.getText();
+        String address = txtAddress.getText();
+        String ageText = txtAge.getText();
+        String specialization = txtSpecialization.getText();
+        String certification = txtCertification.getText();
+        String hireDate = txtHireDate.getText();
+        String bio = txtBio.getText();
+        String ratingText = txtRating.getText();
+
+        if (userId.isEmpty() || name.isEmpty() || phone.isEmpty() || address.isEmpty()
+                || ageText.isEmpty() || specialization.isEmpty() || certification.isEmpty()
+                || hireDate.isEmpty() || bio.isEmpty() || ratingText.isEmpty()) {
+            new Alert(Alert.AlertType.WARNING, "All fields must be filled!").show();
+            return false;
+        }
+
+        if (!phone.matches("\\d{10}")) {
+            new Alert(Alert.AlertType.WARNING, "Phone number must be 10 digits!").show();
+            return false;
+        }
+
+        int age;
+        try {
+            age = Integer.parseInt(ageText);
+            if (age <= 0 || age > 120) {
+                new Alert(Alert.AlertType.WARNING, "Age must be between 1 and 120!").show();
+                return false;
+            }
+        } catch (NumberFormatException e) {
+            new Alert(Alert.AlertType.WARNING, "Invalid age!").show();
+            return false;
+        }
+
+        double rating;
+        try {
+            rating = Double.parseDouble(ratingText);
+            if (rating < 0 || rating > 5) {
+                new Alert(Alert.AlertType.WARNING, "Rating must be between 0 and 5!").show();
+                return false;
+            }
+        } catch (NumberFormatException e) {
+            new Alert(Alert.AlertType.WARNING, "Invalid rating!").show();
+            return false;
+        }
+
+        // Optionally validate date (basic format check)
+        if (!hireDate.matches("\\d{4}-\\d{2}-\\d{2}")) {
+            new Alert(Alert.AlertType.WARNING, "Hire date must be in YYYY-MM-DD format!").show();
+            return false;
+        }
+
+        return true;
+    }
+
+
     public void btnSaveOnAction(ActionEvent actionEvent) {
+
+        if (!isValidInput()) return;
+
         String trainerId = lblTrainerId.getText();
         String userId = txtUserId.getText();
         String name = txtName.getText();
@@ -160,6 +221,9 @@ public class TrainerListController implements Initializable {
     }
 
     public void btnUpdateOnAction(ActionEvent actionEvent) {
+
+        if (!isValidInput()) return;
+
         String trainerId = lblTrainerId.getText();
         String userId = txtUserId.getText();
         String name = txtName.getText();

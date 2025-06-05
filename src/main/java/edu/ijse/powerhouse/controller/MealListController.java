@@ -112,32 +112,63 @@ public class MealListController implements Initializable {
         }
     }
 
+    private boolean isInputValid() {
+        StringBuilder errorMessage = new StringBuilder();
+
+        if (txtDietPlanId.getText().isEmpty()) {
+            errorMessage.append("• Diet Plan ID is required.\n");
+        }
+        if (txtName.getText().isEmpty()) {
+            errorMessage.append("• Name is required.\n");
+        }
+        if (txtDescription.getText().isEmpty()) {
+            errorMessage.append("• Description is required.\n");
+        }
+        if (txtMealTime.getText().isEmpty()) {
+            errorMessage.append("• Meal Time is required.\n");
+        }
+        if (txtCalories.getText().isEmpty() || !txtCalories.getText().matches("\\d+")) {
+            errorMessage.append("• Valid numeric Calories are required.\n");
+        }
+        if (txtProtein.getText().isEmpty() || !txtProtein.getText().matches("\\d+")) {
+            errorMessage.append("• Valid numeric Protein value is required.\n");
+        }
+        if (txtCarbs.getText().isEmpty() || !txtCarbs.getText().matches("\\d+")) {
+            errorMessage.append("• Valid numeric Carbs value is required.\n");
+        }
+        if (txtFat.getText().isEmpty() || !txtFat.getText().matches("\\d+")) {
+            errorMessage.append("• Valid numeric Fat value is required.\n");
+        }
+        if (txtRecipe.getText().isEmpty()) {
+            errorMessage.append("• Recipe is required.\n");
+        }
+
+        if (errorMessage.length() > 0) {
+            new Alert(Alert.AlertType.WARNING, errorMessage.toString()).show();
+            return false;
+        }
+        return true;
+    }
+
+
     public void btnSaveOnAction(ActionEvent actionEvent) {
-        String mealId = lblMealId.getText();
-        String dietPlanId = txtDietPlanId.getText();
-        String name = txtName.getText();
-        String description = txtDescription.getText();
-        String mealTime = txtMealTime.getText();
-        int calories = Integer.parseInt(txtCalories.getText());
-        int protein = Integer.parseInt(txtProtein.getText());
-        int carbs = Integer.parseInt(txtCarbs.getText());
-        int fat = Integer.parseInt(txtFat.getText());
-        String recipe = txtRecipe.getText();
 
+        if (!isInputValid()) return;
 
-        MealListDto mealListDto = new MealListDto(
-                mealId,
-                dietPlanId,
-                name,
-                description,
-                mealTime,
-                calories,
-                protein,
-                carbs,
-                fat,
-                recipe
-        );
         try {
+            MealListDto mealListDto = new MealListDto(
+                    lblMealId.getText(),
+                    txtDietPlanId.getText(),
+                    txtName.getText(),
+                    txtDescription.getText(),
+                    txtMealTime.getText(),
+                    Integer.parseInt(txtCalories.getText()),
+                    Integer.parseInt(txtProtein.getText()),
+                    Integer.parseInt(txtCarbs.getText()),
+                    Integer.parseInt(txtFat.getText()),
+                    txtRecipe.getText()
+            );
+
             boolean isSaved = mealListModel.saveMeal(mealListDto);
 
             if (isSaved) {
@@ -150,46 +181,112 @@ public class MealListController implements Initializable {
             e.printStackTrace();
             new Alert(Alert.AlertType.ERROR, "Something went wrong").show();
         }
+//        String mealId = lblMealId.getText();
+//        String dietPlanId = txtDietPlanId.getText();
+//        String name = txtName.getText();
+//        String description = txtDescription.getText();
+//        String mealTime = txtMealTime.getText();
+//        int calories = Integer.parseInt(txtCalories.getText());
+//        int protein = Integer.parseInt(txtProtein.getText());
+//        int carbs = Integer.parseInt(txtCarbs.getText());
+//        int fat = Integer.parseInt(txtFat.getText());
+//        String recipe = txtRecipe.getText();
+//
+//
+//        MealListDto mealListDto = new MealListDto(
+//                mealId,
+//                dietPlanId,
+//                name,
+//                description,
+//                mealTime,
+//                calories,
+//                protein,
+//                carbs,
+//                fat,
+//                recipe
+//        );
+//        try {
+//            boolean isSaved = mealListModel.saveMeal(mealListDto);
+//
+//            if (isSaved) {
+//                resetPage();
+//                new Alert(Alert.AlertType.INFORMATION, "Saved").show();
+//            } else {
+//                new Alert(Alert.AlertType.ERROR, "Fail").show();
+//            }
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            new Alert(Alert.AlertType.ERROR, "Something went wrong").show();
+//        }
     }
 
     public void btnUpdateOnAction(ActionEvent actionEvent) {
-        String mealId = lblMealId.getText();
-        String dietPlanId = txtDietPlanId.getText();
-        String name = txtName.getText();
-        String description = txtDescription.getText();
-        String mealTime = txtMealTime.getText();
-        int calories = Integer.parseInt(txtCalories.getText());
-        int protein = Integer.parseInt(txtProtein.getText());
-        int carbs = Integer.parseInt(txtCarbs.getText());
-        int fat = Integer.parseInt(txtFat.getText());
-        String recipe = txtRecipe.getText();
 
-
-        MealListDto mealListDto = new MealListDto(
-                mealId,
-                dietPlanId,
-                name,
-                description,
-                mealTime,
-                calories,
-                protein,
-                carbs,
-                fat,
-                recipe
-        );
+        if (!isInputValid()) return;
 
         try {
+            MealListDto mealListDto = new MealListDto(
+                    lblMealId.getText(),
+                    txtDietPlanId.getText(),
+                    txtName.getText(),
+                    txtDescription.getText(),
+                    txtMealTime.getText(),
+                    Integer.parseInt(txtCalories.getText()),
+                    Integer.parseInt(txtProtein.getText()),
+                    Integer.parseInt(txtCarbs.getText()),
+                    Integer.parseInt(txtFat.getText()),
+                    txtRecipe.getText()
+            );
+
             boolean isUpdated = mealListModel.updateMeal(mealListDto);
-            if(isUpdated){
+
+            if (isUpdated) {
                 resetPage();
-                new Alert(Alert.AlertType.INFORMATION,"Updated").show();
-            }else {
-                new Alert(Alert.AlertType.ERROR,"Fail").show();
+                new Alert(Alert.AlertType.INFORMATION, "Updated").show();
+            } else {
+                new Alert(Alert.AlertType.ERROR, "Fail").show();
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
-            new Alert(Alert.AlertType.ERROR,"Something went wrong").show();
+            new Alert(Alert.AlertType.ERROR, "Something went wrong").show();
         }
+//        String mealId = lblMealId.getText();
+//        String dietPlanId = txtDietPlanId.getText();
+//        String name = txtName.getText();
+//        String description = txtDescription.getText();
+//        String mealTime = txtMealTime.getText();
+//        int calories = Integer.parseInt(txtCalories.getText());
+//        int protein = Integer.parseInt(txtProtein.getText());
+//        int carbs = Integer.parseInt(txtCarbs.getText());
+//        int fat = Integer.parseInt(txtFat.getText());
+//        String recipe = txtRecipe.getText();
+//
+//
+//        MealListDto mealListDto = new MealListDto(
+//                mealId,
+//                dietPlanId,
+//                name,
+//                description,
+//                mealTime,
+//                calories,
+//                protein,
+//                carbs,
+//                fat,
+//                recipe
+//        );
+//
+//        try {
+//            boolean isUpdated = mealListModel.updateMeal(mealListDto);
+//            if(isUpdated){
+//                resetPage();
+//                new Alert(Alert.AlertType.INFORMATION,"Updated").show();
+//            }else {
+//                new Alert(Alert.AlertType.ERROR,"Fail").show();
+//            }
+//        }catch (Exception e){
+//            e.printStackTrace();
+//            new Alert(Alert.AlertType.ERROR,"Something went wrong").show();
+//        }
     }
 
     public void btnDeleteOnAction(ActionEvent actionEvent) {

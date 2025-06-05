@@ -18,10 +18,9 @@ CREATE TABLE Users (
     Password VARCHAR(255) NOT NULL,
     user_Type_Id varchar(100),
     registration_Date DATE,
-    Status ENUM('Active', 'Inactive') DEFAULT 'Active',
+    Status varchar(8) not null,
     FOREIGN KEY (User_Type_Id) REFERENCES User_Types(User_Type_Id)
 );
-
 
 CREATE TABLE Employee (
     employee_id varchar(100) PRIMARY KEY ,
@@ -61,7 +60,7 @@ CREATE TABLE Member (
     medical_conditions TEXT,
     fitness_goals TEXT,
     register_date DATE NOT NULL,
-    membership_status ENUM('Active', 'Inactive') DEFAULT 'Active',
+    membership_status varchar(8) not null,
     added_by varchar(100),
     FOREIGN KEY (added_by) REFERENCES Users(user_id)
 );
@@ -75,7 +74,7 @@ CREATE TABLE Payment_Plan (
     features TEXT,
     created_date DATE,
     updated_date DATE,
-    status ENUM('Active', 'Inactive') DEFAULT 'Active'
+    Status varchar(8) not null
 );
 
 CREATE TABLE Payment (
@@ -101,12 +100,14 @@ CREATE TABLE Exercise (
     description TEXT,
     muscle_group VARCHAR(100),
     equipment_needed VARCHAR(255),
-    difficulty_level ENUM('Beginner', 'Intermediate', 'Advanced'),
+    difficulty_level varchar (15),
     video_url VARCHAR(255),
     instructions TEXT,
     added_by varchar(100),
     FOREIGN KEY (added_by) REFERENCES Trainer(trainer_id)
 );
+
+table Exercise;
 
 CREATE TABLE Workout_Plan (
     workout_plan_id varchar(100) PRIMARY KEY ,
@@ -195,7 +196,7 @@ CREATE TABLE Equipment (
     cost DECIMAL(10,2),
     maintenance_schedule TEXT,
     last_maintenance_date DATE,
-    status ENUM('Available', 'In Use', 'Under Maintenance', 'Unavailable') DEFAULT 'Available',
+    status varchar(16),
     added_by varchar(100) NOT NULL,
     FOREIGN KEY (added_by) REFERENCES Users(user_id)
 );
@@ -217,7 +218,7 @@ CREATE TABLE Membership_Type (
     duration INT,
     price DECIMAL(10,2) NOT NULL,
     features TEXT,
-    status ENUM('Active', 'Inactive') DEFAULT 'Active'
+    Status varchar(8) not null
 );
 
 CREATE TABLE Member_Membership (
@@ -231,6 +232,28 @@ CREATE TABLE Member_Membership (
     FOREIGN KEY (member_id) REFERENCES Member(member_id),
     FOREIGN KEY (membership_type_id) REFERENCES Membership_Type(membership_type_id),
     FOREIGN KEY (assigned_by) REFERENCES Users(user_id)
+);
+
+CREATE TABLE Supplier (
+    supplier_id VARCHAR(100) PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    contact_person VARCHAR(100),
+    phone VARCHAR(20),
+    email VARCHAR(100),
+    address TEXT,
+    company_website VARCHAR(255),
+    status VARCHAR(8) NOT NULL
+);
+
+CREATE TABLE Supplier_Equipment (
+    supplier_id VARCHAR(100),
+    equipment_id VARCHAR(100),
+    supply_date DATE,
+    cost DECIMAL(10,2),
+    warranty_period VARCHAR(50),
+    PRIMARY KEY (supplier_id, equipment_id),
+    FOREIGN KEY (supplier_id) REFERENCES Supplier(supplier_id),
+    FOREIGN KEY (equipment_id) REFERENCES Equipment(equipment_id)
 );
 
 show table status where name='Member_Membership';
