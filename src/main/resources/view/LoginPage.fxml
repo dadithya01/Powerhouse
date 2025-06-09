@@ -13,22 +13,22 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="ancMainPage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1850.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ijse.powerhouse.controller.LoginPageController">
+<AnchorPane fx:id="ancMainPage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1135.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ijse.powerhouse.controller.LoginPageController">
    <children>
-      <HBox prefHeight="900.0" prefWidth="1850.0">
+      <HBox prefHeight="1135.0" prefWidth="1920.0">
          <children>
-            <Pane prefHeight="900.0" prefWidth="670.0">
+            <Pane prefHeight="1135.0" prefWidth="664.0">
                <children>
-                  <ImageView fitHeight="900.0" fitWidth="619.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="1135.0" fitWidth="762.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../images/spencer-davis-0ShTs8iPY28-unsplash.jpg" />
                      </image>
                   </ImageView>
-                  <VBox alignment="TOP_CENTER" prefHeight="164.0" prefWidth="597.0">
+                  <VBox alignment="TOP_CENTER" prefHeight="215.0" prefWidth="630.0">
                      <children>
                         <Label text="WELCOME" textFill="WHITE">
                            <font>
-                              <Font name="Serif Bold" size="48.0" />
+                              <Font name="Serif Bold" size="80.0" />
                            </font>
                            <effect>
                               <Reflection />
@@ -41,30 +41,30 @@
                   </VBox>
                </children>
             </Pane>
-            <Pane fx:id="mainCont" prefHeight="900.0" prefWidth="1325.0" style="-fx-background-color: fefefe;">
+            <Pane fx:id="mainCont" prefHeight="1151.0" prefWidth="1258.0" style="-fx-background-color: fefefe;">
                <children>
-                  <VBox alignment="TOP_CENTER" layoutX="42.0" layoutY="252.0" prefHeight="397.0" prefWidth="1176.0">
+                  <VBox alignment="TOP_CENTER" layoutX="98.0" layoutY="324.0" prefHeight="477.0" prefWidth="1077.0">
                      <children>
-                        <Label prefHeight="85.0" prefWidth="197.0" text="Log in">
+                        <Label fx:id="lblLogin" alignment="CENTER" prefHeight="85.0" prefWidth="318.0" text="Log in . . .">
                            <font>
-                              <Font name="Serif Bold" size="48.0" />
+                              <Font name="Serif Bold" size="60.0" />
                            </font>
                            <VBox.margin>
                               <Insets left="40.0" />
                            </VBox.margin>
                         </Label>
-                        <HBox prefHeight="253.0" prefWidth="795.0">
+                        <HBox prefHeight="305.0" prefWidth="1077.0">
                            <children>
                               <VBox alignment="TOP_RIGHT" prefHeight="253.0" prefWidth="379.0" spacing="45.0">
                                  <children>
                                     <Label text="User Name :">
                                        <font>
-                                          <Font name="Serif Bold" size="24.0" />
+                                          <Font name="Serif Bold" size="30.0" />
                                        </font>
                                     </Label>
                                     <Label text="Password :">
                                        <font>
-                                          <Font name="Serif Bold" size="24.0" />
+                                          <Font name="Serif Bold" size="30.0" />
                                        </font>
                                     </Label>
                                  </children>
@@ -75,21 +75,21 @@
                                     <Insets right="20.0" top="50.0" />
                                  </padding>
                               </VBox>
-                              <VBox alignment="TOP_CENTER" prefHeight="253.0" prefWidth="478.0" spacing="35.0">
+                              <VBox alignment="TOP_CENTER" prefHeight="299.0" prefWidth="478.0" spacing="25.0">
                                  <children>
-                                    <TextField fx:id="txtUserName" promptText="User Name..." style="-fx-background-radius: 10;">
+                                    <TextField fx:id="txtUserName" promptText="User Name..." style="-fx-background-radius: 50;">
                                        <font>
-                                          <Font size="20.0" />
+                                          <Font size="30.0" />
                                        </font>
                                     </TextField>
-                                    <TextField fx:id="txtPassword" promptText="Password..." style="-fx-background-radius: 10;">
+                                    <TextField fx:id="txtPassword" promptText="Password..." style="-fx-background-radius: 50;">
                                        <font>
-                                          <Font size="20.0" />
+                                          <Font size="30.0" />
                                        </font>
                                     </TextField>
-                                    <Button mnemonicParsing="false" onAction="#btnLoginOnAction" prefHeight="51.0" prefWidth="117.0" style="-fx-background-color: #2f3640; -fx-background-radius: 7;" text="Log in" textFill="WHITE">
+                                    <Button fx:id="btnLogin" mnemonicParsing="false" onAction="#btnLoginOnAction" prefHeight="62.0" prefWidth="149.0" style="-fx-background-color: #2f3640; -fx-background-radius: 7;" text="Log in" textFill="WHITE">
                                        <font>
-                                          <Font name="Serif Bold" size="24.0" />
+                                          <Font name="Serif Bold" size="30.0" />
                                        </font>
                                     </Button>
                                  </children>
@@ -107,22 +107,22 @@
                         <Insets top="60.0" />
                      </padding>
                   </VBox>
-                  <Label layoutX="88.0" layoutY="53.0" text="PowerHouse">
+                  <Label layoutX="104.0" layoutY="46.0" text="PowerHouse">
                      <font>
-                        <Font name="Serif Bold" size="30.0" />
+                        <Font name="Serif Bold" size="40.0" />
                      </font>
                      <effect>
                         <Reflection />
                      </effect>
                   </Label>
-                  <ImageView fitHeight="69.0" fitWidth="69.0" layoutX="19.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="85.0" fitWidth="85.0" layoutX="19.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../images/dumbbell.png" />
                      </image>
                   </ImageView>
-                  <Button alignment="TOP_LEFT" layoutX="19.0" layoutY="835.0" mnemonicParsing="false" onAction="#btnForgotPasswordOnAction" prefHeight="51.0" prefWidth="282.0" style="-fx-background-color: fefefe;" text="Forgot password ?">
+                  <Button alignment="TOP_LEFT" layoutX="14.0" layoutY="1049.0" mnemonicParsing="false" onAction="#btnForgotPasswordOnAction" prefHeight="62.0" prefWidth="336.0" style="-fx-background-color: fefefe;" text="Forgot password ?">
                      <font>
-                        <Font name="Serif Bold" size="20.0" />
+                        <Font name="Serif Bold" size="30.0" />
                      </font>
                   </Button>
                </children>

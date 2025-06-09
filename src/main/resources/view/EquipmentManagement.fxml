@@ -53,6 +53,11 @@
                                         <Font name="Serif Bold" size="20.0" />
                                     </font>
                                 </Label>
+                                <Label layoutX="340.0" layoutY="223.0" text="Quantity :">
+                                    <font>
+                                        <Font name="Serif Bold" size="20.0" />
+                                    </font>
+                                </Label>
                                 <Label text="Maintenance Schedule :">
                                     <font>
                                         <Font name="Serif Bold" size="20.0" />
@@ -125,6 +130,14 @@
                                     <font>
                                         <Font size="18.0" />
                                     </font></TextField>
+                                <TextField fx:id="txtQuantity" layoutX="20.0" layoutY="225.0" style="-fx-background-radius: 10;">
+                                    <padding>
+                                        <Insets top="10.0" />
+                                    </padding>
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                </TextField>
                                 <TextField fx:id="MaintenanceSchedule" style="-fx-background-radius: 10;">
                                     <padding>
                                         <Insets top="10.0" />
@@ -182,13 +195,14 @@
                     </children></HBox>
                 <ScrollPane prefHeight="242.0" prefWidth="1325.0">
                     <content>
-                        <TableView fx:id="tblEquipmentList" onMouseClicked="#getData" prefHeight="244.0" prefWidth="1894.0">
+                        <TableView fx:id="tblEquipmentList" onMouseClicked="#getData" prefHeight="197.0" prefWidth="1894.0">
                             <columns>
                                 <TableColumn fx:id="colEquipmentId" prefWidth="123.0" text="Equipment Id" />
                                 <TableColumn fx:id="colName" prefWidth="271.0" text="Name" />
                                 <TableColumn fx:id="colDescription" prefWidth="350.0" text="Description" />
                                 <TableColumn fx:id="colPurchaseDate" prefWidth="180.0" text="Purchase Date" />
                                 <TableColumn fx:id="colCost" prefWidth="167.0" text="Cost" />
+                                <TableColumn fx:id="colQuantity" prefWidth="167.0" text="Quantity" />
                                 <TableColumn fx:id="colMaintenanceSchedule" prefWidth="186.0" text="Maintenance Schedule" />
                                 <TableColumn fx:id="colLastMaintenanceDate" prefWidth="209.0" text="Last Maintenance Date" />
                                 <TableColumn fx:id="colStatus" prefWidth="191.0" text="Status" />

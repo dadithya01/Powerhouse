@@ -19,6 +19,7 @@ public class AppInitializer extends Application {
 
         primaryStage.setScene(scene);
         primaryStage.setTitle("Powerhouse");
+        primaryStage.setMaximized(true);
         primaryStage.setResizable(false);
         primaryStage.getIcons().add(icon);
         primaryStage.show();
