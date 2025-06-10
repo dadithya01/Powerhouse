@@ -4,12 +4,16 @@ import edu.ijse.powerhouse.dto.UserListDto;
 import edu.ijse.powerhouse.dto.tm.UserListTM;
 import edu.ijse.powerhouse.model.UserListModel;
 import edu.ijse.powerhouse.util.CrudUtil;
+import javafx.animation.FadeTransition;
+import javafx.animation.ParallelTransition;
+import javafx.animation.TranslateTransition;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import javafx.util.Duration;
 
 import java.net.URL;
 import java.sql.ResultSet;
@@ -29,6 +33,7 @@ public class UserListController implements Initializable {
     public TextField txtUserTypeId;
     public TextField txtRegistrationDate;
     public TextField txtStatus;
+    public Label lblMain;
 
     public TableView<UserListTM> tblUserList;
     public TableColumn<UserListTM, String> colId;
@@ -58,6 +63,7 @@ public class UserListController implements Initializable {
         colUserTypeId.setCellValueFactory(new PropertyValueFactory<>("userTypeId"));
         colRegistrationDate.setCellValueFactory(new PropertyValueFactory<>("registrationDate"));
         colStatus.setCellValueFactory(new PropertyValueFactory<>("status"));
+        animateLabelSlideIn();
 
         try {
             resetPage();
@@ -66,6 +72,24 @@ public class UserListController implements Initializable {
             e.printStackTrace();
             new Alert(Alert.AlertType.ERROR, "Something went wrong!").show();
         }
+    }
+
+    private void animateLabelSlideIn() {
+        String loginText = lblMain.getText();
+        lblMain.setText(loginText);
+        lblMain.setOpacity(0);
+        lblMain.setTranslateX(-50);
+
+        TranslateTransition slide = new TranslateTransition(Duration.millis(2000), lblMain);
+        slide.setFromX(-100);
+        slide.setToX(0);
+
+        FadeTransition fade = new FadeTransition(Duration.millis(2000), lblMain);
+        fade.setFromValue(0);
+        fade.setToValue(1);
+
+        ParallelTransition parallel = new ParallelTransition(slide, fade);
+        parallel.play();
     }
 
     public void loadTableData() throws SQLException, ClassNotFoundException {

@@ -25,7 +25,7 @@
                         <Image url="@../images/dumbbell.png" />
                      </image>
                   </ImageView>
-                  <Label layoutX="99.0" layoutY="43.0" text="PowerHouse">
+                  <Label fx:id="lblIcon" layoutX="99.0" layoutY="43.0" text="PowerHouse">
                      <font>
                         <Font name="Serif Bold" size="40.0" />
                      </font>
@@ -231,14 +231,26 @@
                         <Insets bottom="50.0" top="50.0" />
                      </padding>
                   </VBox>
-                  <Button fx:id="btnLogout" layoutX="14.0" layoutY="1059.0" mnemonicParsing="false" onAction="#btnLogoutOnAction" prefHeight="62.0" prefWidth="168.0" style="-fx-background-color: #2f3640; -fx-background-radius: 7;" text="Log out" textFill="WHITE">
+                  <Button fx:id="btnLogout" layoutX="14.0" layoutY="1059.0" mnemonicParsing="false" onAction="#btnLogoutOnAction" prefHeight="62.0" prefWidth="168.0" style="-fx-background-color: #2f3640; -fx-background-radius: 50;" text="Log out" textFill="WHITE">
                      <font>
                         <Font name="Serif Bold" size="30.0" />
                      </font>
                   </Button>
                </children>
             </Pane>
-            <Pane fx:id="sidePane" prefHeight="900.0" prefWidth="1325.0" style="-fx-background-color: fefefe;" />
+            <Pane fx:id="sidePane" prefHeight="900.0" prefWidth="1325.0" style="-fx-background-color: fefefe;">
+               <children>
+                  <ImageView fitHeight="356.0" fitWidth="313.0" layoutX="929.0" layoutY="81.0" pickOnBounds="true" preserveRatio="true" rotate="16.3">
+                     <image>
+                        <Image url="@../images/_Set_of_gym_Flork_meme_stickers__Sticker_for_Sale_by_ramonparaiba_in_2024___Gym_memes_funny__Gym__-removebg-preview.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="549.0" fitWidth="373.0" layoutX="883.0" layoutY="553.0" pickOnBounds="true" preserveRatio="true" rotate="-16.7">
+                     <image>
+                        <Image url="@../images/rB3M-Clb-removebg-preview.png" />
+                     </image>
+                  </ImageView>
+               </children></Pane>
          </children>
       </HBox>
    </children>

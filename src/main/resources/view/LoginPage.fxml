@@ -81,13 +81,19 @@
                                        <font>
                                           <Font size="30.0" />
                                        </font>
+                                       <padding>
+                                          <Insets bottom="5.0" left="10.0" top="5.0" />
+                                       </padding>
                                     </TextField>
                                     <TextField fx:id="txtPassword" promptText="Password..." style="-fx-background-radius: 50;">
                                        <font>
                                           <Font size="30.0" />
                                        </font>
+                                       <padding>
+                                          <Insets bottom="5.0" left="10.0" top="5.0" />
+                                       </padding>
                                     </TextField>
-                                    <Button fx:id="btnLogin" mnemonicParsing="false" onAction="#btnLoginOnAction" prefHeight="62.0" prefWidth="149.0" style="-fx-background-color: #2f3640; -fx-background-radius: 7;" text="Log in" textFill="WHITE">
+                                    <Button fx:id="btnLogin" mnemonicParsing="false" onAction="#btnLoginOnAction" prefHeight="62.0" prefWidth="149.0" style="-fx-background-color: #2f3640; -fx-background-radius: 50;" text="Log in" textFill="WHITE">
                                        <font>
                                           <Font name="Serif Bold" size="30.0" />
                                        </font>
@@ -100,6 +106,11 @@
                                     <Insets left="10.0" right="30.0" top="45.0" />
                                  </padding>
                               </VBox>
+                              <ImageView fitHeight="347.0" fitWidth="277.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/Download%20Stickman%20Businessman%20Character%20Strong%20and%20Showing%20Biceps%20Vector%20Cartoon%20Illustration%20for%20free.jpeg" />
+                                 </image>
+                              </ImageView>
                            </children>
                         </HBox>
                      </children>

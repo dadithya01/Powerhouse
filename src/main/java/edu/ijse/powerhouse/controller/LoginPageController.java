@@ -12,6 +12,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.effect.DropShadow;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
@@ -28,7 +30,7 @@ import java.util.ResourceBundle;
 public class LoginPageController implements Initializable {
 
     @FXML
-    public Pane mainCont;
+    private Pane mainCont;
 
     @FXML
     private Button btnLogin;
@@ -84,18 +86,33 @@ public class LoginPageController implements Initializable {
                     ancMainPage.getChildren().add(load);
                 }
             } else {
-                Alert alert = new Alert(Alert.AlertType.ERROR);
+
+                Image image = new Image(getClass().getResourceAsStream("/images/florkofcows_icons-removebg-preview.png"));
+                ImageView imageView = new ImageView(image);
+                imageView.setFitHeight(100);
+                imageView.setFitWidth(100);
+
+                Alert alert = new Alert(Alert.AlertType.WARNING);
                 alert.setTitle("Login Failed");
-                alert.setHeaderText(null);
                 alert.setContentText("Invalid username or password.");
-                alert.showAndWait();
+                alert.setGraphic(imageView);
+                alert.show();
                 txtUserName.clear();
                 txtPassword.clear();
                 txtUserName.requestFocus();
             }
         } catch (Exception e) {
             e.printStackTrace();
-            new Alert(Alert.AlertType.ERROR,"Something went wrong").show();
+
+            Image image = new Image(getClass().getResourceAsStream("/images/Screenshot_from_2025-06-10_17-10-53-removebg-preview.png"));
+            ImageView imageView = new ImageView(image);
+            imageView.setFitHeight(100);
+            imageView.setFitWidth(120);
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setContentText("Something went wrong! Don't worry its not you--its us.");
+            alert.setGraphic(imageView);
+            alert.setTitle("Something wrong");
+            alert.show();
         }
     }
 
@@ -183,7 +200,7 @@ public class LoginPageController implements Initializable {
 //    }
 
     public void addFancyHoverAnimation(Button button) {
-        button.setStyle("-fx-background-color: #2f3640; -fx-text-fill: white; -fx-background-radius: 7;");
+        button.setStyle("-fx-background-color: #2f3640; -fx-text-fill: white; -fx-background-radius: 50;");
         DropShadow glow = new DropShadow();
         glow.setColor(Color.LIGHTBLUE);
         glow.setRadius(15);
@@ -194,7 +211,7 @@ public class LoginPageController implements Initializable {
             scaleUp.setToX(1.1);
             scaleUp.setToY(1.1);
 
-            button.setStyle("-fx-background-color: #2f3640; -fx-text-fill: white; -fx-background-radius: 7;");
+            button.setStyle("-fx-background-color: #2f3640; -fx-text-fill: white; -fx-background-radius: 50;");
 
             button.setEffect(glow);
             scaleUp.play();
@@ -205,7 +222,7 @@ public class LoginPageController implements Initializable {
             scaleDown.setToX(1.0);
             scaleDown.setToY(1.0);
 
-            button.setStyle("-fx-background-color: #2f3640; -fx-text-fill: white; -fx-background-radius: 7;");
+            button.setStyle("-fx-background-color: #2f3640; -fx-text-fill: white; -fx-background-radius: 50;");
             button.setEffect(null);
             scaleDown.play();
         });
