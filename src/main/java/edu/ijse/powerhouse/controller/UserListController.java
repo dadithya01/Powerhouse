@@ -3,7 +3,7 @@ package edu.ijse.powerhouse.controller;
 import edu.ijse.powerhouse.dto.UserListDto;
 import edu.ijse.powerhouse.dto.tm.UserListTM;
 import edu.ijse.powerhouse.model.UserListModel;
-import edu.ijse.powerhouse.util.CrudUtil;
+import edu.ijse.powerhouse.util.Animations;
 import javafx.animation.FadeTransition;
 import javafx.animation.ParallelTransition;
 import javafx.animation.TranslateTransition;
@@ -16,7 +16,6 @@ import javafx.scene.input.MouseEvent;
 import javafx.util.Duration;
 
 import java.net.URL;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Optional;
 import java.util.ResourceBundle;
@@ -63,7 +62,11 @@ public class UserListController implements Initializable {
         colUserTypeId.setCellValueFactory(new PropertyValueFactory<>("userTypeId"));
         colRegistrationDate.setCellValueFactory(new PropertyValueFactory<>("registrationDate"));
         colStatus.setCellValueFactory(new PropertyValueFactory<>("status"));
-        animateLabelSlideIn();
+        Animations.AnimateLabelSlideIn(lblMain);
+        Animations.AddFancyHoverAnimation(btnSave, "#27ae60", "#353b48");
+        Animations.AddFancyHoverAnimation(btnUpdate, "#2980b9", "#353b48");
+        Animations.AddFancyHoverAnimation(btnDelete, "#e74c3c", "#353b48");
+        Animations.AddFancyHoverAnimation(btnClear, "#130f40", "#353b48");
 
         try {
             resetPage();
@@ -72,24 +75,6 @@ public class UserListController implements Initializable {
             e.printStackTrace();
             new Alert(Alert.AlertType.ERROR, "Something went wrong!").show();
         }
-    }
-
-    private void animateLabelSlideIn() {
-        String loginText = lblMain.getText();
-        lblMain.setText(loginText);
-        lblMain.setOpacity(0);
-        lblMain.setTranslateX(-50);
-
-        TranslateTransition slide = new TranslateTransition(Duration.millis(2000), lblMain);
-        slide.setFromX(-100);
-        slide.setToX(0);
-
-        FadeTransition fade = new FadeTransition(Duration.millis(2000), lblMain);
-        fade.setFromValue(0);
-        fade.setToValue(1);
-
-        ParallelTransition parallel = new ParallelTransition(slide, fade);
-        parallel.play();
     }
 
     public void loadTableData() throws SQLException, ClassNotFoundException {

@@ -192,19 +192,19 @@
                <children>
                   <Button fx:id="btnSave" mnemonicParsing="false" onAction="#btnSaveOnAction" prefHeight="80.0" prefWidth="200.0" style="-fx-background-color: #27ae60; -fx-background-radius: 50;" text="Save" textFill="WHITE">
                      <font>
-                        <Font name="Serif Bold" size="24.0" />
+                        <Font name="Serif Bold" size="30.0" />
                      </font></Button>
                   <Button fx:id="btnUpdate" mnemonicParsing="false" onAction="#btnUpdateOnAction" prefHeight="80.0" prefWidth="200.0" style="-fx-background-color: #2980b9; -fx-background-radius: 50;" text="Update" textFill="WHITE">
                      <font>
-                        <Font name="Serif Bold" size="24.0" />
+                        <Font name="Serif Bold" size="30.0" />
                      </font></Button>
                   <Button fx:id="btnDelete" mnemonicParsing="false" onAction="#btnDeleteOnAction" prefHeight="80.0" prefWidth="200.0" style="-fx-background-color: #e74c3c; -fx-background-radius: 50;" text="Delete" textFill="WHITE">
                      <font>
-                        <Font name="Serif Bold" size="24.0" />
+                        <Font name="Serif Bold" size="30.0" />
                      </font></Button>
                   <Button fx:id="btnClear" mnemonicParsing="false" onAction="#btnClearOnAction" prefHeight="80.0" prefWidth="200.0" style="-fx-background-color: #130f40; -fx-background-radius: 50;" text="Clear" textFill="WHITE">
                      <font>
-                        <Font name="Serif Bold" size="24.0" />
+                        <Font name="Serif Bold" size="30.0" />
                      </font>
                   </Button>
                </children></HBox>

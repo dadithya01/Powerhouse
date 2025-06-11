@@ -5,6 +5,7 @@ import edu.ijse.powerhouse.dto.tm.UserListTM;
 import edu.ijse.powerhouse.dto.tm.UserTypeTM;
 import edu.ijse.powerhouse.model.UserListModel;
 import edu.ijse.powerhouse.model.UserTypeModel;
+import edu.ijse.powerhouse.util.Animations;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
@@ -21,6 +22,7 @@ public class UserTypesController implements Initializable {
 
     public Label lblUserTypeId;
     public TextField txtType;
+    public Label lblMain;
 
     public TableView<UserTypeTM> tblUserTypes;
     public TableColumn<UserTypeTM, String> colUserTypeId;
@@ -36,6 +38,11 @@ public class UserTypesController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         colUserTypeId.setCellValueFactory(new PropertyValueFactory<>("user_Type_Id"));
         colType.setCellValueFactory(new PropertyValueFactory<>("type"));
+        Animations.AnimateLabelSlideIn(lblMain);
+        Animations.AddFancyHoverAnimation(btnSave, "#27ae60", "#353b48");
+        Animations.AddFancyHoverAnimation(btnUpdate, "#2980b9", "#353b48");
+        Animations.AddFancyHoverAnimation(btnDelete, "#e74c3c", "#353b48");
+        Animations.AddFancyHoverAnimation(btnClear, "#130f40", "#353b48");
 
         try {
             resetPage();

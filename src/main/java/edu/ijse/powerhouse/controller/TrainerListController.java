@@ -3,6 +3,7 @@ package edu.ijse.powerhouse.controller;
 import edu.ijse.powerhouse.dto.TrainerListDto;
 import edu.ijse.powerhouse.dto.tm.TrainerListTM;
 import edu.ijse.powerhouse.model.TrainerListModel;
+import edu.ijse.powerhouse.util.Animations;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
@@ -28,6 +29,7 @@ public class TrainerListController implements Initializable {
     public TextField txtHireDate;
     public TextField txtBio;
     public TextField txtRating;
+    public Label lblMain;
 
     public TableView<TrainerListTM> tblTrainerList;
     public TableColumn<TrainerListTM, String> colTId;
@@ -61,6 +63,11 @@ public class TrainerListController implements Initializable {
         colHireDate.setCellValueFactory(new PropertyValueFactory<>("hire_date"));
         colBio.setCellValueFactory(new PropertyValueFactory<>("bio"));
         colRating.setCellValueFactory(new PropertyValueFactory<>("rating"));
+        Animations.AnimateLabelSlideIn(lblMain);
+        Animations.AddFancyHoverAnimation(btnSave, "#27ae60", "#353b48");
+        Animations.AddFancyHoverAnimation(btnUpdate, "#2980b9", "#353b48");
+        Animations.AddFancyHoverAnimation(btnDelete, "#e74c3c", "#353b48");
+        Animations.AddFancyHoverAnimation(btnClear, "#130f40", "#353b48");
 
         try {
             resetPage();

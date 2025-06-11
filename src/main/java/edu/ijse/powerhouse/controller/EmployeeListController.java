@@ -3,6 +3,7 @@ package edu.ijse.powerhouse.controller;
 import edu.ijse.powerhouse.dto.EmployeeListDto;
 import edu.ijse.powerhouse.dto.tm.EmployeeListTM;
 import edu.ijse.powerhouse.model.EmployeeListModel;
+import edu.ijse.powerhouse.util.Animations;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
@@ -26,6 +27,7 @@ public class EmployeeListController implements Initializable {
     public TextField txtPosition;
     public TextField txtSalary;
     public TextField txtEmergencyContact;
+    public Label lblMain;
 
     public TableView<EmployeeListTM> tblEmployeeList;
     public TableColumn<EmployeeListTM,String> colId;
@@ -54,6 +56,11 @@ public class EmployeeListController implements Initializable {
         colPosition.setCellValueFactory(new PropertyValueFactory<>("position"));
         colSalary.setCellValueFactory(new PropertyValueFactory<>("salary"));
         colEmergencyContact.setCellValueFactory(new PropertyValueFactory<>("emergency_contact"));
+        Animations.AnimateLabelSlideIn(lblMain);
+        Animations.AddFancyHoverAnimation(btnSave, "#27ae60", "#353b48");
+        Animations.AddFancyHoverAnimation(btnUpdate, "#2980b9", "#353b48");
+        Animations.AddFancyHoverAnimation(btnDelete, "#e74c3c", "#353b48");
+        Animations.AddFancyHoverAnimation(btnClear, "#130f40", "#353b48");
 
         try {
             resetPage();

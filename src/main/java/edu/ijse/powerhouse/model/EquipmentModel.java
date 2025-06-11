@@ -10,12 +10,13 @@ import java.util.ArrayList;
 public class EquipmentModel {
 
     public boolean saveEquipment(EquipmentDto equipmentDto) throws SQLException, ClassNotFoundException {
-        return CrudUtil.execute("INSERT INTO Equipment (equipment_id, name, description, purchase_date, cost, maintenance_schedule, last_maintenance_date, status, added_by) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
+        return CrudUtil.execute("INSERT INTO Equipment (equipment_id, name, description, purchase_date, cost,quantity, maintenance_schedule, last_maintenance_date, status, added_by) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
                 equipmentDto.getEquipment_id(),
                 equipmentDto.getName(),
                 equipmentDto.getDescription(),
                 equipmentDto.getPurchase_date(),
                 equipmentDto.getCost(),
+                equipmentDto.getQuantity(),
                 equipmentDto.getMaintenance_schedule(),
                 equipmentDto.getLast_maintenance_date(),
                 equipmentDto.getStatus(),
@@ -23,11 +24,12 @@ public class EquipmentModel {
     }
 
     public boolean updateEquipment(EquipmentDto equipmentDto) throws SQLException, ClassNotFoundException {
-        return CrudUtil.execute("UPDATE Equipment SET name = ?, description = ?, purchase_date = ?, cost = ?, maintenance_schedule = ?, last_maintenance_date = ?, status = ?, added_by = ? WHERE equipment_id = ?",
+        return CrudUtil.execute("UPDATE Equipment SET name = ?, description = ?, purchase_date = ?, cost = ?,quantity=?, maintenance_schedule = ?, last_maintenance_date = ?, status = ?, added_by = ? WHERE equipment_id = ?",
                 equipmentDto.getName(),
                 equipmentDto.getDescription(),
                 equipmentDto.getPurchase_date(),
                 equipmentDto.getCost(),
+                equipmentDto.getQuantity(),
                 equipmentDto.getMaintenance_schedule(),
                 equipmentDto.getLast_maintenance_date(),
                 equipmentDto.getStatus(),
@@ -50,10 +52,11 @@ public class EquipmentModel {
                     resultSet.getString(3),
                     resultSet.getString(4),
                     resultSet.getDouble(5),
-                    resultSet.getString(6),
+                    resultSet.getInt(6),
                     resultSet.getString(7),
                     resultSet.getString(8),
-                    resultSet.getString(9)
+                    resultSet.getString(9),
+                    resultSet.getString(10)
             );
             equipmentList.add(equipmentDto);
         }

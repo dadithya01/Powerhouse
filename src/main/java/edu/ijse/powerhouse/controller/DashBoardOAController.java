@@ -1,8 +1,8 @@
 package edu.ijse.powerhouse.controller;
 
+import edu.ijse.powerhouse.util.Animations;
 import javafx.animation.FadeTransition;
 import javafx.animation.ParallelTransition;
-import javafx.animation.ScaleTransition;
 import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -12,10 +12,8 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
-import javafx.scene.effect.DropShadow;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
-import javafx.scene.paint.Color;
 import javafx.util.Duration;
 
 import java.io.IOException;
@@ -37,8 +35,8 @@ public class DashBoardOAController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        addFancyHoverAnimation(btnLogout);
-        animateLabelSlideIn();
+        Animations.AddFancyHoverAnimation(btnLogout, "#2f3640", "#353b48");
+        Animations.AnimateLabelSlideIn(lblIcon);
     }
 
     @FXML
@@ -53,53 +51,6 @@ public class DashBoardOAController implements Initializable {
             AnchorPane load = FXMLLoader.load(getClass().getResource("/view/LoginPage.fxml"));
             ancDashBoardO.getChildren().add(load);
         }
-    }
-
-    private void animateLabelSlideIn() {
-        String loginText = lblIcon.getText();
-        lblIcon.setText(loginText);
-        lblIcon.setOpacity(0);
-        lblIcon.setTranslateX(-50);
-
-        TranslateTransition slide = new TranslateTransition(Duration.millis(2000), lblIcon);
-        slide.setFromX(-100);
-        slide.setToX(0);
-
-        FadeTransition fade = new FadeTransition(Duration.millis(2000), lblIcon);
-        fade.setFromValue(0);
-        fade.setToValue(1);
-
-        ParallelTransition parallel = new ParallelTransition(slide, fade);
-        parallel.play();
-    }
-
-    public void addFancyHoverAnimation(Button button) {
-        button.setStyle("-fx-background-color: #2f3640; -fx-text-fill: white; -fx-background-radius: 50;");
-        DropShadow glow = new DropShadow();
-        glow.setColor(Color.LIGHTBLUE);
-        glow.setRadius(15);
-        glow.setSpread(0.3);
-
-        button.setOnMouseEntered(e -> {
-            ScaleTransition scaleUp = new ScaleTransition(Duration.millis(200), button);
-            scaleUp.setToX(1.1);
-            scaleUp.setToY(1.1);
-
-            button.setStyle("-fx-background-color: #2f3640; -fx-text-fill: white; -fx-background-radius: 50;");
-
-            button.setEffect(glow);
-            scaleUp.play();
-        });
-
-        button.setOnMouseExited(e -> {
-            ScaleTransition scaleDown = new ScaleTransition(Duration.millis(200), button);
-            scaleDown.setToX(1.0);
-            scaleDown.setToY(1.0);
-
-            button.setStyle("-fx-background-color: #2f3640; -fx-text-fill: white; -fx-background-radius: 50;");
-            button.setEffect(null);
-            scaleDown.play();
-        });
     }
 
     @FXML

@@ -5,6 +5,7 @@ import edu.ijse.powerhouse.dto.EquipmentDto;
 import edu.ijse.powerhouse.dto.tm.EmployeeListTM;
 import edu.ijse.powerhouse.dto.tm.EquipmentTM;
 import edu.ijse.powerhouse.model.EquipmentModel;
+import edu.ijse.powerhouse.util.Animations;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -48,6 +49,9 @@ public class EquipmentManagementController implements Initializable {
     private TableColumn<EquipmentTM, String> colCost;
 
     @FXML
+    private TableColumn<EquipmentTM, Integer> colQuantity;
+
+    @FXML
     private TableColumn<EquipmentTM, String> colDescription;
 
     @FXML
@@ -81,6 +85,9 @@ public class EquipmentManagementController implements Initializable {
     private TextField txtCost;
 
     @FXML
+    private TextField txtQuantity;
+
+    @FXML
     private TextField txtDescription;
 
     @FXML
@@ -95,6 +102,9 @@ public class EquipmentManagementController implements Initializable {
     @FXML
     private TextField txtStatus;
 
+    @FXML
+    private Label lblMain;
+
     private final EquipmentModel equipmentModel = new EquipmentModel();
 
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -103,10 +113,16 @@ public class EquipmentManagementController implements Initializable {
         colDescription.setCellValueFactory(new PropertyValueFactory<>("description"));
         colPurchaseDate.setCellValueFactory(new PropertyValueFactory<>("purchase_date"));
         colCost.setCellValueFactory(new PropertyValueFactory<>("cost"));
+        colQuantity.setCellValueFactory(new PropertyValueFactory<>("quantity"));
         colMaintenanceSchedule.setCellValueFactory(new PropertyValueFactory<>("maintenance_schedule"));
         colLastMaintenanceDate.setCellValueFactory(new PropertyValueFactory<>("last_maintenance_date"));
         colStatus.setCellValueFactory(new PropertyValueFactory<>("status"));
         colAddedBy.setCellValueFactory(new PropertyValueFactory<>("added_by"));
+        Animations.AnimateLabelSlideIn(lblMain);
+        Animations.AddFancyHoverAnimation(btnSave, "#27ae60", "#353b48");
+        Animations.AddFancyHoverAnimation(btnUpdate, "#2980b9", "#353b48");
+        Animations.AddFancyHoverAnimation(btnDelete, "#e74c3c", "#353b48");
+        Animations.AddFancyHoverAnimation(btnClear, "#130f40", "#353b48");
 
         try {
             resetPage();
@@ -128,6 +144,7 @@ public class EquipmentManagementController implements Initializable {
                                 equipmentDto.getDescription(),
                                 equipmentDto.getPurchase_date(),
                                 equipmentDto.getCost(),
+                                equipmentDto.getQuantity(),
                                 equipmentDto.getMaintenance_schedule(),
                                 equipmentDto.getLast_maintenance_date(),
                                 equipmentDto.getStatus(),
@@ -149,6 +166,7 @@ public class EquipmentManagementController implements Initializable {
             txtDescription.setText(null);
             txtPurchaseDate.setText(null);
             txtCost.setText(null);
+            txtQuantity.setText(null);
             MaintenanceSchedule.setText(null);
             txtLastMaintenanceDate.setText(null);
             txtStatus.setText(null);
@@ -166,20 +184,24 @@ public class EquipmentManagementController implements Initializable {
         String description = txtDescription.getText().trim();
         String purchaseDate = txtPurchaseDate.getText().trim();
         String costText = txtCost.getText().trim();
+        String txtquantity = txtQuantity.getText().trim();
         String maintenanceSchedule = MaintenanceSchedule.getText().trim();
         String lastMaintenanceDate = txtLastMaintenanceDate.getText().trim();
         String status = txtStatus.getText().trim();
         String addedBy = txtAddedBy.getText().trim();
 
         if (name.isEmpty() || description.isEmpty() || purchaseDate.isEmpty() ||
-                costText.isEmpty() || maintenanceSchedule.isEmpty() || lastMaintenanceDate.isEmpty() ||
+                costText.isEmpty() || txtquantity.isEmpty() || maintenanceSchedule.isEmpty() || lastMaintenanceDate.isEmpty() ||
                 status.isEmpty() || addedBy.isEmpty()) {
             new Alert(Alert.AlertType.WARNING, "Please fill in all fields.").show();
             return false;
         }
 
+        double costText1 = Double.parseDouble(costText);
+        int txtquantity1 = Integer.parseInt(txtquantity);
+
         try {
-            double cost = Double.parseDouble(costText);
+            double cost = Double.parseDouble(String.valueOf(costText));
             if (cost <= 0) {
                 new Alert(Alert.AlertType.WARNING, "Cost must be a positive number.").show();
                 return false;
@@ -225,6 +247,7 @@ public class EquipmentManagementController implements Initializable {
         String description = txtDescription.getText();
         String purchaseDate = txtPurchaseDate.getText();
         Double cost = Double.valueOf(txtCost.getText());
+        int quantity = Integer.parseInt(txtQuantity.getText());
         String maintenanceSchedule = MaintenanceSchedule.getText();
         String lastMaintenanceDate = txtLastMaintenanceDate.getText();
         String status = txtStatus.getText();
@@ -237,6 +260,7 @@ public class EquipmentManagementController implements Initializable {
                 description,
                 purchaseDate,
                 cost,
+                quantity,
                 maintenanceSchedule,
                 lastMaintenanceDate,
                 status,
@@ -268,6 +292,7 @@ public class EquipmentManagementController implements Initializable {
         String description = txtDescription.getText();
         String purchaseDate = txtPurchaseDate.getText();
         Double cost = Double.valueOf(txtCost.getText());
+        int quantity = Integer.parseInt(txtQuantity.getText());
         String maintenanceSchedule = MaintenanceSchedule.getText();
         String lastMaintenanceDate = txtLastMaintenanceDate.getText();
         String status = txtStatus.getText();
@@ -280,6 +305,7 @@ public class EquipmentManagementController implements Initializable {
                 description,
                 purchaseDate,
                 cost,
+                quantity,
                 maintenanceSchedule,
                 lastMaintenanceDate,
                 status,
@@ -343,6 +369,7 @@ public class EquipmentManagementController implements Initializable {
             txtDescription.setText(selectedItem.getDescription());
             txtPurchaseDate.setText(selectedItem.getPurchase_date());
             txtCost.setText(String.valueOf(selectedItem.getCost()));
+            txtQuantity.setText(String.valueOf(selectedItem.getQuantity()));
             MaintenanceSchedule.setText(selectedItem.getMaintenance_schedule());
             txtLastMaintenanceDate.setText(selectedItem.getLast_maintenance_date());
             txtStatus.setText(selectedItem.getStatus());

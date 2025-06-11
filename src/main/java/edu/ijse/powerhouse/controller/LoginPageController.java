@@ -1,6 +1,7 @@
 package edu.ijse.powerhouse.controller;
 
 import edu.ijse.powerhouse.db.DBConnection;
+import edu.ijse.powerhouse.util.Animations;
 import javafx.animation.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -52,9 +53,9 @@ public class LoginPageController implements Initializable {
 //        animateLabelBlink();
 //        animateLabelSlideIn();
 //        animateLabelZoomIn();
-        typewriterEffect(lblLogin, "Log in . . .", Duration.millis(150));
+        Animations.TypeWriterEffect(lblLogin, "Log in . . .", Duration.millis(150));
 //        addHoverAnimation(btnLogin);
-        addFancyHoverAnimation(btnLogin);
+        Animations.AddFancyHoverAnimation(btnLogin, "#2f3640", "#353b48");
     }
 
     @FXML
@@ -169,19 +170,19 @@ public class LoginPageController implements Initializable {
 //        blink.play();
 //    }
 
-    private void typewriterEffect(Label label, String message, Duration delay) {
-        label.setText("");
-
-        Timeline timeline = new Timeline();
-        for (int i = 0; i < message.length(); i++) {
-            final int index = i;
-            KeyFrame keyFrame = new KeyFrame(delay.multiply(i),
-                    e -> label.setText(label.getText() + message.charAt(index))
-            );
-            timeline.getKeyFrames().add(keyFrame);
-        }
-        timeline.play();
-    }
+//    private void typewriterEffect(Label label, String message, Duration delay) {
+//        label.setText("");
+//
+//        Timeline timeline = new Timeline();
+//        for (int i = 0; i < message.length(); i++) {
+//            final int index = i;
+//            KeyFrame keyFrame = new KeyFrame(delay.multiply(i),
+//                    e -> label.setText(label.getText() + message.charAt(index))
+//            );
+//            timeline.getKeyFrames().add(keyFrame);
+//        }
+//        timeline.play();
+//    }
 
 //    private void addHoverAnimation(Button button) {
 //        button.setOnMouseEntered(e -> {
@@ -199,34 +200,34 @@ public class LoginPageController implements Initializable {
 //        });
 //    }
 
-    public void addFancyHoverAnimation(Button button) {
-        button.setStyle("-fx-background-color: #2f3640; -fx-text-fill: white; -fx-background-radius: 50;");
-        DropShadow glow = new DropShadow();
-        glow.setColor(Color.LIGHTBLUE);
-        glow.setRadius(15);
-        glow.setSpread(0.3);
-
-        button.setOnMouseEntered(e -> {
-            ScaleTransition scaleUp = new ScaleTransition(Duration.millis(200), button);
-            scaleUp.setToX(1.1);
-            scaleUp.setToY(1.1);
-
-            button.setStyle("-fx-background-color: #2f3640; -fx-text-fill: white; -fx-background-radius: 50;");
-
-            button.setEffect(glow);
-            scaleUp.play();
-        });
-
-        button.setOnMouseExited(e -> {
-            ScaleTransition scaleDown = new ScaleTransition(Duration.millis(200), button);
-            scaleDown.setToX(1.0);
-            scaleDown.setToY(1.0);
-
-            button.setStyle("-fx-background-color: #2f3640; -fx-text-fill: white; -fx-background-radius: 50;");
-            button.setEffect(null);
-            scaleDown.play();
-        });
-    }
+//    public void addFancyHoverAnimation(Button button) {
+//        button.setStyle("-fx-background-color: #2f3640; -fx-text-fill: white; -fx-background-radius: 50;");
+//        DropShadow glow = new DropShadow();
+//        glow.setColor(Color.LIGHTBLUE);
+//        glow.setRadius(15);
+//        glow.setSpread(0.3);
+//
+//        button.setOnMouseEntered(e -> {
+//            ScaleTransition scaleUp = new ScaleTransition(Duration.millis(200), button);
+//            scaleUp.setToX(1.1);
+//            scaleUp.setToY(1.1);
+//
+//            button.setStyle("-fx-background-color: #2f3640; -fx-text-fill: white; -fx-background-radius: 50;");
+//
+//            button.setEffect(glow);
+//            scaleUp.play();
+//        });
+//
+//        button.setOnMouseExited(e -> {
+//            ScaleTransition scaleDown = new ScaleTransition(Duration.millis(200), button);
+//            scaleDown.setToX(1.0);
+//            scaleDown.setToY(1.0);
+//
+//            button.setStyle("-fx-background-color: #2f3640; -fx-text-fill: white; -fx-background-radius: 50;");
+//            button.setEffect(null);
+//            scaleDown.play();
+//        });
+//    }
 
     public void btnForgotPasswordOnAction(ActionEvent actionEvent) throws IOException {
         mainCont.getChildren().clear();

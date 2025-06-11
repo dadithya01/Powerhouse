@@ -194,6 +194,7 @@ CREATE TABLE Equipment (
     description TEXT,
     purchase_date DATE,
     cost DECIMAL(10,2),
+    quantity int,
     maintenance_schedule TEXT,
     last_maintenance_date DATE,
     status varchar(16),
@@ -243,17 +244,6 @@ CREATE TABLE Supplier (
     address TEXT,
     company_website VARCHAR(255),
     status VARCHAR(8) NOT NULL
-);
-
-CREATE TABLE Supplier_Equipment (
-    supplier_id VARCHAR(100),
-    equipment_id VARCHAR(100),
-    supply_date DATE,
-    cost DECIMAL(10,2),
-    warranty_period VARCHAR(50),
-    PRIMARY KEY (supplier_id, equipment_id),
-    FOREIGN KEY (supplier_id) REFERENCES Supplier(supplier_id),
-    FOREIGN KEY (equipment_id) REFERENCES Equipment(equipment_id)
 );
 
 show table status where name='Member_Membership';
