@@ -51,11 +51,11 @@ public class AttendanceModel {
 
     public String getNextAttendanceId() throws SQLException , ClassNotFoundException{
         ResultSet resultSet = CrudUtil.execute("SELECT attendance_id FROM Attendance ORDER BY attendance_id DESC LIMIT 1");
-        char tableCharacter = 'A';
+        String tableCharacter = "AT";
 
         if(resultSet.next()){
             String lastId = resultSet.getString(1);
-            String lastIdNumberString = lastId.substring(1);
+            String lastIdNumberString = lastId.substring(2);
             int lastIdNumber = Integer.parseInt(lastIdNumberString);
             int nextIdNumber = lastIdNumber + 1;
             String nextIdString = String.format(tableCharacter + "%03d" , nextIdNumber);
